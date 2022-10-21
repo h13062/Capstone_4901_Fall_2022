@@ -19,7 +19,7 @@ const Register = () =>{
  
   return (
     <View style={styles.container}>
-      {/* <Image style={styles.image} source={require("")} /> */}
+      <Image style={styles.image} source={require("../assets/sleep_baby.jpg")} />
  
       <StatusBar style="auto" />
       <View>
@@ -58,9 +58,9 @@ const Register = () =>{
       <View style={styles.inputView}>
         <TextInput
           style={styles.TextInput}
-          placeholder="Password"
+          placeholder="Confirm Password"
           placeholderTextColor="#003f5c"
-          onsetPassword={setPassword}
+          onsetPassword={setCfpassword}
           secureTextEntry={true}
         
         />
@@ -79,6 +79,7 @@ const styles = StyleSheet.create({
     fontWeight:"0.5",
     textAlign: "center",
     paddingBottom: 10,
+    paddingTop: 0,
   },
   
   container: {
@@ -89,7 +90,10 @@ const styles = StyleSheet.create({
   },
  
   image: {
-    marginBottom: 40,
+    flex: 0.5,
+    width: 600,
+    height: 800,
+    resizeMode: 'contain',
   },
  
   inputView: {

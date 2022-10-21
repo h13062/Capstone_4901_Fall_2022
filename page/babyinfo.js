@@ -10,57 +10,66 @@ import {
   TouchableOpacity,
 } from "react-native";
  
-const Login = () =>{
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+const BabyInfo = () =>{
+  const [BBFullname, setBBFullname] = useState("");
+  const [Gender, setGender] = useState("");
+  const [DOB, setDOB] = useState("");
+  const [Weight, setWeight] = useState("");
  
   return (
     <View style={styles.container}>
-      <Image style={styles.image} source={require("../assets/sleep_baby.jpg")} />
- 
       <StatusBar style="auto" />
       <View>
         <Text style={styles.title}>
-          Welcome 
+          Baby Information 
         </Text>
         <Text style={styles.sup_title}>
-            By signing in you are agreeing to our Term and privacy policy
+            Provide us basic information of your child
         </Text>
       </View>
       <View style={styles.inputView}>
         <TextInput
           style={styles.TextInput}
-          placeholder="Email"
+          placeholder="Baby Full Name"
           placeholderTextColor="#003f5c"
-          onsetEmail={setEmail}
+          onsetEmail={setBBFullname}
         
         />
       </View>
       <View style={styles.inputView}>
         <TextInput
           style={styles.TextInput}
-          placeholder="Password"
+          placeholder="Gender"
           placeholderTextColor="#003f5c"
-          onsetPassword={setPassword}
+          onsetPassword={setGender}
           secureTextEntry={true}
+        />
+      </View>
+      <View style={styles.inputView}>
+        <TextInput
+          style={styles.TextInput}
+          placeholder="Date of Birth"
+          placeholderTextColor="#003f5c"
+          onsetEmail={setDOB}
         
         />
       </View>
- 
-      <TouchableOpacity style={styles.fgBtn}>
-        <Text style={styles.forgot_button}>Forgot Password?</Text>
-      </TouchableOpacity>
- 
-      <TouchableOpacity style={styles.loginBtn}>
-        <Text style={styles.loginText}>LOGIN</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.registerBtn}>
-        <Text style={styles.registerText}>REGISTER</Text>
+      <View style={styles.inputView}>
+        <TextInput
+          style={styles.TextInput}
+          placeholder="Weight (ib)"
+          placeholderTextColor="#003f5c"
+          onsetEmail={setWeight}
+        
+        />
+      </View> 
+      <TouchableOpacity style={styles.NextBtn}>
+        <Text style={styles.NextText}>NEXT</Text>
       </TouchableOpacity>
     </View>
   );
 }
-export default Login;
+export default BabyInfo;
 const styles = StyleSheet.create({
   title:{
     fontSize:40,
@@ -79,14 +88,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
- 
-  image: {
-    flex: 0.6,
-    width: 600,
-    height: 800,
-    resizeMode: 'contain',
-  },
- 
   inputView: {
     borderRadius: 10,
     width: "100%",
@@ -108,43 +109,18 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     
   },
-  fgBtn:{
-    width:300,
-  },
-  forgot_button: {
-    height: 30,
-    marginBottom: 30,
-    alignSelf:'flex-end'
-  },
- 
-  loginBtn: {
+  NextBtn: {
     width: 300,
     borderRadius: 10,
     height: 50,
     alignItems: "center",
     justifyContent: "center",
     marginTop: 40,
-    backgroundColor: '#00bfff',
+    backgroundColor: '#ff7f50',
     
   },
-  loginText: {
+  NextText: {
     color:'white',
-    fontSize:20,
-  },
-  registerBtn: {
-    width: 300,
-    borderRadius: 10,
-    height: 50,
-    alignItems: "center",
-    justifyContent: "center",
-    marginTop: 40,
-    backgroundColor:"white",
-    borderColor:"#00bfff",
-    borderWidth:2,
-    padding:0,
-  },
-  registerText: {
-    color:"#00bfff",
     fontSize:20,
   },
 });
