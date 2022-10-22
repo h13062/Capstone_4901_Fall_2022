@@ -9,13 +9,14 @@ import {
   Button,
   TouchableOpacity,
 } from "react-native";
+import CheckBox from "expo-checkbox";
  
 const Register = () =>{
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [fullname, setFullname] = useState("");
   const [cfpassword, setCfpassword] = useState("");
-  const [isSelected, setSelection] = useState(false);
+  const [agree, setAgree] = useState(false);
  
   return (
     <View style={styles.container}>
@@ -65,6 +66,16 @@ const Register = () =>{
         
         />
       </View>
+      <View style={styles.wrapper}>
+        <CheckBox
+          value={agree}
+          onValueChange={() => setAgree(!agree)}
+          color={agree ? "#4630EB" : undefined}
+        />
+        <Text style={styles.text}>
+          I have read and agreed with the terms and conditions
+        </Text>
+      </View>
         
       <TouchableOpacity style={styles.registerBtn}>
         <Text style={styles.registerText}>REGISTER</Text>
@@ -90,7 +101,7 @@ const styles = StyleSheet.create({
   },
  
   image: {
-    flex: 0.5,
+    flex: 0.6,
     width: 600,
     height: 800,
     resizeMode: 'contain',
@@ -131,5 +142,17 @@ const styles = StyleSheet.create({
   registerText: {
     color:"#00bfff",
     fontSize:20,
+  },
+  wrapper: {
+    display: "flex",
+    flexDirection: "row",
+    alignContent: "center",
+    paddingVertical: 15,
+    width: 300,
+  },
+  text: {
+    lineHeight: 20,
+    marginLeft: 5,
+    marginTop:0,
   },
 });

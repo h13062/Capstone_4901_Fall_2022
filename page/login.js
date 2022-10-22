@@ -9,10 +9,12 @@ import {
   Button,
   TouchableOpacity,
 } from "react-native";
+import CheckBox from "expo-checkbox";
  
 const Login = () =>{
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [agree, setAgree] = useState(false);
  
   return (
     <View style={styles.container}>
@@ -46,10 +48,22 @@ const Login = () =>{
         
         />
       </View>
- 
-      <TouchableOpacity style={styles.fgBtn}>
+      <View style={styles.wrapper}>
+        <CheckBox style={styles.CheckBox}
+          value={agree}
+          onValueChange={() => setAgree(!agree)}
+          color={agree ? "#4630EB" : undefined}
+        />
+        <Text style={styles.text}>
+          Remember me
+        </Text>
+        <TouchableOpacity style={styles.fgBtn}>
         <Text style={styles.forgot_button}>Forgot Password?</Text>
       </TouchableOpacity>
+      </View>
+      {/* <TouchableOpacity style={styles.fgBtn}>
+        <Text style={styles.forgot_button}>Forgot Password?</Text>
+      </TouchableOpacity> */}
  
       <TouchableOpacity style={styles.loginBtn}>
         <Text style={styles.loginText}>LOGIN</Text>
@@ -114,7 +128,8 @@ const styles = StyleSheet.create({
   forgot_button: {
     height: 30,
     marginBottom: 30,
-    alignSelf:'flex-end'
+    paddingLeft: 70,
+    
   },
  
   loginBtn: {
@@ -146,5 +161,21 @@ const styles = StyleSheet.create({
   registerText: {
     color:"#00bfff",
     fontSize:20,
+  },
+  wrapper: {
+    display: "flex",
+    flexDirection: "row",
+    alignContent: "center",
+    paddingVertical: 0,
+    paddingLeft:5,
+    width: 300,
+  },
+  text: {
+    lineHeight: 20,
+    marginLeft: 5,
+    marginTop:0,
+  },
+  CheckBox:{
+    alignSelf:'flex-start'
   },
 });
