@@ -10,19 +10,19 @@ import {
 import { useState } from 'react';
 import React, { useRef } from 'react';
 import prompt from 'react-native-prompt-android';
-import Task from '../components/Task';
+import BabyBox from '../components/BabyBox';
 
-export default function Activity() {
+export default function BabyProfiles() {
   const scrollViewRef = useRef();
   const [taskItems, setTaskItems] = useState([]);
 
   // Add a task by appending it to taskItems
-  const handleAddTask = (text) => {
-    if (text != '') {
-      Keyboard.dismiss();
-      setTaskItems([...taskItems, text]);
-    }
-  };
+  //   const handleAddTask = (text) => {
+  //     if (text != '') {
+  //       Keyboard.dismiss();
+  //       setTaskItems([...taskItems, text]);
+  //     }
+  //   };
 
   // Complete a task by removing an element at a specific index
   //   const handleClearTask = (index) => {
@@ -32,53 +32,38 @@ export default function Activity() {
   //   };
 
   // Complete all tasks by setting taskItems to empty array
-  const handleClearAllTasks = () => {
-    setTaskItems([]);
-  };
+  //   const handleClearAllTasks = () => {
+  //     setTaskItems([]);
+  //   };
 
   // Alert UI for a prompt to add a task
-  const alertAddTask = () => {
-    prompt(
-      'Add an activity',
-      'Enter the name of new activity',
-      [
-        {
-          text: 'Add',
-          onPress: (text) => handleAddTask(text),
-          style: 'default',
-        },
-        {
-          text: 'Cancel',
-          style: 'cancel',
-        },
-      ],
-      {
-        defaultValue: '',
-      }
-    );
-  };
-
-  // Alert UI for completing all tasks
-  const alertClearTasks = () => {
-    Alert.alert('Alert', 'Are you sure you want to clear all activities?', [
-      {
-        text: 'No',
-        style: 'cancel',
-      },
-      {
-        text: 'Yes',
-        onPress: () => handleClearAllTasks(),
-        style: 'destructive',
-      },
-    ]);
-  };
+  //   const alertAddTask = () => {
+  //     prompt(
+  //       'Add an activity',
+  //       'Enter the name of new activity',
+  //       [
+  //         {
+  //           text: 'Add',
+  //           onPress: (text) => handleAddTask(text),
+  //           style: 'default',
+  //         },
+  //         {
+  //           text: 'Cancel',
+  //           style: 'cancel',
+  //         },
+  //       ],
+  //       {
+  //         defaultValue: '',
+  //       }
+  //     );
+  //   };
 
   return (
     <>
       {/* Acitivity header */}
       <View style={styles.activityWrapper}>
         <View>
-          <Text style={styles.headerText}>Activity Tracking</Text>
+          <Text style={styles.headerText}>Baby Profile</Text>
         </View>
 
         {/* Task view */}
@@ -90,21 +75,13 @@ export default function Activity() {
           }}
         >
           <View style={styles.items}>
-            {/* This is where the activities will go */}
-            {/* <TouchableOpacity>
-              <Task text="Sleeping" />
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <Task text="Eating" />
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <Task text="Playing" />
-            </TouchableOpacity> */}
+            {/* This is where the baby profiles will go */}
+            <BabyBox text="HUY BUI" />
             {taskItems.map((item, index) => {
               return (
                 // Task component
                 <TouchableOpacity key={index} style={{ marginBottom: 25 }}>
-                  <Task text={item} />
+                  <BabyBox text={item} />
                 </TouchableOpacity>
               );
             })}
@@ -112,24 +89,8 @@ export default function Activity() {
         </ScrollView>
 
         <View style={styles.buttonsWrapper}>
-          {/* Clear all tasks button */}
-          <TouchableOpacity
-            disabled={taskItems.length === 0}
-            onPress={() => alertClearTasks()}
-            style={
-              taskItems.length === 0 ? { display: 'none' } : styles.clearButton
-            }
-          >
-            <View>
-              <Text style={styles.buttonText}>x</Text>
-            </View>
-          </TouchableOpacity>
-
           {/* Add activity button */}
-          <TouchableOpacity
-            style={styles.addButton}
-            onPress={() => alertAddTask()}
-          >
+          <TouchableOpacity style={styles.addButton}>
             <View>
               <Text style={styles.buttonText}>+</Text>
             </View>
@@ -148,17 +109,15 @@ const styles = StyleSheet.create({
     padding: 25,
     paddingTop: 45,
   },
-  backText: {
-    fontSize: 15,
-    flex: 1,
+  headerWrapper: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 25,
   },
   headerText: {
     fontWeight: 'bold',
     fontSize: 24,
     textAlign: 'center',
-  },
-  rightSide: {
-    flex: 1,
   },
   scrollWrapper: {
     marginTop: 25,
@@ -176,15 +135,6 @@ const styles = StyleSheet.create({
     borderRadius: 100,
     marginTop: 25,
     marginLeft: 25,
-  },
-  clearButton: {
-    width: 80,
-    height: 80,
-    backgroundColor: 'red',
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: 100,
-    marginTop: 25,
   },
   buttonText: {
     color: '#fff',

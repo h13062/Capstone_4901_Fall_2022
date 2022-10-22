@@ -16,7 +16,7 @@ export default function Chart() {
   return (
     <>
       <View style={styles.chartWrapper}>
-        <View style={styles.headerWrapper}>
+        <View>
           <Text style={styles.headerText}>Chart</Text>
         </View>
         <View style={styles.chartViewWrapper}>
@@ -46,10 +46,6 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     padding: 25,
     paddingTop: 45,
-  },
-  backText: {
-    fontSize: 15,
-    flex: 1,
   },
   headerText: {
     fontWeight: 'bold',
