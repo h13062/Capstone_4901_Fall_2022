@@ -148,11 +148,13 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignContent: "center",
     paddingVertical: 15,
+    paddingLeft:5,
     width: 300,
   },
   text: {
     lineHeight: 20,
     marginLeft: 5,
+    paddingRight:0,
     marginTop:0,
   },
 });

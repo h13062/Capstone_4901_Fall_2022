@@ -10,8 +10,8 @@ import Navbar from './components/Navbar';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Login/>
-      {/* <Register /> */}
+      {/* <Login/> */}
+      <Register />
       {/* <BabyInfo/> */}
     </View>
   );
