@@ -76,7 +76,9 @@ export default function BabyProfiles() {
         >
           <View style={styles.items}>
             {/* This is where the baby profiles will go */}
-            <BabyBox text="HUY BUI" />
+            <TouchableOpacity style={{ marginBottom: 25 }}>
+              <BabyBox text="HUY BUI" />
+            </TouchableOpacity>
             {taskItems.map((item, index) => {
               return (
                 // Task component

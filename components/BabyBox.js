@@ -6,9 +6,20 @@ const BabyBox = (props) => {
     <>
       <View style={styles.boxWrapper}>
         <View style={styles.imgWrapper}></View>
-        <View style={{ marginLeft: 25 }}>
+        <View style={{ flex: 6, marginLeft: 25 }}>
           <Text style={styles.text}>{props.text}</Text>
           <Text style={styles.subtext}>Date Here</Text>
+        </View>
+        <View
+          style={{
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'flex-end',
+          }}
+        >
+          <Text style={{ color: '#fff', fontSize: 30, fontWeight: 'bold' }}>
+            &#10095;
+          </Text>
         </View>
       </View>
     </>
@@ -22,6 +33,7 @@ const styles = StyleSheet.create({
     padding: 25,
     borderRadius: 15,
     flexDirection: 'row',
+    flex: 1,
   },
   imgWrapper: {
     aspectRatio: 1,
