@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
     height: '100%',
     flexDirection: 'column',
     padding: 25,
-    paddingTop: 45,
+    paddingTop: 55,
   },
   headerWrapper: {
     flexDirection: 'row',

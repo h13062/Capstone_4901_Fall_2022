@@ -24,8 +24,8 @@ export default function App() {
       <View style={{ width: '100%', height: '100%' }}>
         <View style={{ flex: 10 }}>
           {/* <Activity /> */}
-          {/* <Chart /> */}
-          <BabyProfiles />
+          <Chart />
+          {/* <BabyProfiles /> */}
         </View>
         <View style={{ flex: 1 }}>
           <Navbar />

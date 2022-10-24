@@ -5,13 +5,10 @@ import { Dimensions } from 'react-native';
 
 export default function Chart() {
   const chartConfig = {
-    backgroundGradientFrom: '#fff',
-    backgroundGradientFromOpacity: 1,
-    backgroundGradientTo: '#fff',
-    backgroundGradientToOpacity: 1,
+    backgroundGradientFromOpacity: 0,
+    backgroundGradientToOpacity: 0,
     color: () => `rgba(31, 30, 51, 1)`,
-    withInnerLines: false,
-    withVerticalLabels: false,
+    barPercentage: 0.8,
   };
   return (
     <>
@@ -32,6 +29,9 @@ export default function Chart() {
             width={Dimensions.get('window').width * 0.9}
             height={Dimensions.get('window').height * 0.6}
             chartConfig={chartConfig}
+            withInnerLines={false}
+            fromZero={true}
+            showBarTops={false}
           />
         </View>
       </View>
@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     height: '100%',
     flexDirection: 'column',
     padding: 25,
-    paddingTop: 45,
+    paddingTop: 55,
   },
   headerText: {
     fontWeight: 'bold',

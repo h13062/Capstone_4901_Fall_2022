@@ -146,7 +146,7 @@ const styles = StyleSheet.create({
     height: '100%',
     flexDirection: 'column',
     padding: 25,
-    paddingTop: 45,
+    paddingTop: 55,
   },
   backText: {
     fontSize: 15,
