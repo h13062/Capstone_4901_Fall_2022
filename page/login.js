@@ -10,11 +10,16 @@ import {
   TouchableOpacity,
 } from "react-native";
 import CheckBox from "expo-checkbox";
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { useNavigation } from '@react-navigation/native';
+import Register from "./register";
  
 const Login = () =>{
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [agree, setAgree] = useState(false);
+  const navigation = useNavigation();
  
   return (
     <View style={styles.container}>
@@ -61,14 +66,12 @@ const Login = () =>{
         <Text style={styles.forgot_button}>Forgot Password?</Text>
       </TouchableOpacity>
       </View>
-      {/* <TouchableOpacity style={styles.fgBtn}>
-        <Text style={styles.forgot_button}>Forgot Password?</Text>
-      </TouchableOpacity> */}
+    
  
       <TouchableOpacity style={styles.loginBtn}>
         <Text style={styles.loginText}>LOGIN</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.registerBtn}>
+      <TouchableOpacity style={styles.registerBtn} onPress={() => navigation.navigate("Register")}>
         <Text style={styles.registerText}>REGISTER</Text>
       </TouchableOpacity>
     </View>
