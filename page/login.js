@@ -143,6 +143,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     marginTop: 40,
     backgroundColor: '#00bfff',
+    marginTop:0,
+    paddingTop:0,
     
   },
   loginText: {
@@ -160,6 +162,7 @@ const styles = StyleSheet.create({
     borderColor:"#00bfff",
     borderWidth:2,
     padding:0,
+    marginTop:20,
   },
   registerText: {
     color:"#00bfff",
@@ -172,6 +175,8 @@ const styles = StyleSheet.create({
     paddingVertical: 0,
     paddingLeft:5,
     width: 300,
+    marginBottom:0,
+    paddingBottom:0,
   },
   text: {
     lineHeight: 20,

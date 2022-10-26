@@ -10,6 +10,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import CheckBox from "expo-checkbox";
+import { useNavigation } from '@react-navigation/native';
  
 const Register = () =>{
   const [email, setEmail] = useState("");
@@ -17,6 +18,7 @@ const Register = () =>{
   const [fullname, setFullname] = useState("");
   const [cfpassword, setCfpassword] = useState("");
   const [agree, setAgree] = useState(false);
+  const navigation = useNavigation();
  
   return (
     <View style={styles.container}>
@@ -80,6 +82,9 @@ const Register = () =>{
       <TouchableOpacity style={styles.registerBtn}>
         <Text style={styles.registerText}>REGISTER</Text>
       </TouchableOpacity>
+      <TouchableOpacity style={styles.backBtn} onPress={() => navigation.navigate("Login")}>
+        <Text style={styles.backText}>BACK</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -91,6 +96,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     paddingBottom: 10,
     paddingTop: 0,
+    marginBottom:0,
   },
   
   container: {
@@ -138,6 +144,7 @@ const styles = StyleSheet.create({
     backgroundColor:"white",
     borderColor:"#00bfff",
     borderWidth:2,
+    marginTop:0,
   },
   registerText: {
     color:"#00bfff",
@@ -150,11 +157,30 @@ const styles = StyleSheet.create({
     paddingVertical: 15,
     paddingLeft:5,
     width: 300,
+    marginTop:0,
+    paddingTop:0,
   },
   text: {
     lineHeight: 20,
     marginLeft: 5,
     paddingRight:0,
     marginTop:0,
+  },
+  backBtn:{
+    width: 300,
+    borderRadius: 10,
+    height: 50,
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 40,
+    backgroundColor:"white",
+    borderColor:"#00bfff",
+    borderWidth:2,
+    paddingVertical:0,
+    marginTop:15,
+  },
+  backText: {
+    color:"#00bfff",
+    fontSize:20,
   },
 });
