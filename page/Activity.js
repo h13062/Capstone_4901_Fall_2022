@@ -92,15 +92,15 @@ export default function Activity() {
         >
           <View style={styles.items}>
             {/* This is where the activities will go */}
-            {/* <TouchableOpacity>
+            <TouchableOpacity style={{ marginBottom: 25 }}>
               <Task text="Sleeping" />
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity style={{ marginBottom: 25 }}>
               <Task text="Eating" />
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity style={{ marginBottom: 25 }}>
               <Task text="Playing" />
-            </TouchableOpacity> */}
+            </TouchableOpacity>
             {taskItems.map((item, index) => {
               return (
                 // Task component
