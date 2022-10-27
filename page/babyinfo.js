@@ -9,12 +9,14 @@ import {
   Button,
   TouchableOpacity,
 } from "react-native";
+import { useNavigation } from '@react-navigation/native';
  
 const BabyInfo = () =>{
   const [BBFullname, setBBFullname] = useState("");
   const [Gender, setGender] = useState("");
   const [DOB, setDOB] = useState("");
   const [Weight, setWeight] = useState("");
+  const navigation = useNavigation();
  
   return (
     <View style={styles.container}>
@@ -63,7 +65,7 @@ const BabyInfo = () =>{
         
         />
       </View> 
-      <TouchableOpacity style={styles.NextBtn}>
+      <TouchableOpacity style={styles.NextBtn} onPress={() => navigation.navigate("Activity")}>
         <Text style={styles.NextText}>NEXT</Text>
       </TouchableOpacity>
     </View>

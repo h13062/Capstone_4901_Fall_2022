@@ -29,6 +29,18 @@ export default function App() {
   return (
     <NavigationContainer>
       <Navigator>
+        <Screen 
+          name="Login" 
+          options={{headerShown: false}} 
+          component={Login}/>
+        <Screen 
+          name="Register" 
+          options={{headerShown: false}} 
+          component={Register}/>
+        <Screen 
+          name="BabyInfo" 
+          options={{headerShown: false}} 
+          component={BabyInfo}/>
         <Screen
           name="Activity"
           options={{ headerShown: false, animationEnabled: false }}

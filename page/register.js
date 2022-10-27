@@ -79,7 +79,7 @@ const Register = () =>{
         </Text>
       </View>
         
-      <TouchableOpacity style={styles.registerBtn}>
+      <TouchableOpacity style={styles.registerBtn} onPress={() => navigation.navigate("BabyInfo")}>
         <Text style={styles.registerText}>REGISTER</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.backBtn} onPress={() => navigation.navigate("Login")}>
