@@ -2,6 +2,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import React, { useRef } from 'react';
 import { BarChart } from 'react-native-chart-kit';
 import { Dimensions } from 'react-native';
+import Navbar from '../components/Navbar';
 
 export default function Chart() {
   const chartConfig = {
@@ -35,6 +36,7 @@ export default function Chart() {
           />
         </View>
       </View>
+      <Navbar />
     </>
   );
 }
@@ -46,6 +48,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     padding: 25,
     paddingTop: 55,
+    flex: 10,
   },
   headerText: {
     fontWeight: 'bold',

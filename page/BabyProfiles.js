@@ -11,6 +11,7 @@ import { useState } from 'react';
 import React, { useRef } from 'react';
 import prompt from 'react-native-prompt-android';
 import BabyBox from '../components/BabyBox';
+import Navbar from '../components/Navbar';
 
 export default function BabyProfiles() {
   const scrollViewRef = useRef();
@@ -99,6 +100,7 @@ export default function BabyProfiles() {
           </TouchableOpacity>
         </View>
       </View>
+      <Navbar />
     </>
   );
 }
@@ -110,6 +112,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     padding: 25,
     paddingTop: 55,
+    flex: 10,
   },
   headerWrapper: {
     flexDirection: 'row',

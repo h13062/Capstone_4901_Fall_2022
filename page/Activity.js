@@ -11,6 +11,7 @@ import { useState } from 'react';
 import React, { useRef } from 'react';
 import prompt from 'react-native-prompt-android';
 import Task from '../components/Task';
+import Navbar from '../components/Navbar';
 
 export default function Activity() {
   const scrollViewRef = useRef();
@@ -136,6 +137,7 @@ export default function Activity() {
           </TouchableOpacity>
         </View>
       </View>
+      <Navbar />
     </>
   );
 }
@@ -147,6 +149,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     padding: 25,
     paddingTop: 55,
+    flex: 10,
   },
   backText: {
     fontSize: 15,
