@@ -7,6 +7,7 @@ import Chart from './page/Chart';
 import Activity from './page/Activity';
 import Navbar from './components/Navbar';
 import BabyProfiles from './page/BabyProfiles';
+import ActivityForm from './page/ActivityForm';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 // export default function App() {
@@ -29,22 +30,30 @@ export default function App() {
   return (
     <NavigationContainer>
       <Navigator>
-        <Screen 
-          name="Login" 
-          options={{headerShown: false}} 
-          component={Login}/>
-        <Screen 
-          name="Register" 
-          options={{headerShown: false}} 
-          component={Register}/>
-        <Screen 
-          name="BabyInfo" 
-          options={{headerShown: false}} 
-          component={BabyInfo}/>
+        <Screen
+          name="Login"
+          options={{ headerShown: false }}
+          component={Login}
+        />
+        <Screen
+          name="Register"
+          options={{ headerShown: false }}
+          component={Register}
+        />
+        <Screen
+          name="BabyInfo"
+          options={{ headerShown: false }}
+          component={BabyInfo}
+        />
         <Screen
           name="Activity"
           options={{ headerShown: false, animationEnabled: false }}
           component={Activity}
+        />
+        <Screen
+          name="ActivityForm"
+          options={{ headerShown: false, animationEnabled: false }}
+          component={ActivityForm}
         />
         <Screen
           name="Chart"

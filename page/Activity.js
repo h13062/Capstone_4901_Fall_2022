@@ -6,24 +6,21 @@ import {
   TouchableOpacity,
   Keyboard,
   Alert,
+  Modal,
+  TextInput,
+  Button,
 } from 'react-native';
 import { useState } from 'react';
 import React, { useRef } from 'react';
 import prompt from 'react-native-prompt-android';
 import Task from '../components/Task';
 import Navbar from '../components/Navbar';
+import { useNavigation } from '@react-navigation/native';
 
 export default function Activity() {
   const scrollViewRef = useRef();
   const [taskItems, setTaskItems] = useState([]);
-
-  // Add a task by appending it to taskItems
-  const handleAddTask = (text) => {
-    if (text != '') {
-      Keyboard.dismiss();
-      setTaskItems([...taskItems, text]);
-    }
-  };
+  const navigation = useNavigation();
 
   // Complete a task by removing an element at a specific index
   //   const handleClearTask = (index) => {
@@ -129,7 +126,12 @@ export default function Activity() {
           {/* Add activity button */}
           <TouchableOpacity
             style={styles.addButton}
-            onPress={() => alertAddTask()}
+            onPress={() =>
+              navigation.navigate('ActivityForm', {
+                taskItems,
+                setTaskItems,
+              })
+            }
           >
             <View>
               <Text style={styles.buttonText}>+</Text>
@@ -192,5 +194,28 @@ const styles = StyleSheet.create({
   buttonText: {
     color: '#fff',
     fontSize: 30,
+  },
+  modalWrapper: {
+    width: '100%',
+    height: '100%',
+    padding: 25,
+    paddingTop: 40,
+  },
+  inputField: {
+    marginTop: 25,
+    backgroundColor: 'fff',
+    borderColor: '#1f1e33',
+    borderWidth: 2,
+    borderRadius: 5,
+    height: 35,
+  },
+  modalEnter: {
+    marginTop: 25,
+    backgroundColor: '#1f1e33',
+    backgroundColor: 'blue',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 5,
+    paddingVertical: 10,
   },
 });
