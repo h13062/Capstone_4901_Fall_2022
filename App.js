@@ -7,6 +7,7 @@ import Chart from "./page/Chart";
 import Activity from "./page/Activity";
 import Navbar from "./components/Navbar";
 import BabyProfiles from "./page/BabyProfiles";
+import ActivityForm from "./page/ActivityForm";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import StopWatch from "./components/stopwatch";
