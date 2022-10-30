@@ -12,10 +12,13 @@ import React, { useRef } from 'react';
 import prompt from 'react-native-prompt-android';
 import BabyBox from '../components/BabyBox';
 import Navbar from '../components/Navbar';
+import { useNavigation } from '@react-navigation/native';
+import BabyInfo from './babyinfo';
 
 export default function BabyProfiles() {
   const scrollViewRef = useRef();
   const [taskItems, setTaskItems] = useState([]);
+  const navigation = useNavigation();
 
   // Add a task by appending it to taskItems
   //   const handleAddTask = (text) => {
@@ -93,7 +96,10 @@ export default function BabyProfiles() {
 
         <View style={styles.buttonsWrapper}>
           {/* Add activity button */}
-          <TouchableOpacity style={styles.addButton}>
+          <TouchableOpacity
+            style={styles.addButton}
+            onPress={() => navigation.navigate('BabyInfo')}
+          >
             <View>
               <Text style={styles.buttonText}>+</Text>
             </View>
