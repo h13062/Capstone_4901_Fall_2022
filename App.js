@@ -74,8 +74,8 @@ export default function App() {
     // </View>
 
     <>
-      {/* <StopWatch /> */}
-      <Welcome />
+      <StopWatch />
+      {/* <Welcome /> */}
     </>
   );
 }

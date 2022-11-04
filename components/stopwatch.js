@@ -56,11 +56,12 @@ export default function StopWatch() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "black",
+    backgroundColor: "white",
     paddingTop: Constants.statusBarHeight,
   },
   display: {
     flex: 3 / 5,
+    fontSize: 80,
     justifyContent: "center",
     backgroundColor: "white",
     alignItems: "center",
