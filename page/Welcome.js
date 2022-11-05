@@ -12,7 +12,7 @@ import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 
 const Welcome = () => {
-  //   const navigation = useNavigation();
+  const navigation = useNavigation();
 
   return (
     <View style={styles.container}>
@@ -23,13 +23,14 @@ const Welcome = () => {
       >
         <TouchableOpacity
           style={styles.loginBtn}
-          // onPress={() => navigation.navigate("BabyInfo")}
+          onPress={() => navigation.navigate("Login")}
         >
           <Text style={styles.loginText}>LOGIN</Text>
         </TouchableOpacity>
+
         <TouchableOpacity
           style={styles.registerBtn}
-          // onPress={() => navigation.navigate("Register")}
+          onPress={() => navigation.navigate("Register")}
         >
           <Text style={styles.registerText}>REGISTER</Text>
         </TouchableOpacity>
@@ -41,22 +42,16 @@ export default Welcome;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // width: 350,
-    // height: 1000,
-    // padding: 0,
-    // margin: 0,
-    // paddingLeft: 0,
     alignItems: "center",
-    // justifyContent: "center",
+    backgroundColor: "red",
   },
   image: {
     flex: 1,
-    // width: 350,
-    // height: undefined,
-    padding: 0,
-    margin: 0,
+    width: "100%",
     justifyContent: "center",
     alignContent: "center",
+    alignItems: "center",
+    alignSelf: "center",
   },
   loginBtn: {
     width: 300,
