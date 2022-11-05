@@ -1,5 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import {
+  Appearance,
+  StyleSheet,
+  Text,
+  useColorScheme,
+  View,
+} from 'react-native';
 import Login from './page/login';
 import Register from './page/register';
 import BabyInfo from './page/babyinfo';
@@ -8,9 +14,15 @@ import Activity from './page/Activity';
 import Navbar from './components/Navbar';
 import BabyProfiles from './page/BabyProfiles';
 import ActivityForm from './page/ActivityForm';
-import { NavigationContainer } from '@react-navigation/native';
+// import Setting from './page/Setting';
+import {
+  NavigationContainer,
+  DefaultTheme,
+  DarkTheme,
+} from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import StopWatch from './components/stopwatch';
+import { useState } from 'react';
 
 // export default function App() {
 //   const { Navigator, Screen } = createNativeStackNavigator();
@@ -29,8 +41,10 @@ import StopWatch from './components/stopwatch';
 
 export default function App() {
   const { Navigator, Screen } = createNativeStackNavigator();
+  const scheme = useColorScheme();
+
   return (
-    <NavigationContainer>
+    <NavigationContainer theme={DefaultTheme}>
       <Navigator>
         <Screen
           name="Login"
@@ -53,6 +67,11 @@ export default function App() {
           component={Activity}
         />
         <Screen
+          name="ActivityForm"
+          options={{ headerShown: false, animationEnabled: false }}
+          component={ActivityForm}
+        />
+        <Screen
           name="Chart"
           options={{ headerShown: false, animationEnabled: false }}
           component={Chart}
@@ -62,6 +81,14 @@ export default function App() {
           options={{ headerShown: false, animationEnabled: false }}
           component={BabyProfiles}
         />
+        {/* <Screen
+          name="Setting"
+          options={{
+            headerShown: false,
+            animationEnabled: false,
+          }}
+          component={Setting}
+        /> */}
       </Navigator>
     </NavigationContainer>
   );

@@ -31,7 +31,10 @@ export default function Navbar() {
             <Text>3</Text>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.navButtonWrapper}>
+        <TouchableOpacity
+          style={styles.navButtonWrapper}
+          // onPress={() => navigation.navigate('Setting')}
+        >
           <View>
             <Text>4</Text>
           </View>
