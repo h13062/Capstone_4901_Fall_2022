@@ -63,3 +63,8 @@ C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\BabyTracker.
 C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\BabyTracker.Infrastructure.dll
 C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\BabyTracker.Infrastructure.pdb
 C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\BabyTracker.Core.pdb
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll

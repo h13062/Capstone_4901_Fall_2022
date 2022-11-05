@@ -1,5 +1,6 @@
 ﻿using BabyTracker.Core.Entity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BabyTracker.Infrastructure.Data
 {
-    public class BabyTrackerDbContext : DbContext
+    public class BabyTrackerDbContext : IdentityDbContext<ApplicationUser>
     {
         public BabyTrackerDbContext(DbContextOptions<BabyTrackerDbContext> option) : base(option)
         {
