@@ -156,7 +156,9 @@ const styleSheet = StyleSheet.create({
   MainContainer: {
     flex: 1,
     padding: 6,
+    marginTop: 100,
     alignItems: "center",
+    alignSelf: "center",
     backgroundColor: "white",
   },
 
