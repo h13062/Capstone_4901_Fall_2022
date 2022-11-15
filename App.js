@@ -12,7 +12,7 @@ import { StyleSheet, Text, View } from "react-native";
 // import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import StopWatch from "./components/stopwatch";
 import Datetime1 from "./page/Datetime1";
-import DateTime2 from "./page/Datetime2";
+
 // import Welcome from "./page/Welcome";
 
 // export default function App() {
