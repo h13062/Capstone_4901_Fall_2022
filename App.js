@@ -11,6 +11,8 @@ import { StyleSheet, Text, View } from "react-native";
 // import { NavigationContainer } from "@react-navigation/native";
 // import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import StopWatch from "./components/stopwatch";
+import Datetime1 from "./page/Datetime1";
+import DateTime2 from "./page/Datetime2";
 // import Welcome from "./page/Welcome";
 
 // export default function App() {
@@ -69,7 +71,9 @@ export default function App() {
     // </View>
 
     <>
-      <StopWatch />
+      {/* <StopWatch /> */}
+      <Datetime1 />
+      {/* <DateTime2 /> */}
     </>
   );
 }
