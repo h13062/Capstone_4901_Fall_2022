@@ -9,6 +9,7 @@ import {
   Modal,
   TextInput,
   Button,
+  Appearance,
 } from 'react-native';
 import React, { useRef } from 'react';
 import { useTheme } from '@react-navigation/native';
@@ -17,42 +18,42 @@ import Navbar from '../components/Navbar';
 import CheckBox from 'expo-checkbox';
 
 export default function Setting() {
-  const { colors } = useTheme();
-
-  // const handleDarkMode = () => {
-  //   setIsDark(!isDark);
-  // };
+  const [isDark, setIsDark] = useState(true);
+  // const [theme, setTheme] = useState(Appearance.getColorScheme)
+  const handleDarkMode = () => {
+    setIsDark(!isDark);
+  };
   return (
-    // <>
-    //   <View
-    //     style={
-    //       isDark ? styles.settingWrapper_light : styles.settingWrapper_dark
-    //     }
-    //   >
-    //     <View>
-    //       <Text
-    //         style={isDark ? styles.headerText_light : styles.headerText_dark}
-    //       >
-    //         Setting
-    //       </Text>
-    //     </View>
-    //     <View style={styles.tabStyle}>
-    //       <Text style={isDark ? { color: '#000' } : { color: '#fff' }}>
-    //         Dark mode
-    //       </Text>
-    //       <CheckBox
-    //         style={styles.CheckBox}
-    //         value={!isDark}
-    //         onValueChange={handleDarkMode}
-    //         color={isDark ? '#4630EB' : undefined}
-    //       />
-    //     </View>
-    //   </View>
-    //   <Navbar />
-    // </>
-    <TouchableOpacity style={{ backgroundColor: colors.card }}>
-      <Text style={{ color: colors.text }}>Button!</Text>
-    </TouchableOpacity>
+    <>
+      <View
+        style={
+          isDark ? styles.settingWrapper_light : styles.settingWrapper_dark
+        }
+      >
+        <View>
+          <Text
+            style={isDark ? styles.headerText_light : styles.headerText_dark}
+          >
+            Setting
+          </Text>
+        </View>
+        <View style={styles.tabStyle}>
+          <Text style={isDark ? { color: '#000' } : { color: '#fff' }}>
+            Dark mode
+          </Text>
+          <CheckBox
+            style={styles.CheckBox}
+            value={!isDark}
+            onValueChange={handleDarkMode}
+            color={isDark ? '#4630EB' : undefined}
+          />
+        </View>
+      </View>
+      <Navbar />
+    </>
+    // <TouchableOpacity style={{ backgroundColor: colors.card }}>
+    //   <Text style={{ color: colors.text }}>Button!</Text>
+    // </TouchableOpacity>
   );
 }
 

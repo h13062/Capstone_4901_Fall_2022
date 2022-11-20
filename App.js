@@ -14,7 +14,7 @@ import Activity from './page/Activity';
 import Navbar from './components/Navbar';
 import BabyProfiles from './page/BabyProfiles';
 import ActivityForm from './page/ActivityForm';
-// import Setting from './page/Setting';
+import Setting from './page/Setting';
 import {
   NavigationContainer,
   DefaultTheme,
@@ -81,14 +81,14 @@ export default function App() {
           options={{ headerShown: false, animationEnabled: false }}
           component={BabyProfiles}
         />
-        {/* <Screen
+        <Screen
           name="Setting"
           options={{
             headerShown: false,
             animationEnabled: false,
           }}
           component={Setting}
-        /> */}
+        />
       </Navigator>
     </NavigationContainer>
   );
