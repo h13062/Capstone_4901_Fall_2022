@@ -1,7 +1,6 @@
-import { style } from "deprecated-react-native-prop-types/DeprecatedImagePropType";
-import React from "react";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-
+// import { style } from "deprecated-react-native-prop-types/DeprecatedImagePropType";
+import React, { useState } from "react";
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 function Control({ isRunning, handleleftButtonPress, handlerightButtonPress }) {
   return (
     <>
@@ -11,6 +10,7 @@ function Control({ isRunning, handleleftButtonPress, handlerightButtonPress }) {
           { backgroundColor: isRunning ? "#333333" : "#1c1c1e" },
         ]}
         onPress={handleleftButtonPress}
+        activeOpacity={1}
       >
         <View style={styles.controlButton}>
           <Text style={{ color: isRunning ? "#fff" : "#9d9ca2" }}>
@@ -19,19 +19,76 @@ function Control({ isRunning, handleleftButtonPress, handlerightButtonPress }) {
         </View>
       </TouchableOpacity>
 
-      <TouchableOpacity
+      {/* <TouchableOpacity
+        
         style={[
           styles.controlButtonBorder,
-          { backgroundColor: isRunning ? "#340e0d" : "#0a2a12" },
+          { backgroundColor: isRunning ? "red" : "#0a2a12" },
         ]}
         onPress={handlerightButtonPress}
       >
         <View style={styles.controlButton}>
-          <Text style={{ color: isRunning ? "#ea4c49" : "#37d05c" }}>
+          <Text
+            style={{
+              color: isRunning ? "#ddd" : "#37d05c",
+              fontWeight: "bold",
+            }}
+          >
             {isRunning ? "Stop" : "Start"}
           </Text>
         </View>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
+
+      {isRunning ? (
+        <TouchableOpacity
+          style={[styles.controlButtonBorder, { backgroundColor: "red" }]}
+          onPress={handlerightButtonPress}
+          activeOpacity={1}
+        >
+          <View style={styles.controlButton}>
+            <Text
+              style={{
+                color: "#ddd",
+                fontWeight: "bold",
+              }}
+            >
+              Stop
+            </Text>
+          </View>
+        </TouchableOpacity>
+      ) : (
+        <TouchableOpacity
+          style={[styles.controlButtonBorder, { backgroundColor: "#0a2a12" }]}
+          onPress={handlerightButtonPress}
+          activeOpacity={1}
+        >
+          <View style={styles.controlButton}>
+            <Text
+              style={{
+                color: "#37d05c",
+                fontWeight: "bold",
+              }}
+            >
+              Start
+            </Text>
+          </View>
+        </TouchableOpacity>
+      )}
+
+      {/* {isRunning ? (
+        <Button
+          title="Start"
+          style={styles.buttonStart}
+          color="#f194ff"
+          onPress={handlerightButtonPress}
+        />
+      ) : (
+        <Button
+          title="Stop"
+          style={styles.buttonStop}
+          onPress={handlerightButtonPress}
+        />
+      )} */}
     </>
   );
 }
@@ -53,6 +110,12 @@ const styles = StyleSheet.create({
     borderRadius: 65,
     borderColor: "#000",
     borderWidth: 1,
+  },
+  buttonStart: {
+    width: 100000,
+    height: 70,
+    borderRadius: 70,
+    color: "#f194ff",
   },
 });
 export default React.memo(Control);

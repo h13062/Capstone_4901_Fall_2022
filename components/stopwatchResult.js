@@ -27,7 +27,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
   },
   resultItemText: {
-    color: "#fff",
+    color: "black",
+    alignItems: "center",
+    alignSelf: "center",
   },
 });
 export default React.memo(Result);
