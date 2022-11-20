@@ -1,3 +1,4 @@
+
 // import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 // import Login from "./page/login";
@@ -8,12 +9,20 @@ import { StyleSheet, Text, View } from "react-native";
 // import Navbar from "./components/Navbar";
 // import BabyProfiles from "./page/BabyProfiles";
 // import ActivityForm from "./page/ActivityForm";
+// import Setting from './page/Setting';
+import {
+  NavigationContainer,
+  DefaultTheme,
+  DarkTheme,
+} from '@react-navigation/native';
 // import { NavigationContainer } from "@react-navigation/native";
 // import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import StopWatch from "./components/stopwatch";
 import Datetime1 from "./page/Datetime1";
+import { useState } from 'react';
 
 // import Welcome from "./page/Welcome";
+
 
 // export default function App() {
 //   const { Navigator, Screen } = createNativeStackNavigator();
@@ -65,6 +74,59 @@ import Datetime1 from "./page/Datetime1";
 //   );
 // }
 export default function App() {
+
+  const { Navigator, Screen } = createNativeStackNavigator();
+  const scheme = useColorScheme();
+
+  return (
+    <NavigationContainer theme={DefaultTheme}>
+      <Navigator>
+        <Screen
+          name="Login"
+          options={{ headerShown: false }}
+          component={Login}
+        />
+        <Screen
+          name="Register"
+          options={{ headerShown: false }}
+          component={Register}
+        />
+        <Screen
+          name="BabyInfo"
+          options={{ headerShown: false }}
+          component={BabyInfo}
+        />
+        <Screen
+          name="Activity"
+          options={{ headerShown: false, animationEnabled: false }}
+          component={Activity}
+        />
+        <Screen
+          name="ActivityForm"
+          options={{ headerShown: false, animationEnabled: false }}
+          component={ActivityForm}
+        />
+        <Screen
+          name="Chart"
+          options={{ headerShown: false, animationEnabled: false }}
+          component={Chart}
+        />
+        <Screen
+          name="BabyProfiles"
+          options={{ headerShown: false, animationEnabled: false }}
+          component={BabyProfiles}
+        />
+        <Screen
+          name="Setting"
+          options={{
+            headerShown: false,
+            animationEnabled: false,
+          }}
+          component={Setting}
+        />
+      </Navigator>
+    </NavigationContainer>
+
   return (
     // <View style={styles.container}>
     //   <StopWatch />
@@ -75,6 +137,7 @@ export default function App() {
       <Datetime1 />
       {/* <DateTime2 /> */}
     </>
+
   );
 }
 
