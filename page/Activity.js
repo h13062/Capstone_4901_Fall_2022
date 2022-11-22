@@ -9,17 +9,17 @@ import {
   Modal,
   TextInput,
   Button,
-} from 'react-native';
-import { useState } from 'react';
-import React, { useRef } from 'react';
-import prompt from 'react-native-prompt-android';
-import Task from '../components/Task';
-import Navbar from '../components/Navbar';
-import { useNavigation } from '@react-navigation/native';
+} from "react-native";
+import { useState } from "react";
+import React, { useRef } from "react";
+import prompt from "react-native-prompt-android";
+import Task from "../components/Task";
+import Navbar from "../components/Navbar";
+import { useNavigation } from "@react-navigation/native";
 
 export default function Activity() {
   const scrollViewRef = useRef();
-  const [taskItems, setTaskItems] = useState([]);
+  const [taskItems, setTaskItems] = useState([]); // Problem here
   const navigation = useNavigation();
 
   // Complete a task by removing an element at a specific index
@@ -37,36 +37,36 @@ export default function Activity() {
   // Alert UI for a prompt to add a task
   const alertAddTask = () => {
     prompt(
-      'Add an activity',
-      'Enter the name of new activity',
+      "Add an activity",
+      "Enter the name of new activity",
       [
         {
-          text: 'Add',
+          text: "Add",
           onPress: (text) => handleAddTask(text),
-          style: 'default',
+          style: "default",
         },
         {
-          text: 'Cancel',
-          style: 'cancel',
+          text: "Cancel",
+          style: "cancel",
         },
       ],
       {
-        defaultValue: '',
+        defaultValue: "",
       }
     );
   };
 
   // Alert UI for completing all tasks
   const alertClearTasks = () => {
-    Alert.alert('Alert', 'Are you sure you want to clear all activities?', [
+    Alert.alert("Alert", "Are you sure you want to clear all activities?", [
       {
-        text: 'No',
-        style: 'cancel',
+        text: "No",
+        style: "cancel",
       },
       {
-        text: 'Yes',
+        text: "Yes",
         onPress: () => handleClearAllTasks(),
-        style: 'destructive',
+        style: "destructive",
       },
     ]);
   };
@@ -115,7 +115,7 @@ export default function Activity() {
             disabled={taskItems.length === 0}
             onPress={() => alertClearTasks()}
             style={
-              taskItems.length === 0 ? { display: 'none' } : styles.clearButton
+              taskItems.length === 0 ? { display: "none" } : styles.clearButton
             }
           >
             <View>
@@ -127,7 +127,7 @@ export default function Activity() {
           <TouchableOpacity
             style={styles.addButton}
             onPress={() =>
-              navigation.navigate('ActivityForm', {
+              navigation.navigate("ActivityForm", {
                 taskItems,
                 setTaskItems,
               })
@@ -146,9 +146,9 @@ export default function Activity() {
 
 const styles = StyleSheet.create({
   activityWrapper: {
-    width: '100%',
-    height: '100%',
-    flexDirection: 'column',
+    width: "100%",
+    height: "100%",
+    flexDirection: "column",
     padding: 25,
     paddingTop: 55,
     flex: 10,
@@ -158,9 +158,9 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   headerText: {
-    fontWeight: 'bold',
+    fontWeight: "bold",
     fontSize: 24,
-    textAlign: 'center',
+    textAlign: "center",
   },
   rightSide: {
     flex: 1,
@@ -169,15 +169,15 @@ const styles = StyleSheet.create({
     marginTop: 25,
   },
   buttonsWrapper: {
-    flexDirection: 'row',
-    justifyContent: 'flex-end',
+    flexDirection: "row",
+    justifyContent: "flex-end",
   },
   addButton: {
     width: 80,
     height: 80,
-    backgroundColor: 'blue',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "blue",
+    alignItems: "center",
+    justifyContent: "center",
     borderRadius: 100,
     marginTop: 25,
     marginLeft: 25,
@@ -185,36 +185,36 @@ const styles = StyleSheet.create({
   clearButton: {
     width: 80,
     height: 80,
-    backgroundColor: 'red',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "red",
+    alignItems: "center",
+    justifyContent: "center",
     borderRadius: 100,
     marginTop: 25,
   },
   buttonText: {
-    color: '#fff',
+    color: "#fff",
     fontSize: 30,
   },
   modalWrapper: {
-    width: '100%',
-    height: '100%',
+    width: "100%",
+    height: "100%",
     padding: 25,
     paddingTop: 40,
   },
   inputField: {
     marginTop: 25,
-    backgroundColor: 'fff',
-    borderColor: '#1f1e33',
+    backgroundColor: "fff",
+    borderColor: "#1f1e33",
     borderWidth: 2,
     borderRadius: 5,
     height: 35,
   },
   modalEnter: {
     marginTop: 25,
-    backgroundColor: '#1f1e33',
-    backgroundColor: 'blue',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#1f1e33",
+    backgroundColor: "blue",
+    alignItems: "center",
+    justifyContent: "center",
     borderRadius: 5,
     paddingVertical: 10,
   },
