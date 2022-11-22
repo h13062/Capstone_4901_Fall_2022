@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace BabyTracker.Infrastructure.Repository
 {
-    public class AccountRepositoryAsync : BaseRepository<SignupModel>, IAccountRepositoryAsync
+    public class AccountRepositoryAsync : BaseRepository<SignUpModel>, IAccountRepositoryAsync
     {
         private readonly UserManager<ApplicationUser> _userManager;
         public AccountRepositoryAsync(BabyTrackerDbContext db,UserManager<ApplicationUser> userManager) : base(db)
@@ -19,7 +19,7 @@ namespace BabyTracker.Infrastructure.Repository
             _userManager = userManager;
         }
 
-        public async Task<IdentityResult> SignUpAsync(SignupModel model)
+        public async Task<IdentityResult> SignUpAsync(SignUpModel model)
         {
             ApplicationUser user = new ApplicationUser();
             user.FirstName = model.FirstName;

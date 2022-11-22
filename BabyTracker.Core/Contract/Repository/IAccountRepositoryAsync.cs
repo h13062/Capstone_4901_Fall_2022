@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 
 namespace BabyTracker.Core.Contract.Repository
 {
-    public interface IAccountRepositoryAsync: IRepositoryAsync<SignupModel>
+    public interface IAccountRepositoryAsync: IRepositoryAsync<SignUpModel>
     {
-        Task<IdentityResult> SignUpAsync(SignupModel model);
+        Task<IdentityResult> SignUpAsync(SignUpModel model);
     }
 }

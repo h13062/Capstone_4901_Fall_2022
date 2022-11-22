@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace BabyTracker.Core.Model
 {
-    public class SignupModel
+    public class SignUpModel
     {
         [Required]
         public string FirstName { get; set; }

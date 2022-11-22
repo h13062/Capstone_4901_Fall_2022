@@ -10,6 +10,6 @@ namespace BabyTracker.Core.Contract.Service
 {
     public interface IAccountServiceAsync
     {
-        Task<IdentityResult> SignUpAsync(SignupModel model);
+        Task<IdentityResult> SignUpAsync(SignUpModel model);
     }
 }
