@@ -12,11 +12,12 @@ import {
 import { useNavigation } from "@react-navigation/native";
 
 const STHeader = () => {
-  // const navigation = useNavigation();
+  const navigation = useNavigation();
   return (
     <Appbar.Header style={styles.Header}>
       <TouchableOpacity
         style={styles.backBtn}
+        onPress={() => navigation.navigate("Activity")}
         // onPress={() => navigation.navigate("BabyInfo")}
       >
         <Text style={styles.backText}>BACK</Text>
@@ -45,6 +46,12 @@ const STHeader = () => {
           flexDirection: "column",
         }}
       />
+      <TouchableOpacity
+        style={styles.customBtn}
+        onPress={() => navigation.navigate("DateTimePicker")}
+      >
+        <Text style={styles.customText}>CUSTOM</Text>
+      </TouchableOpacity>
     </Appbar.Header>
   );
 };
@@ -69,6 +76,24 @@ const styles = StyleSheet.create({
     paddingTop: 0,
   },
   backText: {
+    flex: 1,
+    color: "white",
+    fontSize: 15,
+  },
+  customBtn: {
+    // flex: 0.8,
+    width: 100,
+    borderRadius: 10,
+    height: 20,
+    alignItems: "center",
+    justifyContent: "flex-end",
+    alignSelf: "flex-start",
+    marginTop: 0,
+    backgroundColor: "#00bfff",
+    marginTop: 0,
+    paddingTop: 0,
+  },
+  customText: {
     flex: 1,
     color: "white",
     fontSize: 15,

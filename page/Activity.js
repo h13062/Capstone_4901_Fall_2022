@@ -89,7 +89,10 @@ export default function Activity() {
         >
           <View style={styles.items}>
             {/* This is where the activities will go */}
-            <TouchableOpacity style={{ marginBottom: 25 }}>
+            <TouchableOpacity
+              style={{ marginBottom: 25 }}
+              onPress={() => navigation.navigate("Stopwatch")}
+            >
               <Task text="Sleeping" />
             </TouchableOpacity>
             <TouchableOpacity style={{ marginBottom: 25 }}>

@@ -22,125 +22,130 @@ import { useState } from "react";
 
 import Welcome from "./page/Welcome";
 
-// export default function App() {
-//   const { Navigator, Screen } = createNativeStackNavigator();
-//   return (
-//     <NavigationContainer>
-//       <Navigator>
-//         <Screen
-//           name="Welcome"
-//           options={{ headerShown: false }}
-//           component={Welcome}
-//         />
-//         <Screen
-//           name="Login"
-//           options={{ headerShown: false }}
-//           component={Login}
-//         />
-//         <Screen
-//           name="Register"
-//           options={{ headerShown: false }}
-//           component={Register}
-//         />
-//         <Screen
-//           name="BabyInfo"
-//           options={{ headerShown: false }}
-//           component={BabyInfo}
-//         />
-//         <Screen
-//           name="Activity"
-//           options={{ headerShown: false, animationEnabled: false }}
-//           component={Activity}
-//         />
-//         <Screen
-//           name="Chart"
-//           options={{ headerShown: false, animationEnabled: false }}
-//           component={Chart}
-//         />
-//         <Screen
-//           name="BabyProfiles"
-//           options={{ headerShown: false, animationEnabled: false }}
-//           component={BabyProfiles}
-//         />
-//         <Screen
-//           name="Stopwatch"
-//           options={{ headerShown: false, animationEnabled: false }}
-//           component={StopWatch}
-//         />
-//         <Screen
-//           name="ActivityForm"
-//           options={{ headerShown: false, animationEnabled: false }}
-//           component={ActivityForm}
-//         />
-//       </Navigator>
-//     </NavigationContainer>
-//   );
-// }
 export default function App() {
-  //   const { Navigator, Screen } = createNativeStackNavigator();
-  //   const scheme = useColorScheme();
-
-  //   return (
-  //     <NavigationContainer theme={DefaultTheme}>
-  //       <Navigator>
-  //         <Screen
-  //           name="Login"
-  //           options={{ headerShown: false }}
-  //           component={Login}
-  //         />
-  //         <Screen
-  //           name="Register"
-  //           options={{ headerShown: false }}
-  //           component={Register}
-  //         />
-  //         <Screen
-  //           name="BabyInfo"
-  //           options={{ headerShown: false }}
-  //           component={BabyInfo}
-  //         />
-  //         <Screen
-  //           name="Activity"
-  //           options={{ headerShown: false, animationEnabled: false }}
-  //           component={Activity}
-  //         />
-  //         <Screen
-  //           name="ActivityForm"
-  //           options={{ headerShown: false, animationEnabled: false }}
-  //           component={ActivityForm}
-  //         />
-  //         <Screen
-  //           name="Chart"
-  //           options={{ headerShown: false, animationEnabled: false }}
-  //           component={Chart}
-  //         />
-  //         <Screen
-  //           name="BabyProfiles"
-  //           options={{ headerShown: false, animationEnabled: false }}
-  //           component={BabyProfiles}
-  //         />
-  //         <Screen
-  //           name="Setting"
-  //           options={{
-  //             headerShown: false,
-  //             animationEnabled: false,
-  //           }}
-  //           component={Setting}
-  //         />
-  //       </Navigator>
-  //     </NavigationContainer>
-
+  const { Navigator, Screen } = createNativeStackNavigator();
   return (
-    // <View style={styles.container}>
-    //   <StopWatch />
-    // </View>
-
-    <>
-      <StopWatch />
-      {/* <Datetime1 /> */}
-      {/* <DateTime2 /> */}
-    </>
+    <NavigationContainer>
+      <Navigator>
+        <Screen
+          name="Welcome"
+          options={{ headerShown: false }}
+          component={Welcome}
+        />
+        <Screen
+          name="Login"
+          options={{ headerShown: false }}
+          component={Login}
+        />
+        <Screen
+          name="Register"
+          options={{ headerShown: false }}
+          component={Register}
+        />
+        <Screen
+          name="BabyInfo"
+          options={{ headerShown: false }}
+          component={BabyInfo}
+        />
+        <Screen
+          name="Activity"
+          options={{ headerShown: false, animationEnabled: false }}
+          component={Activity}
+        />
+        <Screen
+          name="Chart"
+          options={{ headerShown: false, animationEnabled: false }}
+          component={Chart}
+        />
+        <Screen
+          name="BabyProfiles"
+          options={{ headerShown: false, animationEnabled: false }}
+          component={BabyProfiles}
+        />
+        <Screen
+          name="Stopwatch"
+          options={{ headerShown: false, animationEnabled: false }}
+          component={StopWatch}
+        />
+        <Screen
+          name="ActivityForm"
+          options={{ headerShown: false, animationEnabled: false }}
+          component={ActivityForm}
+        />
+        <Screen
+          name="DateTimePicker"
+          options={{ headerShown: false, animationEnabled: false }}
+          component={Datetime1}
+        />
+      </Navigator>
+    </NavigationContainer>
   );
 }
+// export default function App() {
+//   //   const { Navigator, Screen } = createNativeStackNavigator();
+//   //   const scheme = useColorScheme();
+
+//   //   return (
+//   //     <NavigationContainer theme={DefaultTheme}>
+//   //       <Navigator>
+//   //         <Screen
+//   //           name="Login"
+//   //           options={{ headerShown: false }}
+//   //           component={Login}
+//   //         />
+//   //         <Screen
+//   //           name="Register"
+//   //           options={{ headerShown: false }}
+//   //           component={Register}
+//   //         />
+//   //         <Screen
+//   //           name="BabyInfo"
+//   //           options={{ headerShown: false }}
+//   //           component={BabyInfo}
+//   //         />
+//   //         <Screen
+//   //           name="Activity"
+//   //           options={{ headerShown: false, animationEnabled: false }}
+//   //           component={Activity}
+//   //         />
+//   //         <Screen
+//   //           name="ActivityForm"
+//   //           options={{ headerShown: false, animationEnabled: false }}
+//   //           component={ActivityForm}
+//   //         />
+//   //         <Screen
+//   //           name="Chart"
+//   //           options={{ headerShown: false, animationEnabled: false }}
+//   //           component={Chart}
+//   //         />
+//   //         <Screen
+//   //           name="BabyProfiles"
+//   //           options={{ headerShown: false, animationEnabled: false }}
+//   //           component={BabyProfiles}
+//   //         />
+//   //         <Screen
+//   //           name="Setting"
+//   //           options={{
+//   //             headerShown: false,
+//   //             animationEnabled: false,
+//   //           }}
+//   //           component={Setting}
+//   //         />
+//   //       </Navigator>
+//   //     </NavigationContainer>
+
+//   return (
+//     // <View style={styles.container}>
+//     //   <StopWatch />
+//     // </View>
+
+//     <>
+//       <StopWatch />
+//       {/* <Datetime1 /> */}
+//       {/* <DateTime2 /> */}
+//     </>
+//   );
+// }
 
 const styles = StyleSheet.create({
   container: {
