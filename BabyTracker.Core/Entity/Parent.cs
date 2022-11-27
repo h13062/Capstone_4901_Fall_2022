@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -11,9 +12,10 @@ namespace BabyTracker.Core.Entity
     {
         public int Id { get; set; }
 
+        [MaxLength(50)]
         [Column(TypeName = "varchar")]
         public string ParentName { get; set; }
-
+        public int BabyId { get; set; }
         public Baby Baby { get; set; }
     }
 }

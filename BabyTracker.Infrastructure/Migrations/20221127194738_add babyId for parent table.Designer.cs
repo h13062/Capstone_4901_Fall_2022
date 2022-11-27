@@ -4,6 +4,7 @@ using BabyTracker.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BabyTracker.Infrastructure.Migrations
 {
     [DbContext(typeof(BabyTrackerDbContext))]
-    partial class BabyTrackerDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221127194738_add babyId for parent table")]
+    partial class addbabyIdforparenttable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -182,8 +184,7 @@ namespace BabyTracker.Infrastructure.Migrations
 
                     b.Property<string>("ParentName")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("varchar(50)");
+                        .HasColumnType("varchar");
 
                     b.HasKey("Id");
 

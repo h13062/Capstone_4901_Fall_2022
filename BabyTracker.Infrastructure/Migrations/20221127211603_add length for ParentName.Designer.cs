@@ -4,6 +4,7 @@ using BabyTracker.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BabyTracker.Infrastructure.Migrations
 {
     [DbContext(typeof(BabyTrackerDbContext))]
-    partial class BabyTrackerDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221127211603_add length for ParentName")]
+    partial class addlengthforParentName
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -178,12 +180,12 @@ namespace BabyTracker.Infrastructure.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<int>("BabyId")
+                        .HasMaxLength(50)
                         .HasColumnType("int");
 
                     b.Property<string>("ParentName")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("varchar(50)");
+                        .HasColumnType("varchar");
 
                     b.HasKey("Id");
 

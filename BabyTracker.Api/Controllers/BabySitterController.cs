@@ -7,23 +7,23 @@ namespace BabyTracker.Api.Controllers
     [ApiController]
     public class BabySitterController: ControllerBase
     {
-        private readonly IBabySitterServiceAsync babysitterServiceAsync;
+        private readonly IBabySitterServiceAsync _babysitterServiceAsync;
         public BabySitterController(IBabySitterServiceAsync babysitterServiceAsync)
         {
-            this.babysitterServiceAsync = babysitterServiceAsync;
+            _babysitterServiceAsync = babysitterServiceAsync;
         }
 
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            return Ok(await babysitterServiceAsync.GetAllAsync());
+            return Ok(await _babysitterServiceAsync.GetAllAsync());
         }
 
         [HttpGet]
         [Route("{id:int}")]
         public async Task<IActionResult> GetByIdAsync(int id)
         {
-            var result = await babysitterServiceAsync.GetByIdAsync(id);
+            var result = await _babysitterServiceAsync.GetByIdAsync(id);
             if (result == null)
             {
                 return NotFound($"Baby sitter object with Id = {id} is not available");
@@ -35,7 +35,7 @@ namespace BabyTracker.Api.Controllers
         [Route("{name}")]
         public async Task<IActionResult> GetByNameAsync(string name)
         {
-            var result = await babysitterServiceAsync.GetByNameAsync(name);
+            var result = await _babysitterServiceAsync.GetByNameAsync(name);
             if (result == null)
             {
                 return NotFound($"Baby sitterobject with Name = {name} is not available");
@@ -46,7 +46,7 @@ namespace BabyTracker.Api.Controllers
         [HttpPost]
         public async Task<IActionResult> Post(BabySitterModel model)
         {
-            var result = await babysitterServiceAsync.AddBabyAsync(model);
+            var result = await _babysitterServiceAsync.AddBabyAsync(model);
             if (result != 0)
             {
                 return Ok(model);
@@ -58,7 +58,7 @@ namespace BabyTracker.Api.Controllers
         [Route("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            var result = await babysitterServiceAsync.DeleteByIdAsync(id);
+            var result = await _babysitterServiceAsync.DeleteByIdAsync(id);
             if (result != 0)
             {
                 return Ok("Baby Sitter Deleted Successfully");

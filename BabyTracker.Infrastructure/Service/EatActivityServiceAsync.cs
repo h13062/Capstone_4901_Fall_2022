@@ -56,7 +56,17 @@ namespace BabyTracker.Infrastructure.Service
 
         public async Task<EatActivityModel> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            var item = await eatActivyRepositoryAsync.GetByIdAsync(id);
+            if (item != null)
+            {
+                EatActivityModel model = new EatActivityModel();
+                model.Id = item.Id;
+                model.Day = item.Day;
+                model.EatEnd= item.EatEnd;
+                model.EatStart = item.EatStart;
+                return model;
+            }
+            return null;
         }
 
         public async Task<int> UpdateEatAsync(EatActivityModel eat)
