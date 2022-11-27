@@ -12,5 +12,12 @@ namespace BabyTracker.Core.Entity
         public DateTime Day { get; set; }
         public DateTime SleepStart { get; set; }
         public DateTime SleepEnd { get; set; }
+        public TimeSpan SleepDuration { get; set; }
+
+        public SleepActivity()
+        {
+            SleepDuration = SleepEnd - SleepStart;
+            Day = DateTime.Now;
+        }
     }
 }

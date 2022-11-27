@@ -9,5 +9,6 @@ namespace BabyTracker.Core.Contract.Repository
 {
     public interface IBabySitterRepositoryAsync : IRepositoryAsync<BabySitter>
     {
+        Task<BabySitter> GetByNameAsync(string name);
     }
 }

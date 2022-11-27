@@ -4,6 +4,7 @@ using BabyTracker.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BabyTracker.Infrastructure.Migrations
 {
     [DbContext(typeof(BabyTrackerDbContext))]
-    partial class BabyTrackerDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221127183943_assign length 50 for babysitter name")]
+    partial class assignlength50forbabysittername
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -121,7 +123,7 @@ namespace BabyTracker.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Babys", (string)null);
+                    b.ToTable("Babys");
                 });
 
             modelBuilder.Entity("BabyTracker.Core.Entity.BabySitter", b =>
@@ -144,7 +146,7 @@ namespace BabyTracker.Infrastructure.Migrations
 
                     b.HasIndex("BabyId");
 
-                    b.ToTable("BabySitters", (string)null);
+                    b.ToTable("BabySitters");
                 });
 
             modelBuilder.Entity("BabyTracker.Core.Entity.EatActivity", b =>
@@ -166,7 +168,7 @@ namespace BabyTracker.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("EatActivities", (string)null);
+                    b.ToTable("EatActivities");
                 });
 
             modelBuilder.Entity("BabyTracker.Core.Entity.Parent", b =>
@@ -188,7 +190,7 @@ namespace BabyTracker.Infrastructure.Migrations
 
                     b.HasIndex("BabyId");
 
-                    b.ToTable("Parents", (string)null);
+                    b.ToTable("Parents");
                 });
 
             modelBuilder.Entity("BabyTracker.Core.Entity.PlayActivity", b =>
@@ -210,7 +212,7 @@ namespace BabyTracker.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("PlayActivities", (string)null);
+                    b.ToTable("PlayActivities");
                 });
 
             modelBuilder.Entity("BabyTracker.Core.Entity.SleepActivity", b =>
@@ -235,7 +237,7 @@ namespace BabyTracker.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("SleepActivities", (string)null);
+                    b.ToTable("SleepActivities");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

@@ -73,9 +73,20 @@ namespace BabyTracker.Infrastructure.Service
 
         }
 
-        public Task<BabyModel> GetByNameAsync(string name)
+        public async Task<BabyModel> GetByNameAsync(string name)
         {
-            throw new NotImplementedException();
+            var item = await babyRepositoryAsync.GetByNameAsync(name);
+            if (item != null)
+            {
+                BabyModel model = new BabyModel();
+                model.Id = item.Id;
+                model.Name = item.Name;
+                model.Gender = item.Gender;
+                model.DateOfBirth = item.DateOfBirth;
+                model.Weight = item.Weight;
+                return model;
+            }
+            return null;
         }
 
         public async Task<int> UpdateBabyAsync(BabyModel baby)

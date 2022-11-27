@@ -34,7 +34,7 @@ namespace BabyTracker.Infrastructure.Repository
         {
             return await _db.Set<T>().FindAsync(id);
         }
-        
+
         public async Task<int> InsertAsync(T entity)
         {
             await _db.Set<T>().AddAsync(entity);
