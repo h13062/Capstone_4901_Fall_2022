@@ -63,7 +63,7 @@ builder.Services.AddScoped<IBabySitterServiceAsync, BabySitterServiceAsync>();
 builder.Services.AddScoped<IParentServiceAsync,ParentServiceAsync>();
 builder.Services.AddScoped<IEatActivyServiceAsync, EatActivityServiceAsync>();
 builder.Services.AddScoped<IPlayActivtyServiceAsync, PlayActivityServiceAsync>();
-builder.Services.AddScoped<ISleepActivityServiceAsync, SleepActivityServiceAsync>();
+builder.Services.AddScoped<IPlayActivityServiceAsync, SleepActivityServiceAsync>();
 builder.Services.AddScoped<IAccountServiceAsync, AccountServiceAsync>();
 var app = builder.Build();
 

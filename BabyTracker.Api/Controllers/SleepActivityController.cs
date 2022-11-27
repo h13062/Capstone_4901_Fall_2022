@@ -1,40 +1,41 @@
 ﻿using BabyTracker.Core.Contract.Service;
 using BabyTracker.Core.Model;
 using Microsoft.AspNetCore.Mvc;
+
 namespace BabyTracker.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PlayActivityControllercs: ControllerBase
+    public class SleepActivityController: ControllerBase
     {
-        private readonly IPlayActivtyServiceAsync _playActivityServiceAsync;
-        public PlayActivityControllercs(IPlayActivtyServiceAsync playActivityServiceAsync)
+        private readonly IPlayActivityServiceAsync _sleepactivyServiceAsync;
+        public SleepActivityController(IPlayActivityServiceAsync sleepactivyServiceAsync)
         {
-            _playActivityServiceAsync = playActivityServiceAsync;
+            _sleepactivyServiceAsync = sleepactivyServiceAsync;
         }
 
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            return Ok(await _playActivityServiceAsync.GetAllAsync());
+            return Ok(await _sleepactivyServiceAsync.GetAllAsync());
         }
 
         [HttpGet]
         [Route("{id:int}")]
         public async Task<IActionResult> GetByIdAsync(int id)
         {
-            var result = await _playActivityServiceAsync.GetByIdAsync(id);
+            var result = await _sleepactivyServiceAsync.GetByIdAsync(id);
             if (result == null)
             {
-                return NotFound($"Play activity with Id = {id} is not available");
+                return NotFound($"Sleep activity with Id = {id} is not available");
             }
             return Ok(result);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post(PlayActivityModel model)
+        public async Task<IActionResult> Post(SleepActivityModel model)
         {
-            var result = await _playActivityServiceAsync.AddPlayAsync(model);
+            var result = await _sleepactivyServiceAsync.AddSleepAsync(model);
             if (result != 0)
             {
                 return Ok(model);
@@ -46,13 +47,12 @@ namespace BabyTracker.Api.Controllers
         [Route("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            var result = await _playActivityServiceAsync.DeleteByIdAsync(id);
+            var result = await _sleepactivyServiceAsync.DeleteByIdAsync(id);
             if (result != 0)
             {
-                return Ok("Play Activity Deleted Successfully");
+                return Ok("Sleep Activity Deleted Successfully");
             }
             return BadRequest();
         }
-
     }
 }

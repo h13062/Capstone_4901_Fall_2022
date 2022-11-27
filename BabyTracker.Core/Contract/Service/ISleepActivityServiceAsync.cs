@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BabyTracker.Core.Contract.Service
 {
-    public interface ISleepActivityServiceAsync
+    public interface IPlayActivityServiceAsync
     {
         Task<IEnumerable<SleepActivityModel>> GetAllAsync();
         Task<int> AddSleepAsync(SleepActivityModel sleep);

@@ -12,10 +12,10 @@ namespace BabyTracker.Infrastructure.Service
 {
     public class PlayActivityServiceAsync : IPlayActivtyServiceAsync
     {
-        private readonly IPlayActivityRepositoryAsync playActivtyRepositoryAsync;
+        private readonly IPlayActivityRepositoryAsync _playActivtyRepositoryAsync;
         public PlayActivityServiceAsync(IPlayActivityRepositoryAsync playActivtyRepositoryAsync)
         {
-              this.playActivtyRepositoryAsync = playActivtyRepositoryAsync;
+              _playActivtyRepositoryAsync = playActivtyRepositoryAsync;
         }
         public async Task<int> AddPlayAsync(PlayActivityModel play)
         {
@@ -24,17 +24,17 @@ namespace BabyTracker.Infrastructure.Service
             p.Day = play.Day;  
             p.PlayStart=play.PlayStart;
             p.PlayEnd=play.PlayEnd;
-            return await playActivtyRepositoryAsync.InsertAsync(p);
+            return await _playActivtyRepositoryAsync.InsertAsync(p);
         }
 
         public async Task<int?> DeleteByIdAsync(int id)
         {
-            return await playActivtyRepositoryAsync.DeleteAsync(id);
+            return await _playActivtyRepositoryAsync.DeleteAsync(id);
         }
 
         public async Task<IEnumerable<PlayActivityModel>> GetAllAsync()
         {
-            var collection = await playActivtyRepositoryAsync.GetAllAsync();
+            var collection = await _playActivtyRepositoryAsync.GetAllAsync();
 
             if (collection != null)
             {
@@ -53,9 +53,21 @@ namespace BabyTracker.Infrastructure.Service
             return null;
         }
 
-        public Task<PlayActivityModel> GetByIdAsync(int id)
+        public async Task<PlayActivityModel> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            var item = await _playActivtyRepositoryAsync.GetByIdAsync(id);
+            if (item != null)
+            {
+                PlayActivityModel model = new PlayActivityModel();
+                model.Id = item.Id;
+                model.Day = item.Day;
+                model.PlayStart = item.PlayStart;
+                model.PlayEnd = item.PlayEnd;
+                //var par = await _sleepActivityRepositoyryAsync.GetByIdAsync(item.BabyId);
+                //model.BabyId = par.BabyId;
+                return model;
+            }
+            return null;
         }
 
         public async Task<int> UpdatePlayAsync(PlayActivityModel play)
@@ -65,7 +77,7 @@ namespace BabyTracker.Infrastructure.Service
             p.Day = play.Day;
             p.PlayStart = play.PlayStart;
             p.PlayEnd = play.PlayEnd;
-            return await playActivtyRepositoryAsync.UpdateAsync(p);
+            return await _playActivtyRepositoryAsync.UpdateAsync(p);
         }
     }
 }
