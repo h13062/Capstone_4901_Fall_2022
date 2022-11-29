@@ -12,7 +12,7 @@ import Setting from "./page/Setting";
 import { DefaultTheme, DarkTheme } from "@react-navigation/native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import StopWatch from "./components/stopwatch";
+import StopWatch from "./page/Stopwatch";
 import Datetime1 from "./page/Datetime1";
 import { useState } from "react";
 
