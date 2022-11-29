@@ -31,7 +31,7 @@ export default function StopWatch() {
     setRemainingSecs(0);
     setIsActive(false);
   };
-
+//useeffect
   useEffect(() => {
     let interval = null;
     if (isActive) {
