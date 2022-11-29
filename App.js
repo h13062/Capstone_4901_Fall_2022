@@ -8,12 +8,8 @@ import Activity from "./page/Activity";
 import Navbar from "./components/Navbar";
 import BabyProfiles from "./page/BabyProfiles";
 import ActivityForm from "./page/ActivityForm";
-// import Setting from './page/Setting';
-// import {
-//   NavigationContainer,
-//   DefaultTheme,
-//   DarkTheme,
-// } from "@react-navigation/native";
+import Setting from "./page/Setting";
+import { DefaultTheme, DarkTheme } from "@react-navigation/native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import StopWatch from "./components/stopwatch";
@@ -76,6 +72,14 @@ export default function App() {
           name="DateTimePicker"
           options={{ headerShown: false, animationEnabled: false }}
           component={Datetime1}
+        />
+        <Screen
+          name="Setting"
+          options={{
+            headerShown: false,
+            animationEnabled: false,
+          }}
+          component={Setting}
         />
       </Navigator>
     </NavigationContainer>
