@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import Ionicons from '@expo/vector-icons/Ionicons';
 
 export default function Navbar() {
   const navigation = useNavigation();
@@ -11,32 +12,37 @@ export default function Navbar() {
           style={styles.navButtonWrapper}
           onPress={() => navigation.navigate('Activity')}
         >
-          <View>
-            <Text>1</Text>
+          <View style={{ alignItems: 'center' }}>
+            <Ionicons name="home" size={30} />
+
+            <Text>Home</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.navButtonWrapper}
           onPress={() => navigation.navigate('Chart')}
         >
-          <View>
-            <Text>2</Text>
+          <View style={{ alignItems: 'center' }}>
+            <Ionicons name="podium" size={30} />
+            <Text>Chart</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.navButtonWrapper}
           onPress={() => navigation.navigate('BabyProfiles')}
         >
-          <View>
-            <Text>3</Text>
+          <View style={{ alignItems: 'center' }}>
+            <Ionicons name="person-circle-outline" size={30} />
+            <Text>Babies</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.navButtonWrapper}
           onPress={() => navigation.navigate('Setting')}
         >
-          <View>
-            <Text>4</Text>
+          <View style={{ alignItems: 'center' }}>
+            <Ionicons name="settings-outline" size={30} />
+            <Text>Settings</Text>
           </View>
         </TouchableOpacity>
       </View>
