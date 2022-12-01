@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import {
   StyleSheet,
   Text,
@@ -6,22 +6,27 @@ import {
   StatusBar,
   TouchableOpacity,
   Dimensions,
-} from "react-native";
+} from 'react-native';
 
-const screen = Dimensions.get("window");
+const screen = Dimensions.get('window');
 
 const formatNumber = (number) => `0${number}`.slice(-2);
 
 const getRemaining = (time) => {
-  const mins = Math.floor(time / 60);
+  const hrs = Math.floor(time / 3600);
+  const mins = (Math.floor(time / 60)) % 60;
   const secs = time - mins * 60;
-  return { mins: formatNumber(mins), secs: formatNumber(secs) };
+  return {
+    hrs: formatNumber(hrs),
+    mins: formatNumber(mins),
+    secs: formatNumber(secs),
+  };
 };
 
-export default function StopWatch() {
+export default function App() {
   const [remainingSecs, setRemainingSecs] = useState(0);
   const [isActive, setIsActive] = useState(false);
-  const { mins, secs } = getRemaining(remainingSecs);
+  const { hrs, mins, secs } = getRemaining(remainingSecs);
 
   toggle = () => {
     setIsActive(!isActive);
@@ -31,7 +36,7 @@ export default function StopWatch() {
     setRemainingSecs(0);
     setIsActive(false);
   };
-//useeffect
+
   useEffect(() => {
     let interval = null;
     if (isActive) {
@@ -46,10 +51,10 @@ export default function StopWatch() {
 
   return (
     <View style={styles.container}>
-      <StatusBar barStyle="light-content" />
-      <Text style={styles.timerText}>{`${mins}:${secs}`}</Text>
+      <StatusBar barStyle='light-content' />
+      <Text style={styles.timerText}>{`${hrs}:${mins}:${secs}`}</Text>
       <TouchableOpacity onPress={this.toggle} style={styles.button}>
-        <Text style={styles.buttonText}>{isActive ? "Pause" : "Start"}</Text>
+        <Text style={styles.buttonText}>{isActive ? 'Pause' : 'Start'}</Text>
       </TouchableOpacity>
       <TouchableOpacity
         onPress={this.reset}
@@ -64,33 +69,33 @@ export default function StopWatch() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#07121B",
-    alignItems: "center",
-    justifyContent: "center",
+    backgroundColor: '#07121B',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   button: {
     borderWidth: 10,
-    borderColor: "#B9AAFF",
+    borderColor: '#B9AAFF',
     width: screen.width / 2,
     height: screen.width / 2,
     borderRadius: screen.width / 2,
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   buttonText: {
     fontSize: 45,
-    color: "#B9AAFF",
+    color: '#B9AAFF',
   },
   timerText: {
-    color: "#fff",
+    color: '#fff',
     fontSize: 90,
     marginBottom: 20,
   },
   buttonReset: {
     marginTop: 20,
-    borderColor: "#FF851B",
+    borderColor: '#FF851B',
   },
   buttonTextReset: {
-    color: "#FF851B",
+    color: '#FF851B',
   },
 });
