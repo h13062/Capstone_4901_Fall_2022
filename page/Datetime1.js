@@ -1,6 +1,14 @@
 import React, { useState } from "react";
-import { Button, SafeAreaView, StyleSheet, Text, View } from "react-native";
+import {
+  Button,
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+} from "react-native";
 import DateTimePicker from "@react-native-community/datetimepicker";
+import { AutoGrowingTextInput } from "react-native-autogrow-textinput";
 export default function DateTime1() {
   // for First Date Time Picker=======================================
   const [datePicker1, setDatePicker1] = useState(false);
@@ -13,6 +21,9 @@ export default function DateTime1() {
   const [date2, setDate2] = useState(new Date());
   const [timePicker2, setTimePicker2] = useState(false);
   const [time2, setTime2] = useState(new Date(Date.now()));
+
+  //Notes==========================================
+  const [password, setPassword] = useState("");
 
   // Function for First Date Time Picker================================
   function showDatePicker1() {
@@ -44,14 +55,15 @@ export default function DateTime1() {
     setTime2(value);
     setTimePicker2(false);
   }
+
   //========================================================================
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: "green" }}>
       {/* First Date Time Picker ====================================================*/}
-      <View style={styleSheet.MainContainer}>
-        <Text style={styleSheet.text}>Date = {date1.toDateString()}</Text>
+      <View style={styles.MainContainer}>
+        <Text style={styles.text}>Date = {date1.toDateString()}</Text>
 
-        <Text style={styleSheet.text}>
+        <Text style={styles.text}>
           Time = {time1.toLocaleTimeString("en-US")}
         </Text>
 
@@ -62,7 +74,7 @@ export default function DateTime1() {
             display={Platform.OS === "ios" ? "spinner" : "default"}
             is24Hour={true}
             onChange={onDateSelected1}
-            style={styleSheet.datePicker1}
+            style={styles.datePicker1}
           />
         )}
 
@@ -73,7 +85,7 @@ export default function DateTime1() {
             display={Platform.OS === "ios" ? "spinner" : "default"}
             is24Hour={false}
             onChange={onTimeSelected1}
-            style={styleSheet.datePicker1}
+            style={styles.datePicker1}
           />
         )}
 
@@ -96,13 +108,10 @@ export default function DateTime1() {
             />
           </View>
         )}
-      </View>
+        {/* Second Date Time Picker ====================================================*/}
+        <Text style={styles.text}>Date = {date2.toDateString()}</Text>
 
-      {/* Second Date Time Picker ====================================================*/}
-      <View style={styleSheet.MainContainer}>
-        <Text style={styleSheet.text}>Date = {date2.toDateString()}</Text>
-
-        <Text style={styleSheet.text}>
+        <Text style={styles.text}>
           Time = {time2.toLocaleTimeString("en-US")}
         </Text>
 
@@ -113,7 +122,7 @@ export default function DateTime1() {
             display={Platform.OS === "ios" ? "spinner" : "default"}
             is24Hour={true}
             onChange={onDateSelected2}
-            style={styleSheet.datePicker2}
+            style={styles.datePicker2}
           />
         )}
 
@@ -124,7 +133,7 @@ export default function DateTime1() {
             display={Platform.OS === "ios" ? "spinner" : "default"}
             is24Hour={false}
             onChange={onTimeSelected2}
-            style={styleSheet.datePicker2}
+            style={styles.datePicker2}
           />
         )}
 
@@ -148,39 +157,80 @@ export default function DateTime1() {
           </View>
         )}
       </View>
+
+      <View style={styles.inputView}>
+        <TextInput
+          style={styles.TextInput}
+          placeholder="Notes"
+          placeholderTextColor="#003f5c"
+          onsetPassword={setPassword}
+          secureTextEntry={false}
+          multiline={true}
+        />
+      </View>
     </SafeAreaView>
   );
 }
 
-const styleSheet = StyleSheet.create({
+const styles = StyleSheet.create({
   MainContainer: {
-    flex: 1,
-    padding: 6,
+    // flex: 1,
+    padding: 0,
     marginTop: 100,
     alignItems: "center",
     alignSelf: "center",
-    backgroundColor: "white",
+    backgroundColor: "blue",
   },
 
   text: {
-    fontSize: 25,
+    fontSize: 20,
     color: "red",
     padding: 3,
-    marginBottom: 10,
+    marginBottom: 0,
     textAlign: "center",
   },
   datePicker1: {
     justifyContent: "center",
-    alignItems: "flex-start",
-    width: 320,
-    height: 260,
+    alignItems: "center",
+    width: 100,
+    height: 150,
     display: "flex",
+    margin: 0,
+    padding: 0,
   },
   datePicker2: {
     justifyContent: "center",
-    alignItems: "flex-start",
+    alignItems: "center",
     width: 320,
-    height: 260,
+    height: 150,
     display: "flex",
+    margin: 0,
+    padding: 0,
+  },
+  inputView: {
+    // flex: ,
+
+    // height: 40,
+
+    alignItems: "center",
+    justifyContent: "flex-start",
+    alignSelf: "center",
+  },
+  TextInput: {
+    maxHeight: 200,
+    // height: 50,
+    borderRadius: 10,
+    alignItems: "center",
+    justifyContent: "center",
+    width: 300,
+    flex: 1,
+    padding: 10,
+    marginLeft: 10,
+    borderColor: "black",
+    borderWidth: 2,
+    maxHeight: 100,
+    position: "absolute",
+    // overflow: "scroll",
+    // flexGrow: 0,
   },
 });
