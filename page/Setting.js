@@ -16,40 +16,102 @@ import { useTheme } from '@react-navigation/native';
 import { useState } from 'react';
 import Navbar from '../components/Navbar';
 import CheckBox from 'expo-checkbox';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import ToggleButton from 'react-native-toggle-button';
 
-export default function Setting() {
-  const [isDark, setIsDark] = useState(true);
-  // const [theme, setTheme] = useState(Appearance.getColorScheme)
+export default function Setting({
+  setIsDarkGlobal,
+  isDarkGlobal,
+  setIsUnitMetric,
+  isUnitMetric,
+  setIsTempMetric,
+  isTempMetric,
+}) {
+  // const [isDark, setIsDark] = useState(true);
   const handleDarkMode = () => {
-    setIsDark(!isDark);
+    setIsDarkGlobal(!isDarkGlobal);
+  };
+
+  const handleUnitMetric = () => {
+    setIsUnitMetric(!isUnitMetric);
+  };
+
+  const handleTempMetric = () => {
+    setIsTempMetric(!isTempMetric);
   };
   return (
     <>
-      <View
-        style={
-          isDark ? styles.settingWrapper_light : styles.settingWrapper_dark
-        }
-      >
-        <View>
-          <Text
-            style={isDark ? styles.headerText_light : styles.headerText_dark}
-          >
-            Setting
-          </Text>
+      <SafeAreaView style={styles.allSettingWrapper}>
+        <View
+          style={
+            isDarkGlobal
+              ? styles.settingWrapper_light
+              : styles.settingWrapper_dark
+          }
+        >
+          <View>
+            <Text
+              style={
+                isDarkGlobal ? styles.headerText_light : styles.headerText_dark
+              }
+            >
+              Setting
+            </Text>
+          </View>
+          <View style={styles.tabStyle}>
+            <Text
+              style={isDarkGlobal ? styles.tabText_light : styles.tabText_dark}
+            >
+              Dark mode
+            </Text>
+            <CheckBox
+              style={styles.CheckBox}
+              value={!isDarkGlobal}
+              onValueChange={handleDarkMode}
+              color={isDarkGlobal ? '#4630EB' : undefined}
+            />
+          </View>
+          <View style={styles.tabStyle}>
+            <Text
+              style={isDarkGlobal ? styles.tabText_light : styles.tabText_dark}
+            >
+              Unit
+            </Text>
+            <ToggleButton
+              primaryText="cm/kg/ml"
+              secondaryText="inch/lb/oz"
+              activeButtonStyle={styles.toggleActive}
+              activeTextStyle={styles.toggleTextActive}
+              style={
+                isDarkGlobal
+                  ? styles.toggleStyle_light
+                  : styles.toggleStyle_dark
+              }
+              onPress={handleUnitMetric}
+            />
+          </View>
+          <View style={styles.tabStyle}>
+            <Text
+              style={isDarkGlobal ? styles.tabText_light : styles.tabText_dark}
+            >
+              Temperature
+            </Text>
+            <ToggleButton
+              primaryText="C°"
+              secondaryText="F°"
+              activeButtonStyle={styles.toggleActive}
+              activeTextStyle={styles.toggleTextActive}
+              style={
+                isDarkGlobal
+                  ? styles.toggleStyle_light
+                  : styles.toggleStyle_dark
+              }
+              onPress={handleTempMetric}
+            />
+          </View>
         </View>
-        <View style={styles.tabStyle}>
-          <Text style={isDark ? { color: '#000' } : { color: '#fff' }}>
-            Dark mode
-          </Text>
-          <CheckBox
-            style={styles.CheckBox}
-            value={!isDark}
-            onValueChange={handleDarkMode}
-            color={isDark ? '#4630EB' : undefined}
-          />
-        </View>
-      </View>
-      <Navbar />
+        <Navbar />
+      </SafeAreaView>
     </>
     // <TouchableOpacity style={{ backgroundColor: colors.card }}>
     //   <Text style={{ color: colors.text }}>Button!</Text>
@@ -58,19 +120,26 @@ export default function Setting() {
 }
 
 const styles = StyleSheet.create({
+  allSettingWrapper: {
+    width: '100%',
+    height: '100%',
+    flexDirection: 'column',
+    paddingHorizontal: 0,
+  },
   settingWrapper_light: {
     width: '100%',
     height: '100%',
-    padding: 25,
-    paddingTop: 40,
+    paddingTop: 25,
+    paddingHorizontal: 25,
+    // marginBottom: 25,
     flex: 10,
-    backgroundColor: '#fff',
   },
   settingWrapper_dark: {
     width: '100%',
     height: '100%',
-    padding: 25,
-    paddingTop: 40,
+    paddingTop: 25,
+    paddingHorizontal: 25,
+    // marginBottom: 25,
     flex: 10,
     backgroundColor: '#000',
   },
@@ -90,5 +159,30 @@ const styles = StyleSheet.create({
   tabStyle: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    marginBottom: 25,
+  },
+  tabText_light: {
+    color: '#000',
+    fontSize: 18,
+  },
+  tabText_dark: {
+    color: '#fff',
+    fontSize: 18,
+  },
+  toggleStyle_light: {
+    backgroundColor: '#e0dcdc',
+  },
+  toggleStyle_dark: {
+    backgroundColor: '#3b3939',
+  },
+  toggleInactive: {
+    borderWidth: 0,
+  },
+  toggleActive: {
+    backgroundColor: '#6082B6',
+    borderWidth: 0,
+  },
+  toggleTextActive: {
+    color: '#fff',
   },
 });

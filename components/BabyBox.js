@@ -28,7 +28,7 @@ const BabyBox = (props) => {
 
 const styles = StyleSheet.create({
   boxWrapper: {
-    backgroundColor: '#1f1e33',
+    backgroundColor: '#6082B6',
     width: '100%',
     padding: 25,
     borderRadius: 15,
