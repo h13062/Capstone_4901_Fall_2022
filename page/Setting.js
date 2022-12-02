@@ -68,7 +68,7 @@ export default function Setting({
               style={styles.CheckBox}
               value={!isDarkGlobal}
               onValueChange={handleDarkMode}
-              color={isDarkGlobal ? '#4630EB' : undefined}
+              color={isDarkGlobal ? '#6082B6' : undefined}
             />
           </View>
           <View style={styles.tabStyle}>
@@ -110,7 +110,7 @@ export default function Setting({
             />
           </View>
         </View>
-        <Navbar />
+        <Navbar isDarkGlobal={isDarkGlobal} />
       </SafeAreaView>
     </>
     // <TouchableOpacity style={{ backgroundColor: colors.card }}>

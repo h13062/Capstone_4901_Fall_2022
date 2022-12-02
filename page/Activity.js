@@ -168,7 +168,7 @@ export default function Activity({ isDarkGlobal }) {
             </TouchableOpacity>
           </View> */}
         </View>
-        <Navbar />
+        <Navbar isDarkGlobal={isDarkGlobal} />
       </SafeAreaView>
     </>
   );

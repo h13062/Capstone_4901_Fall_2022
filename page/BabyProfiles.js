@@ -125,7 +125,7 @@ export default function BabyProfiles({ isDarkGlobal }) {
             </TouchableOpacity>
           </View> */}
         </View>
-        <Navbar />
+        <Navbar isDarkGlobal={isDarkGlobal} />
       </SafeAreaView>
     </>
   );

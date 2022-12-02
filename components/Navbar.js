@@ -1,48 +1,93 @@
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { useState } from 'react';
+import { useEffect } from 'react';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
-export default function Navbar() {
+export default function Navbar({ isDarkGlobal }) {
   const navigation = useNavigation();
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    setIsDark(!isDarkGlobal);
+  }, [isDarkGlobal]);
   return (
     <>
       {/* Nav bar */}
-      <View style={styles.navWrapper}>
+      <View
+        style={isDarkGlobal ? styles.navWrapper_light : styles.navWrapper_dark}
+      >
         <TouchableOpacity
-          style={styles.navButtonWrapper}
+          style={
+            isDarkGlobal
+              ? styles.navButtonWrapper_light
+              : styles.navButtonWrapper_dark
+          }
           onPress={() => navigation.navigate('Activity')}
         >
           <View style={{ alignItems: 'center' }}>
-            <Ionicons name="home" size={30} />
+            <Ionicons
+              name="home"
+              size={30}
+              color={isDarkGlobal ? '#000' : '#fff'}
+            />
 
-            <Text>Home</Text>
+            <Text style={{ color: isDarkGlobal ? '#000' : '#fff' }}>Home</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity
-          style={styles.navButtonWrapper}
+          style={
+            isDarkGlobal
+              ? styles.navButtonWrapper_light
+              : styles.navButtonWrapper_dark
+          }
           onPress={() => navigation.navigate('Chart')}
         >
           <View style={{ alignItems: 'center' }}>
-            <Ionicons name="podium" size={30} />
-            <Text>Chart</Text>
+            <Ionicons
+              name="podium"
+              size={30}
+              color={isDarkGlobal ? '#000' : '#fff'}
+            />
+            <Text style={{ color: isDarkGlobal ? '#000' : '#fff' }}>Chart</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity
-          style={styles.navButtonWrapper}
+          style={
+            isDarkGlobal
+              ? styles.navButtonWrapper_light
+              : styles.navButtonWrapper_dark
+          }
           onPress={() => navigation.navigate('BabyProfiles')}
         >
           <View style={{ alignItems: 'center' }}>
-            <Ionicons name="person-circle-outline" size={30} />
-            <Text>Babies</Text>
+            <Ionicons
+              name="person-circle-outline"
+              size={30}
+              color={isDarkGlobal ? '#000' : '#fff'}
+            />
+            <Text style={{ color: isDarkGlobal ? '#000' : '#fff' }}>
+              Babies
+            </Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity
-          style={styles.navButtonWrapper}
+          style={
+            isDarkGlobal
+              ? styles.navButtonWrapper_light
+              : styles.navButtonWrapper_dark
+          }
           onPress={() => navigation.navigate('Setting')}
         >
           <View style={{ alignItems: 'center' }}>
-            <Ionicons name="settings-outline" size={30} />
-            <Text>Settings</Text>
+            <Ionicons
+              name="settings-outline"
+              size={30}
+              color={isDarkGlobal ? '#000' : '#fff'}
+            />
+            <Text style={{ color: isDarkGlobal ? '#000' : '#fff' }}>
+              Settings
+            </Text>
           </View>
         </TouchableOpacity>
       </View>
@@ -51,7 +96,7 @@ export default function Navbar() {
 }
 
 const styles = StyleSheet.create({
-  navWrapper: {
+  navWrapper_light: {
     width: '100%',
     height: '100%',
     flexDirection: 'row',
@@ -60,11 +105,29 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     flex: 1,
   },
-  navButtonWrapper: {
+  navWrapper_dark: {
+    width: '100%',
+    height: '100%',
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#595959',
+    justifyContent: 'space-around',
+    flex: 1,
+  },
+  navButtonWrapper_light: {
     width: '100%',
     height: '100%',
     justifyContent: 'center',
     alignItems: 'center',
     flex: 1,
+    paddingHorizontal: 1,
+  },
+  navButtonWrapper_dark: {
+    width: '100%',
+    height: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flex: 1,
+    paddingHorizontal: 1,
   },
 });

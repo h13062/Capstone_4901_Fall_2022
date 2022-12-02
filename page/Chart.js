@@ -72,7 +72,7 @@ export default function Chart({ isDarkGlobal }) {
             />
           </View>
         </View>
-        <Navbar />
+        <Navbar isDarkGlobal={isDarkGlobal} />
       </SafeAreaView>
     </>
   );
