@@ -29,22 +29,22 @@ export default function Chart({ isDarkGlobal }) {
     color: () => `rgba(255, 255, 255, 1)`,
     barPercentage: 0.8,
   };
+
+  const chartWrapper = isDarkGlobal
+    ? styles.chartWrapper_light
+    : styles.chartWrapper_dark;
+
+  const chartConfig = isDarkGlobal ? chartConfigLight : chartConfigDark;
+
+  const headerText = isDarkGlobal
+    ? styles.headerText_light
+    : styles.headerText_dark;
   return (
     <>
       <SafeAreaView style={styles.allChartWrapper}>
-        <View
-          style={
-            isDarkGlobal ? styles.chartWrapper_light : styles.chartWrapper_dark
-          }
-        >
+        <View style={chartWrapper}>
           <View>
-            <Text
-              style={
-                isDarkGlobal ? styles.headerText_light : styles.headerText_dark
-              }
-            >
-              Chart
-            </Text>
+            <Text style={headerText}>Chart</Text>
           </View>
           <View style={styles.chartViewWrapper}>
             <BarChart
@@ -65,7 +65,7 @@ export default function Chart({ isDarkGlobal }) {
               }}
               width={Dimensions.get('window').width * 0.9}
               height={Dimensions.get('window').height * 0.6}
-              chartConfig={isDarkGlobal ? chartConfigLight : chartConfigDark}
+              chartConfig={chartConfig}
               withInnerLines={false}
               fromZero={true}
               showBarTops={false}

@@ -69,25 +69,20 @@ export default function BabyProfiles({ isDarkGlobal }) {
   //     );
   //   };
 
+  const profileWrapper = isDarkGlobal
+    ? styles.profileWrapper_light
+    : styles.profileWrapper_dark;
+
+  const headerText = isDarkGlobal
+    ? styles.headerText_light
+    : styles.headerText_dark;
   return (
     <>
       <SafeAreaView style={styles.allProfileWrapper}>
         {/* Acitivity header */}
-        <View
-          style={
-            isDarkGlobal
-              ? styles.profileWrapper_light
-              : styles.profileWrapper_dark
-          }
-        >
+        <View style={profileWrapper}>
           <View>
-            <Text
-              style={
-                isDarkGlobal ? styles.headerText_light : styles.headerText_dark
-              }
-            >
-              Baby Profile
-            </Text>
+            <Text style={headerText}>Baby Profile</Text>
           </View>
 
           {/* Task view */}

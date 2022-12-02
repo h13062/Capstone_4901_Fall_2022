@@ -78,25 +78,20 @@ export default function Activity({ isDarkGlobal }) {
     ]);
   };
 
+  const activityWrapper = isDarkGlobal
+    ? styles.activityWrapper_light
+    : styles.activityWrapper_dark;
+
+  const headerText = isDarkGlobal
+    ? styles.headerText_light
+    : styles.headerText_dark;
   return (
     <>
       <SafeAreaView style={styles.allAcivityWrapper}>
         {/* Acitivity header */}
-        <View
-          style={
-            isDarkGlobal
-              ? styles.activityWrapper_light
-              : styles.activityWrapper_dark
-          }
-        >
+        <View style={activityWrapper}>
           <View>
-            <Text
-              style={
-                isDarkGlobal ? styles.headerText_light : styles.headerText_dark
-              }
-            >
-              Activity Tracking
-            </Text>
+            <Text style={headerText}>Activity Tracking</Text>
           </View>
 
           {/* Task view */}

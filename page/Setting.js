@@ -39,31 +39,29 @@ export default function Setting({
   const handleTempMetric = () => {
     setIsTempMetric(!isTempMetric);
   };
+
+  const settingWrapper = isDarkGlobal
+    ? styles.settingWrapper_light
+    : styles.settingWrapper_dark;
+
+  const headerText = isDarkGlobal
+    ? styles.headerText_light
+    : styles.headerText_dark;
+
+  const toggleStyle = isDarkGlobal
+    ? styles.toggleStyle_light
+    : styles.toggleStyle_dark;
+
+  const tabText = isDarkGlobal ? styles.tabText_light : styles.tabText_dark;
   return (
     <>
       <SafeAreaView style={styles.allSettingWrapper}>
-        <View
-          style={
-            isDarkGlobal
-              ? styles.settingWrapper_light
-              : styles.settingWrapper_dark
-          }
-        >
+        <View style={settingWrapper}>
           <View>
-            <Text
-              style={
-                isDarkGlobal ? styles.headerText_light : styles.headerText_dark
-              }
-            >
-              Setting
-            </Text>
+            <Text style={headerText}>Setting</Text>
           </View>
           <View style={styles.tabStyle}>
-            <Text
-              style={isDarkGlobal ? styles.tabText_light : styles.tabText_dark}
-            >
-              Dark mode
-            </Text>
+            <Text style={tabText}>Dark mode</Text>
             <CheckBox
               style={styles.CheckBox}
               value={!isDarkGlobal}
@@ -72,40 +70,24 @@ export default function Setting({
             />
           </View>
           <View style={styles.tabStyle}>
-            <Text
-              style={isDarkGlobal ? styles.tabText_light : styles.tabText_dark}
-            >
-              Unit
-            </Text>
+            <Text style={tabText}>Unit</Text>
             <ToggleButton
               primaryText="cm/kg/ml"
               secondaryText="inch/lb/oz"
               activeButtonStyle={styles.toggleActive}
               activeTextStyle={styles.toggleTextActive}
-              style={
-                isDarkGlobal
-                  ? styles.toggleStyle_light
-                  : styles.toggleStyle_dark
-              }
+              style={toggleStyle}
               onPress={handleUnitMetric}
             />
           </View>
           <View style={styles.tabStyle}>
-            <Text
-              style={isDarkGlobal ? styles.tabText_light : styles.tabText_dark}
-            >
-              Temperature
-            </Text>
+            <Text style={tabText}>Temperature</Text>
             <ToggleButton
               primaryText="C°"
               secondaryText="F°"
               activeButtonStyle={styles.toggleActive}
               activeTextStyle={styles.toggleTextActive}
-              style={
-                isDarkGlobal
-                  ? styles.toggleStyle_light
-                  : styles.toggleStyle_dark
-              }
+              style={toggleStyle}
               onPress={handleTempMetric}
             />
           </View>
