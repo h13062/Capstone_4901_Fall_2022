@@ -17,6 +17,7 @@ namespace BabyTracker.Infrastructure.Repository
         {
             _db = db;
         }
+
         public async Task<Parent> GetByNameAsync(string name)
         {
             return await _db.Set<Parent>().FirstOrDefaultAsync(a => a.ParentName == name);
