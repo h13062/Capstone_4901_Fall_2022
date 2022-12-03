@@ -14,19 +14,28 @@ namespace BabyTracker.Infrastructure.Repository
     public class AccountRepositoryAsync : BaseRepository<SignUpModel>, IAccountRepositoryAsync
     {
         private readonly UserManager<ApplicationUser> _userManager;
-        public AccountRepositoryAsync(BabyTrackerDbContext db,UserManager<ApplicationUser> userManager) : base(db)
+        private readonly SignInManager<ApplicationUser> _signInManager;
+        public AccountRepositoryAsync(BabyTrackerDbContext db,UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, IParentRepositoryAsync parentRepositoryAsync) : base(db)
         {
             _userManager = userManager;
+            _signInManager = signInManager;
+        }
+
+        public async Task<SignInResult> SignIn(LoginModel login)
+        {
+            return await _signInManager.PasswordSignInAsync(login.UserName, login.Password, false, false);
         }
 
         public async Task<IdentityResult> SignUpAsync(SignUpModel model)
         {
             ApplicationUser user = new ApplicationUser();
+
             user.FirstName = model.FirstName;
             user.LastName =  model.LastName;
             user.Email = model.EmailId;
             user.UserName = model.EmailId;
-           return await _userManager.CreateAsync(user,model.Password);
+
+            return await _userManager.CreateAsync(user,model.Password);
         }
     }
 }

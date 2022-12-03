@@ -10,11 +10,11 @@ namespace BabyTracker.Core.Contract.Service
     public  interface IParentServiceAsync
     {
       
-        Task<IEnumerable<ParentModel>> GetAllAsync();
-        Task<int> AddParentAsync(ParentModel parent);
-        Task<ParentModel> GetByIdAsync(int id);
-        Task<ParentModel> GetByNameAsync(string name);
-        Task<int> UpdateParentAsync(ParentModel parent);
+        Task<IEnumerable<ParentResponseModel>> GetAllAsync();
+        Task<int> AddParentAsync(ParentRequestModel parent);
+        Task<ParentResponseModel> GetByIdAsync(int id);
+        Task<ParentResponseModel> GetByNameAsync(string name);
+        Task<int> UpdateParentAsync(ParentRequestModel parent);
         Task<int?> DeleteByIdAsync(int id);
     }
 }

@@ -15,7 +15,7 @@ namespace BabyTracker.Infrastructure.Data
         {
 
         }
-
+ 
         public DbSet<Baby> Babys { get; set; }
 
         public DbSet<BabySitter> BabySitters { get; set; }

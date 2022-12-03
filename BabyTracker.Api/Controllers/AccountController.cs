@@ -1,6 +1,12 @@
 ﻿using BabyTracker.Core.Contract.Service;
 using BabyTracker.Core.Model;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
 
 namespace BabyTracker.Api.Controllers
 {
@@ -10,7 +16,7 @@ namespace BabyTracker.Api.Controllers
     {
         private readonly IAccountServiceAsync _accountServiceAsync;
         private readonly IConfiguration _configuration;
-
+        private readonly IParentServiceAsync _parentServiceAsync;
         public AccountController(IAccountServiceAsync accountServiceAsync, IConfiguration configuration)
         {
             _accountServiceAsync = accountServiceAsync;
@@ -21,10 +27,37 @@ namespace BabyTracker.Api.Controllers
         [Route("signup")]
         public async Task<IActionResult> SignUp([FromBody]SignUpModel model)
         { 
-            var result = await _accountServiceAsync.SignUpAsync(model);
-            if (result.Succeeded)
-                return Ok(result.Succeeded);
+            var result1 = await _accountServiceAsync.SignUpAsync(model);
+
+            if (result1.Succeeded)
+                return Ok(result1.Succeeded);
             return Unauthorized();
+        }
+
+        [HttpPost]
+        [Route("login")]
+        public async Task<IActionResult> Login(LoginModel model)
+        {
+            var result = await _accountServiceAsync.SignInAsync(model);
+            if (!result.Succeeded)
+            {
+                return Unauthorized();
+            }
+            var authClaims = new List<Claim>
+            {
+                new Claim(ClaimTypes.Name, model.UserName),
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+            };
+            var authKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:Secret"]));
+            var token = new JwtSecurityToken(
+                issuer: _configuration["JWT:ValidIssuer"],
+                audience: _configuration["JWT:ValidAudience"],
+                expires: DateTime.Now.AddMinutes(20),
+                claims: authClaims,
+                signingCredentials: new SigningCredentials(authKey, SecurityAlgorithms.HmacSha256Signature)
+            );
+            var h = new { jwt = new JwtSecurityTokenHandler().WriteToken(token) };
+            return Ok(h);
         }
     }
 }
