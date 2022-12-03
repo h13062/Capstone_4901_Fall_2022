@@ -13,20 +13,19 @@ namespace BabyTracker.Infrastructure.Service
     public class ParentServiceAsync : IParentServiceAsync
     {
         private readonly IParentRepositoryAsync _parentRepositoryAsync;
-        private readonly IBabyRepositoryAsync _babyRepositoryAsync;
-        public ParentServiceAsync(IParentRepositoryAsync par, IBabyRepositoryAsync babyRepositoryAsync)
+        public ParentServiceAsync(IParentRepositoryAsync parentRepositoryAsync)
         {
-           _parentRepositoryAsync = par;
-            _babyRepositoryAsync = babyRepositoryAsync;
-
+           _parentRepositoryAsync = parentRepositoryAsync;
         }
 
         public async Task<int> AddParentAsync(ParentRequestModel parent)
         {
             Parent p = new Parent();
             p.Id = parent.Id;
-            p.ParentName = parent.FirstName + " " + parent.LastName;
+            p.Name = parent.FirstName + " " + parent.LastName;
+            p.Email = parent.Email;
             p.BabyId = parent.BabyId;
+
             return await _parentRepositoryAsync.InsertAsync(p);
         }
 
@@ -45,10 +44,11 @@ namespace BabyTracker.Infrastructure.Service
                 {
                     ParentResponseModel model = new ParentResponseModel();
                     model.Id = item.Id;
-                    model.Name = item.ParentName;
+                    model.Name = item.Name;
+                    model.Email = item.Email;
                     var par = await _parentRepositoryAsync.GetByIdAsync(item.BabyId);
                     model.BabyId = par.BabyId;
-
+                    
                     result.Add(model);
                 }
                 return result;
@@ -64,9 +64,11 @@ namespace BabyTracker.Infrastructure.Service
             {
                 ParentResponseModel model = new ParentResponseModel();
                 model.Id = item.Id;
-                model.Name = item.ParentName;
+                model.Name = item.Name;
+                model.Email = item.Email;
                 var par = await _parentRepositoryAsync.GetByIdAsync(item.BabyId);
                 model.BabyId = par.BabyId;
+                
                 return model;
             }
             return null;
@@ -79,9 +81,11 @@ namespace BabyTracker.Infrastructure.Service
             {
                 ParentResponseModel model = new ParentResponseModel();
                 model.Id = item.Id;
-                model.Name = item.ParentName;
+                model.Name = item.Name;
+                model.Email = item.Email;
                 var par = await _parentRepositoryAsync.GetByIdAsync(item.BabyId);
                 model.BabyId = par.BabyId;
+
                 return model;
             }
             return null;
@@ -91,8 +95,10 @@ namespace BabyTracker.Infrastructure.Service
         {
             Parent p = new Parent();
             p.Id = parent.Id;
-            p.ParentName = parent.FirstName + " " + parent.LastName;
+            p.Name = parent.FirstName + " " + parent.LastName;
             p.BabyId = parent.BabyId;
+            p.Email = parent.Email;
+
             return await _parentRepositoryAsync.UpdateAsync(p);
         }
     }

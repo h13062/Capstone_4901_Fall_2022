@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace BabyTracker.Infrastructure.Migrations
 {
-    public partial class identityuseradded : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -48,6 +48,68 @@ namespace BabyTracker.Infrastructure.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Babys",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
+                    Gender = table.Column<string>(type: "varchar(10)", maxLength: 10, nullable: false),
+                    DateOfBirth = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Weight = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Babys", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "EatActivities",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Day = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    EatStart = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    EatEnd = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_EatActivities", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "PlayActivities",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Day = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    PlayStart = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    PlayEnd = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_PlayActivities", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "SleepActivities",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Day = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    SleepStart = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    SleepEnd = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    SleepDuration = table.Column<TimeSpan>(type: "time", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_SleepActivities", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -156,6 +218,47 @@ namespace BabyTracker.Infrastructure.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "BabySitters",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    BabySitterName = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
+                    BabyId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_BabySitters", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_BabySitters_Babys_BabyId",
+                        column: x => x.BabyId,
+                        principalTable: "Babys",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Parents",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
+                    Email = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
+                    BabyId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Parents", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Parents_Babys_BabyId",
+                        column: x => x.BabyId,
+                        principalTable: "Babys",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -194,6 +297,16 @@ namespace BabyTracker.Infrastructure.Migrations
                 column: "NormalizedUserName",
                 unique: true,
                 filter: "[NormalizedUserName] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_BabySitters_BabyId",
+                table: "BabySitters",
+                column: "BabyId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Parents_BabyId",
+                table: "Parents",
+                column: "BabyId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -214,10 +327,28 @@ namespace BabyTracker.Infrastructure.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
+                name: "BabySitters");
+
+            migrationBuilder.DropTable(
+                name: "EatActivities");
+
+            migrationBuilder.DropTable(
+                name: "Parents");
+
+            migrationBuilder.DropTable(
+                name: "PlayActivities");
+
+            migrationBuilder.DropTable(
+                name: "SleepActivities");
+
+            migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "Babys");
         }
     }
 }

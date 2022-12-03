@@ -16,6 +16,11 @@ namespace BabyTracker.Core.Model
         [Column(TypeName = "varchar")]
         [MaxLength(50)]
         public string Name { get; set; }
+
+        [Column(TypeName = "varchar")]
+        [MaxLength(50)]
+        public string Email { get; set; }
+
         public int BabyId { get; set; }
 
     }

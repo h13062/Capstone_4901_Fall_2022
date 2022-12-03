@@ -180,7 +180,12 @@ namespace BabyTracker.Infrastructure.Migrations
                     b.Property<int>("BabyId")
                         .HasColumnType("int");
 
-                    b.Property<string>("ParentName")
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("varchar(50)");
