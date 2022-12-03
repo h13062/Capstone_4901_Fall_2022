@@ -17,9 +17,7 @@ const BabyBox = (props) => {
             alignItems: 'flex-end',
           }}
         >
-          <Text style={{ color: '#fff', fontSize: 30, fontWeight: 'bold' }}>
-            &#10095;
-          </Text>
+          <Text style={styles.arrow}>&#10095;</Text>
         </View>
       </View>
     </>
@@ -43,10 +41,18 @@ const styles = StyleSheet.create({
   text: {
     color: '#fff',
     fontSize: 30,
+    opacity: 0.87,
   },
   subtext: {
     color: '#fff',
     fontSize: 15,
+    opacity: 0.87,
+  },
+  arrow: {
+    color: '#fff',
+    fontSize: 30,
+    fontWeight: 'bold',
+    opacity: 0.87,
   },
 });
 

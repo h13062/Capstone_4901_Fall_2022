@@ -109,7 +109,7 @@ export default function BabyProfiles({ isDarkGlobal }) {
             </View>
           </ScrollView>
 
-          {/* <View style={styles.buttonsWrapper}>
+          <View style={styles.buttonsWrapper}>
             <TouchableOpacity
               style={styles.addButton}
               onPress={() => navigation.navigate('BabyInfo')}
@@ -118,7 +118,7 @@ export default function BabyProfiles({ isDarkGlobal }) {
                 <Text style={styles.buttonText}>+</Text>
               </View>
             </TouchableOpacity>
-          </View> */}
+          </View>
         </View>
         <Navbar isDarkGlobal={isDarkGlobal} />
       </SafeAreaView>
@@ -130,8 +130,6 @@ const styles = StyleSheet.create({
   allProfileWrapper: {
     width: '100%',
     height: '100%',
-    flexDirection: 'column',
-    paddingHorizontal: 0,
   },
   profileWrapper_light: {
     width: '100%',
@@ -140,6 +138,7 @@ const styles = StyleSheet.create({
     paddingTop: 25,
     paddingHorizontal: 25,
     flex: 10,
+    paddingBottom: 25,
   },
   profileWrapper_dark: {
     width: '100%',
@@ -148,7 +147,8 @@ const styles = StyleSheet.create({
     paddingTop: 25,
     paddingHorizontal: 25,
     flex: 10,
-    backgroundColor: '#000',
+    backgroundColor: '#121212',
+    paddingBottom: 25,
   },
   headerWrapper: {
     flexDirection: 'row',
@@ -165,6 +165,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     textAlign: 'center',
     color: '#fff',
+    opacity: 0.87,
   },
   scrollWrapper: {
     marginTop: 25,
@@ -176,7 +177,7 @@ const styles = StyleSheet.create({
   addButton: {
     width: 80,
     height: 80,
-    backgroundColor: 'blue',
+    backgroundColor: '#cca558',
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 100,
@@ -186,5 +187,6 @@ const styles = StyleSheet.create({
   buttonText: {
     color: '#fff',
     fontSize: 30,
+    opacity: 0.87,
   },
 });

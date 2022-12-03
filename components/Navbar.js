@@ -12,19 +12,15 @@ export default function Navbar({ isDarkGlobal }) {
     setIsDark(!isDarkGlobal);
   }, [isDarkGlobal]);
 
-  const navWrapper = isDarkGlobal
-    ? styles.navWrapper_light
-    : styles.navWrapper_dark;
-
   const navButtonWrapper = isDarkGlobal
     ? styles.navButtonWrapper_light
     : styles.navButtonWrapper_dark;
 
-  const color = isDarkGlobal ? '#000' : '#fff';
+  const color = isDarkGlobal ? '#000' : '`rgba(255, 255, 255, 0.87)`';
   return (
     <>
       {/* Nav bar */}
-      <View style={navWrapper}>
+      <View style={styles.navWrapper}>
         <TouchableOpacity
           style={navButtonWrapper}
           onPress={() => navigation.navigate('Activity')}
@@ -32,7 +28,7 @@ export default function Navbar({ isDarkGlobal }) {
           <View style={{ alignItems: 'center' }}>
             <Ionicons name="home" size={30} color={color} />
 
-            <Text style={{ color: color }}>Home</Text>
+            <Text style={{ color: color, opacity: 0.87 }}>Home</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity
@@ -41,7 +37,7 @@ export default function Navbar({ isDarkGlobal }) {
         >
           <View style={{ alignItems: 'center' }}>
             <Ionicons name="podium" size={30} color={color} />
-            <Text style={{ color: color }}>Chart</Text>
+            <Text style={{ color: color, opacity: 0.87 }}>Chart</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity
@@ -50,7 +46,7 @@ export default function Navbar({ isDarkGlobal }) {
         >
           <View style={{ alignItems: 'center' }}>
             <Ionicons name="person-circle-outline" size={30} color={color} />
-            <Text style={{ color: color }}>Babies</Text>
+            <Text style={{ color: color, opacity: 0.87 }}>Babies</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity
@@ -59,7 +55,7 @@ export default function Navbar({ isDarkGlobal }) {
         >
           <View style={{ alignItems: 'center' }}>
             <Ionicons name="settings-outline" size={30} color={color} />
-            <Text style={{ color: color }}>Settings</Text>
+            <Text style={{ color: color, opacity: 0.87 }}>Settings</Text>
           </View>
         </TouchableOpacity>
       </View>
@@ -68,21 +64,11 @@ export default function Navbar({ isDarkGlobal }) {
 }
 
 const styles = StyleSheet.create({
-  navWrapper_light: {
+  navWrapper: {
     width: '100%',
     height: '100%',
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#D9D9D9',
-    justifyContent: 'space-around',
-    flex: 1,
-  },
-  navWrapper_dark: {
-    width: '100%',
-    height: '100%',
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: '#595959',
     justifyContent: 'space-around',
     flex: 1,
   },
@@ -92,7 +78,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     flex: 1,
-    paddingHorizontal: 1,
+    backgroundColor: '#D9D9D9',
   },
   navButtonWrapper_dark: {
     width: '100%',
@@ -100,6 +86,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     flex: 1,
-    paddingHorizontal: 1,
+    backgroundColor: '#595959',
   },
 });

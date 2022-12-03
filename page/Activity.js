@@ -108,19 +108,31 @@ export default function Activity({ isDarkGlobal }) {
                 style={{ marginBottom: 25 }}
                 onPress={() => navigation.navigate('Stopwatch')}
               >
-                <Task text="Sleeping" />
+                <Task
+                  text="Sleeping"
+                  isDarkGlobal={isDarkGlobal}
+                  icon="moon-outline"
+                />
               </TouchableOpacity>
               <TouchableOpacity
                 style={{ marginBottom: 25 }}
                 onPress={() => navigation.navigate('Stopwatch')}
               >
-                <Task text="Eating" />
+                <Task
+                  text="Eating"
+                  isDarkGlobal={isDarkGlobal}
+                  icon="nutrition-outline"
+                />
               </TouchableOpacity>
               <TouchableOpacity
                 style={{ marginBottom: 25 }}
                 onPress={() => navigation.navigate('Stopwatch')}
               >
-                <Task text="Playing" />
+                <Task
+                  text="Playing"
+                  isDarkGlobal={isDarkGlobal}
+                  icon="tennisball-outline"
+                />
               </TouchableOpacity>
               {taskItems.map((item, index) => {
                 return (
@@ -173,8 +185,6 @@ const styles = StyleSheet.create({
   allAcivityWrapper: {
     width: '100%',
     height: '100%',
-    flexDirection: 'column',
-    paddingHorizontal: 0,
   },
   activityWrapper_light: {
     width: '100%',
@@ -191,7 +201,7 @@ const styles = StyleSheet.create({
     flex: 10,
     paddingTop: 25,
     paddingHorizontal: 25,
-    backgroundColor: '#000',
+    backgroundColor: '#121212',
   },
   backText: {
     fontSize: 15,
@@ -207,6 +217,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     textAlign: 'center',
     color: '#fff',
+    opacity: 0.87,
   },
   rightSide: {
     flex: 1,

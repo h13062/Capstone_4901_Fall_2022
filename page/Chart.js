@@ -21,12 +21,12 @@ export default function Chart({ isDarkGlobal }) {
   };
   const chartConfigDark = {
     fillShadowGradientFrom: '#fff',
-    fillShadowGradientFromOpacity: 1,
+    fillShadowGradientFromOpacity: 0.87,
     fillShadowGradientTo: '#fff',
-    fillShadowGradientToOpacity: 1,
+    fillShadowGradientToOpacity: 0.87,
     backgroundGradientFromOpacity: 0,
     backgroundGradientToOpacity: 0,
-    color: () => `rgba(255, 255, 255, 1)`,
+    color: () => `rgba(255, 255, 255, 0.87)`,
     barPercentage: 0.8,
   };
 
@@ -59,7 +59,7 @@ export default function Chart({ isDarkGlobal }) {
                 ],
                 datasets: [
                   {
-                    data: [20, 45, 28, 80, 99, 43],
+                    data: [20, 45, 28, 80, 100, 43],
                   },
                 ],
               }}
@@ -82,8 +82,6 @@ const styles = StyleSheet.create({
   allChartWrapper: {
     width: '100%',
     height: '100%',
-    flexDirection: 'column',
-    paddingHorizontal: 0,
   },
   chartWrapper_light: {
     width: '100%',
@@ -100,7 +98,7 @@ const styles = StyleSheet.create({
     paddingTop: 25,
     paddingHorizontal: 25,
     flex: 10,
-    backgroundColor: '#000',
+    backgroundColor: '#121212',
   },
   headerText_light: {
     fontWeight: 'bold',
@@ -112,6 +110,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     textAlign: 'center',
     color: '#fff',
+    opacity: 0.87,
   },
   chartViewWrapper: {
     width: '100%',

@@ -27,7 +27,6 @@ export default function Setting({
   setIsTempMetric,
   isTempMetric,
 }) {
-  // const [isDark, setIsDark] = useState(true);
   const handleDarkMode = () => {
     setIsDarkGlobal(!isDarkGlobal);
   };
@@ -53,6 +52,15 @@ export default function Setting({
     : styles.toggleStyle_dark;
 
   const tabText = isDarkGlobal ? styles.tabText_light : styles.tabText_dark;
+
+  const toggleActive = isDarkGlobal
+    ? styles.toggleActive_light
+    : styles.toggleActive_dark;
+
+  const toggleTextActive = isDarkGlobal
+    ? styles.toggleTextActive_light
+    : styles.toggleTextActive_dark;
+
   return (
     <>
       <SafeAreaView style={styles.allSettingWrapper}>
@@ -66,7 +74,7 @@ export default function Setting({
               style={styles.CheckBox}
               value={!isDarkGlobal}
               onValueChange={handleDarkMode}
-              color={isDarkGlobal ? '#6082B6' : undefined}
+              color={'#6082B6'}
             />
           </View>
           <View style={styles.tabStyle}>
@@ -74,8 +82,8 @@ export default function Setting({
             <ToggleButton
               primaryText="cm/kg/ml"
               secondaryText="inch/lb/oz"
-              activeButtonStyle={styles.toggleActive}
-              activeTextStyle={styles.toggleTextActive}
+              activeButtonStyle={toggleActive}
+              activeTextStyle={toggleTextActive}
               style={toggleStyle}
               onPress={handleUnitMetric}
             />
@@ -85,8 +93,8 @@ export default function Setting({
             <ToggleButton
               primaryText="C°"
               secondaryText="F°"
-              activeButtonStyle={styles.toggleActive}
-              activeTextStyle={styles.toggleTextActive}
+              activeButtonStyle={toggleActive}
+              activeTextStyle={toggleTextActive}
               style={toggleStyle}
               onPress={handleTempMetric}
             />
@@ -95,9 +103,6 @@ export default function Setting({
         <Navbar isDarkGlobal={isDarkGlobal} />
       </SafeAreaView>
     </>
-    // <TouchableOpacity style={{ backgroundColor: colors.card }}>
-    //   <Text style={{ color: colors.text }}>Button!</Text>
-    // </TouchableOpacity>
   );
 }
 
@@ -105,8 +110,6 @@ const styles = StyleSheet.create({
   allSettingWrapper: {
     width: '100%',
     height: '100%',
-    flexDirection: 'column',
-    paddingHorizontal: 0,
   },
   settingWrapper_light: {
     width: '100%',
@@ -123,7 +126,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 25,
     // marginBottom: 25,
     flex: 10,
-    backgroundColor: '#000',
+    backgroundColor: '#121212',
   },
   headerText_light: {
     fontWeight: 'bold',
@@ -137,6 +140,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginBottom: 25,
     color: '#fff',
+    opacity: 0.87,
   },
   tabStyle: {
     flexDirection: 'row',
@@ -160,11 +164,19 @@ const styles = StyleSheet.create({
   toggleInactive: {
     borderWidth: 0,
   },
-  toggleActive: {
+  toggleActive_light: {
+    backgroundColor: '#b4cbed',
+    borderWidth: 0,
+  },
+  toggleActive_dark: {
     backgroundColor: '#6082B6',
     borderWidth: 0,
   },
-  toggleTextActive: {
+  toggleTextActive_light: {
+    color: '#355382',
+  },
+  toggleTextActive_dark: {
     color: '#fff',
+    opacity: 0.87,
   },
 });
