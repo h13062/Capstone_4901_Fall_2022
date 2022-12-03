@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   StyleSheet,
   Text,
@@ -21,6 +21,18 @@ const Register = () => {
   const [agree, setAgree] = useState(false);
   const navigation = useNavigation();
 
+  const registerOnPressHandler = () => {
+    console.log("On submit object:", {
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      password: password,
+      confirmPassword: confirmPassword,
+    });
+
+    // navigation.navigate("BabyInfo");
+  };
+
   return (
     <View style={styles.container}>
       <Image
@@ -36,48 +48,55 @@ const Register = () => {
         <TextInput
           style={styles.TextInput}
           placeholder="Please enter your first name"
-          placeholderTextColor="#003f5c"
           onChangeText={(e) => {
-            console.log("First Name", { e });
+            setFirstName(e);
           }}
+          value={firstName}
         />
       </View>
       <View style={styles.inputView}>
         <TextInput
           style={styles.TextInput}
-          placeholder="Full name"
-          placeholderTextColor="#003f5c"
-          onsetEmail={setFullname}
+          placeholder="Please enter your last name"
+          onChangeText={(e) => {
+            setLastName(e);
+          }}
+          value={lastName}
         />
       </View>
-
       <View style={styles.inputView}>
         <TextInput
           style={styles.TextInput}
-          placeholder="Full name"
-          placeholderTextColor="#003f5c"
-          onsetEmail={setFullname}
+          placeholder="Please enter your email"
+          onChangeText={(e) => {
+            setEmail(e);
+          }}
+          value={email}
         />
       </View>
-
       <View style={styles.inputView}>
         <TextInput
           style={styles.TextInput}
-          placeholder="Password"
-          placeholderTextColor="#003f5c"
-          onsetPassword={setPassword}
+          placeholder="Please enter your password"
+          onChangeText={(e) => {
+            setPassword(e);
+          }}
+          value={password}
           secureTextEntry={true}
         />
       </View>
       <View style={styles.inputView}>
         <TextInput
           style={styles.TextInput}
-          placeholder="Confirm Password"
-          placeholderTextColor="#003f5c"
-          onsetPassword={setConfirmPassword}
+          placeholder="Please confirm your password"
+          onChangeText={(e) => {
+            setConfirmPassword(e);
+          }}
+          value={confirmPassword}
           secureTextEntry={true}
         />
       </View>
+
       <View style={styles.wrapper}>
         <CheckBox
           value={agree}
@@ -91,7 +110,7 @@ const Register = () => {
 
       <TouchableOpacity
         style={styles.registerBtn}
-        onPress={() => navigation.navigate("BabyInfo")}
+        onPress={registerOnPressHandler}
       >
         <Text style={styles.registerText}>REGISTER</Text>
       </TouchableOpacity>
