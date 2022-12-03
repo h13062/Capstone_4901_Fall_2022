@@ -16,63 +16,117 @@ import { useTheme } from '@react-navigation/native';
 import { useState } from 'react';
 import Navbar from '../components/Navbar';
 import CheckBox from 'expo-checkbox';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import ToggleButton from 'react-native-toggle-button';
 
-export default function Setting() {
-  const [isDark, setIsDark] = useState(true);
-  // const [theme, setTheme] = useState(Appearance.getColorScheme)
+export default function Setting({
+  setIsDarkGlobal,
+  isDarkGlobal,
+  setIsUnitMetric,
+  isUnitMetric,
+  setIsTempMetric,
+  isTempMetric,
+}) {
   const handleDarkMode = () => {
-    setIsDark(!isDark);
+    setIsDarkGlobal(!isDarkGlobal);
   };
+
+  const handleUnitMetric = () => {
+    setIsUnitMetric(!isUnitMetric);
+  };
+
+  const handleTempMetric = () => {
+    setIsTempMetric(!isTempMetric);
+  };
+
+  const settingWrapper = isDarkGlobal
+    ? styles.settingWrapper_light
+    : styles.settingWrapper_dark;
+
+  const headerText = isDarkGlobal
+    ? styles.headerText_light
+    : styles.headerText_dark;
+
+  const toggleStyle = isDarkGlobal
+    ? styles.toggleStyle_light
+    : styles.toggleStyle_dark;
+
+  const tabText = isDarkGlobal ? styles.tabText_light : styles.tabText_dark;
+
+  const toggleActive = isDarkGlobal
+    ? styles.toggleActive_light
+    : styles.toggleActive_dark;
+
+  const toggleTextActive = isDarkGlobal
+    ? styles.toggleTextActive_light
+    : styles.toggleTextActive_dark;
+
   return (
     <>
-      <View
-        style={
-          isDark ? styles.settingWrapper_light : styles.settingWrapper_dark
-        }
-      >
-        <View>
-          <Text
-            style={isDark ? styles.headerText_light : styles.headerText_dark}
-          >
-            Setting
-          </Text>
+      <SafeAreaView style={styles.allSettingWrapper}>
+        <View style={settingWrapper}>
+          <View>
+            <Text style={headerText}>Setting</Text>
+          </View>
+          <View style={styles.tabStyle}>
+            <Text style={tabText}>Dark mode</Text>
+            <CheckBox
+              style={styles.CheckBox}
+              value={!isDarkGlobal}
+              onValueChange={handleDarkMode}
+              color={'#6082B6'}
+            />
+          </View>
+          <View style={styles.tabStyle}>
+            <Text style={tabText}>Unit</Text>
+            <ToggleButton
+              primaryText="cm/kg/ml"
+              secondaryText="inch/lb/oz"
+              activeButtonStyle={toggleActive}
+              activeTextStyle={toggleTextActive}
+              style={toggleStyle}
+              onPress={handleUnitMetric}
+            />
+          </View>
+          <View style={styles.tabStyle}>
+            <Text style={tabText}>Temperature</Text>
+            <ToggleButton
+              primaryText="C°"
+              secondaryText="F°"
+              activeButtonStyle={toggleActive}
+              activeTextStyle={toggleTextActive}
+              style={toggleStyle}
+              onPress={handleTempMetric}
+            />
+          </View>
         </View>
-        <View style={styles.tabStyle}>
-          <Text style={isDark ? { color: '#000' } : { color: '#fff' }}>
-            Dark mode
-          </Text>
-          <CheckBox
-            style={styles.CheckBox}
-            value={!isDark}
-            onValueChange={handleDarkMode}
-            color={isDark ? '#4630EB' : undefined}
-          />
-        </View>
-      </View>
-      <Navbar />
+        <Navbar isDarkGlobal={isDarkGlobal} />
+      </SafeAreaView>
     </>
-    // <TouchableOpacity style={{ backgroundColor: colors.card }}>
-    //   <Text style={{ color: colors.text }}>Button!</Text>
-    // </TouchableOpacity>
   );
 }
 
 const styles = StyleSheet.create({
+  allSettingWrapper: {
+    width: '100%',
+    height: '100%',
+  },
   settingWrapper_light: {
     width: '100%',
     height: '100%',
-    padding: 25,
-    paddingTop: 40,
+    paddingTop: 25,
+    paddingHorizontal: 25,
+    // marginBottom: 25,
     flex: 10,
-    backgroundColor: '#fff',
   },
   settingWrapper_dark: {
     width: '100%',
     height: '100%',
-    padding: 25,
-    paddingTop: 40,
+    paddingTop: 25,
+    paddingHorizontal: 25,
+    // marginBottom: 25,
     flex: 10,
-    backgroundColor: '#000',
+    backgroundColor: '#121212',
   },
   headerText_light: {
     fontWeight: 'bold',
@@ -86,9 +140,43 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginBottom: 25,
     color: '#fff',
+    opacity: 0.87,
   },
   tabStyle: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    marginBottom: 25,
+  },
+  tabText_light: {
+    color: '#000',
+    fontSize: 18,
+  },
+  tabText_dark: {
+    color: '#fff',
+    fontSize: 18,
+  },
+  toggleStyle_light: {
+    backgroundColor: '#e0dcdc',
+  },
+  toggleStyle_dark: {
+    backgroundColor: '#3b3939',
+  },
+  toggleInactive: {
+    borderWidth: 0,
+  },
+  toggleActive_light: {
+    backgroundColor: '#b4cbed',
+    borderWidth: 0,
+  },
+  toggleActive_dark: {
+    backgroundColor: '#6082B6',
+    borderWidth: 0,
+  },
+  toggleTextActive_light: {
+    color: '#355382',
+  },
+  toggleTextActive_dark: {
+    color: '#fff',
+    opacity: 0.87,
   },
 });
