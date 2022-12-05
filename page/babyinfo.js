@@ -9,80 +9,95 @@ import {
   Button,
   TouchableOpacity,
 } from "react-native";
-import { useNavigation } from '@react-navigation/native';
- 
-const BabyInfo = () =>{
-  const [BBFullname, setBBFullname] = useState("");
+import { useNavigation } from "@react-navigation/native";
+
+const BabyInfo = () => {
+  const [BaByFullname, setBaByFullname] = useState("");
   const [Gender, setGender] = useState("");
-  const [DOB, setDOB] = useState("");
+  const [DateOfBirth, setDateOfBirth] = useState("");
   const [Weight, setWeight] = useState("");
   const navigation = useNavigation();
- 
+
+  const babyInfoOnPressHandler = () => {
+    console.log("On submit object:", {
+      fullname: BaByFullname,
+      Gender: Gender,
+      DateOfBirth: DateOfBirth,
+      Weight: Weight,
+    });
+
+    navigation.navigate("Activity");
+  };
+
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
       <View>
-        <Text style={styles.title}>
-          Baby Information 
-        </Text>
+        <Text style={styles.title}>Baby Information</Text>
         <Text style={styles.sup_title}>
-            Provide us basic information of your child
+          Provide us basic information of your child
         </Text>
       </View>
       <View style={styles.inputView}>
         <TextInput
           style={styles.TextInput}
-          placeholder="Baby Full Name"
-          placeholderTextColor="#003f5c"
-          onsetEmail={setBBFullname}
-        
+          placeholder="Please enter the baby's fullname"
+          onChangeText={(e) => {
+            setBaByFullname(e);
+          }}
+          value={BaByFullname}
         />
       </View>
       <View style={styles.inputView}>
         <TextInput
           style={styles.TextInput}
-          placeholder="Gender"
-          placeholderTextColor="#003f5c"
-          onsetPassword={setGender}
-          secureTextEntry={true}
+          placeholder="Please enter the baby's gender"
+          onChangeText={(e) => {
+            setGender(e);
+          }}
+          value={Gender}
         />
       </View>
       <View style={styles.inputView}>
         <TextInput
           style={styles.TextInput}
-          placeholder="Date of Birth"
-          placeholderTextColor="#003f5c"
-          onsetEmail={setDOB}
-        
+          placeholder="Please enter the baby's date of birth"
+          onChangeText={(e) => {
+            setDateOfBirth(e);
+          }}
+          keyboardType="numeric"
+          value={DateOfBirth}
         />
       </View>
       <View style={styles.inputView}>
         <TextInput
           style={styles.TextInput}
-          placeholder="Weight (ib)"
-          placeholderTextColor="#003f5c"
-          onsetEmail={setWeight}
-        
+          placeholder="Please enter the baby's weight (ib)"
+          onChangeText={(e) => {
+            setWeight(e);
+          }}
+          keyboardType="numeric"
+          value={Weight}
         />
-      </View> 
-      <TouchableOpacity style={styles.NextBtn} onPress={() => navigation.navigate("Activity")}>
+      </View>
+      <TouchableOpacity style={styles.NextBtn} onPress={babyInfoOnPressHandler}>
         <Text style={styles.NextText}>NEXT</Text>
       </TouchableOpacity>
     </View>
   );
-}
+};
 export default BabyInfo;
 const styles = StyleSheet.create({
-  title:{
-    fontSize:40,
-    fontWeight:"0.5",
+  title: {
+    fontSize: 40,
+    fontWeight: "0.5",
     textAlign: "center",
   },
-  sup_title:{
+  sup_title: {
     alignSelf: "center",
     textAlign: "center",
-    width:300,
-    paddingBottom:10,
+    width: 300,
+    paddingBottom: 10,
   },
   container: {
     flex: 1,
@@ -96,9 +111,8 @@ const styles = StyleSheet.create({
     height: 40,
     marginBottom: 20,
     alignItems: "center",
-    
   },
- 
+
   TextInput: {
     height: 50,
     borderRadius: 10,
@@ -107,9 +121,8 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 10,
     marginLeft: 10,
-    borderColor: 'black',
+    borderColor: "black",
     borderWidth: 2,
-    
   },
   NextBtn: {
     width: 300,
@@ -118,11 +131,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     marginTop: 40,
-    backgroundColor: '#ff7f50',
-    
+    backgroundColor: "#ff7f50",
   },
   NextText: {
-    color:'white',
-    fontSize:20,
+    color: "white",
+    fontSize: 20,
   },
 });
