@@ -21,16 +21,67 @@ const Register = () => {
   const [agree, setAgree] = useState(false);
   const navigation = useNavigation();
 
-  const registerOnPressHandler = () => {
-    console.log("On submit object:", {
+  const registerOnSubmitHandler = (e) => {
+    // console.log("On submit object:", {
+    //   firstName: firstName,
+    //   lastName: lastName,
+    //   email: email,
+    //   password: password,
+    //   confirmPassword: confirmPassword,
+    // });
+    e.preventDefault();
+
+    // executeCreateUser(firstName, lastName, email, password, confirmPassword)
+    //   .then((res) => {
+    //     console.log("response from POST:", res);
+    //   })
+    //   .catch((err) => {
+    //     console.log("error:", err);
+    //   });
+    console.log("button clicked");
+
+    fetch("https://localhost:7290/api/Baby", {
+      method: "GET",
+    })
+      .then((res) => console.log("res status:", res.status))
+      .catch((err) => console.log("error:", err));
+
+    console.log("after fetch");
+    // navigation.navigate("BabyInfo");
+  };
+
+  const executeCreateUser = (
+    firstName,
+    lastName,
+    email,
+    password,
+    confirmPassword
+  ) => {
+    const UserInfo = {
       firstName: firstName,
       lastName: lastName,
       email: email,
       password: password,
       confirmPassword: confirmPassword,
-    });
+    };
 
-    // navigation.navigate("BabyInfo");
+    // return fetch("https://localhost:7290/api/Account/signup", {
+    //   headers: { "Content-Type": "application/json" },
+    //   medthod: "POST",
+    //   credential: "include",
+    // });
+
+    console.log("UserInfo", { UserInfo });
+
+    return fetch("api/Account/signup", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      // credentials: "include",
+      body: JSON.stringify(UserInfo),
+    });
   };
 
   return (
@@ -110,7 +161,7 @@ const Register = () => {
 
       <TouchableOpacity
         style={styles.registerBtn}
-        onPress={registerOnPressHandler}
+        onPress={registerOnSubmitHandler}
       >
         <Text style={styles.registerText}>REGISTER</Text>
       </TouchableOpacity>
