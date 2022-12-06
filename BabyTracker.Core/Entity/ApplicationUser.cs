@@ -12,5 +12,7 @@ namespace BabyTracker.Core.Entity
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
+        public int ParentId { get; set; }
+        public Parent Parent { get; set; }
     }
 }

@@ -23,7 +23,6 @@ namespace BabyTracker.Infrastructure.Service
             Parent p = new Parent();
             p.Id = parent.Id;
             p.Name = parent.FirstName + " " + parent.LastName;
-            p.Email = parent.Email;
             p.BabyId = parent.BabyId;
 
             return await _parentRepositoryAsync.InsertAsync(p);
@@ -45,7 +44,6 @@ namespace BabyTracker.Infrastructure.Service
                     ParentResponseModel model = new ParentResponseModel();
                     model.Id = item.Id;
                     model.Name = item.Name;
-                    model.Email = item.Email;
                     var par = await _parentRepositoryAsync.GetByIdAsync(item.BabyId);
                     model.BabyId = par.BabyId;
                     
@@ -65,7 +63,6 @@ namespace BabyTracker.Infrastructure.Service
                 ParentResponseModel model = new ParentResponseModel();
                 model.Id = item.Id;
                 model.Name = item.Name;
-                model.Email = item.Email;
                 var par = await _parentRepositoryAsync.GetByIdAsync(item.BabyId);
                 model.BabyId = par.BabyId;
                 
@@ -82,7 +79,6 @@ namespace BabyTracker.Infrastructure.Service
                 ParentResponseModel model = new ParentResponseModel();
                 model.Id = item.Id;
                 model.Name = item.Name;
-                model.Email = item.Email;
                 var par = await _parentRepositoryAsync.GetByIdAsync(item.BabyId);
                 model.BabyId = par.BabyId;
 
@@ -97,7 +93,6 @@ namespace BabyTracker.Infrastructure.Service
             p.Id = parent.Id;
             p.Name = parent.FirstName + " " + parent.LastName;
             p.BabyId = parent.BabyId;
-            p.Email = parent.Email;
 
             return await _parentRepositoryAsync.UpdateAsync(p);
         }

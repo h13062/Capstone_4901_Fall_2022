@@ -63,6 +63,9 @@ namespace BabyTracker.Infrastructure.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
+                    b.Property<int>("ParentId")
+                        .HasColumnType("int");
+
                     b.Property<string>("PasswordHash")
                         .HasColumnType("nvarchar(max)");
 
@@ -91,6 +94,8 @@ namespace BabyTracker.Infrastructure.Migrations
                         .IsUnique()
                         .HasDatabaseName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
+
+                    b.HasIndex("ParentId");
 
                     b.ToTable("AspNetUsers", (string)null);
                 });
@@ -179,11 +184,6 @@ namespace BabyTracker.Infrastructure.Migrations
 
                     b.Property<int>("BabyId")
                         .HasColumnType("int");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("varchar(50)");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -375,6 +375,17 @@ namespace BabyTracker.Infrastructure.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
+                });
+
+            modelBuilder.Entity("BabyTracker.Core.Entity.ApplicationUser", b =>
+                {
+                    b.HasOne("BabyTracker.Core.Entity.Parent", "Parent")
+                        .WithMany()
+                        .HasForeignKey("ParentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Parent");
                 });
 
             modelBuilder.Entity("BabyTracker.Core.Entity.BabySitter", b =>

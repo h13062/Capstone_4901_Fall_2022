@@ -1,5 +1,6 @@
 ﻿using BabyTracker.Core.Contract.Repository;
 using BabyTracker.Core.Contract.Service;
+using BabyTracker.Core.Entity;
 using BabyTracker.Core.Model;
 using Microsoft.AspNetCore.Identity;
 using System;
@@ -13,10 +14,11 @@ namespace BabyTracker.Infrastructure.Service
     public class AccountServiceAsync : IAccountServiceAsync
     {
         private readonly IAccountRepositoryAsync _accountRepositoryAsync;
-        public AccountServiceAsync(IAccountRepositoryAsync accountRepositoryAsync)
+        private readonly IParentRepositoryAsync _parentRepositoryAsync;
+        public AccountServiceAsync(IAccountRepositoryAsync accountRepositoryAsync, IParentRepositoryAsync parentRepositoryAsync)
         {
             _accountRepositoryAsync = accountRepositoryAsync;
-
+            _parentRepositoryAsync = parentRepositoryAsync;
         }
 
         public async Task<SignInResult>SignInAsync(LoginModel model)
@@ -27,9 +29,13 @@ namespace BabyTracker.Infrastructure.Service
 
         public async Task<IdentityResult> SignUpAsync(SignUpModel model)
         {
-            return await _accountRepositoryAsync.SignUpAsync(model);
-        }
+            Parent parent = new Parent();
+            parent.Name = model.FirstName + " " + model.LastName;
+            parent.BabyId = 1;//default
 
-  
+            await _parentRepositoryAsync.InsertAsync(parent);
+
+            return await _accountRepositoryAsync.SignUpAsync(model, parent.Id);
+        }
     }
 }

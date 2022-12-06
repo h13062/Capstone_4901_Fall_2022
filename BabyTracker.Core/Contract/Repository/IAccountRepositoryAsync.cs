@@ -11,7 +11,7 @@ namespace BabyTracker.Core.Contract.Repository
 {
     public interface IAccountRepositoryAsync: IRepositoryAsync<SignUpModel>
     {
-        Task<IdentityResult> SignUpAsync(SignUpModel model);
+        Task<IdentityResult> SignUpAsync(SignUpModel model, int parentId);
         Task<SignInResult> SignIn(LoginModel login);
     }
 }
