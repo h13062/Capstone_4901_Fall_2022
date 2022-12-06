@@ -1,0 +1,15 @@
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Infrastructure\bin\Debug\net6.0\BabyTracker.Infrastructure.deps.json
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Infrastructure\bin\Debug\net6.0\BabyTracker.Infrastructure.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Infrastructure\bin\Debug\net6.0\BabyTracker.Infrastructure.pdb
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Infrastructure\bin\Debug\net6.0\BabyTracker.Core.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Infrastructure\bin\Debug\net6.0\BabyTracker.Core.pdb
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Infrastructure\obj\Debug\net6.0\BabyTracker.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Infrastructure\obj\Debug\net6.0\BabyTracker.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Infrastructure\obj\Debug\net6.0\BabyTracker.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Infrastructure\obj\Debug\net6.0\BabyTracker.Infrastructure.AssemblyInfo.cs
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Infrastructure\obj\Debug\net6.0\BabyTracker.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Infrastructure\obj\Debug\net6.0\BabyTracker.Infrastructure.csproj.CopyComplete
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Infrastructure\obj\Debug\net6.0\BabyTracker.Infrastructure.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Infrastructure\obj\Debug\net6.0\refint\BabyTracker.Infrastructure.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Infrastructure\obj\Debug\net6.0\BabyTracker.Infrastructure.pdb
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Infrastructure\obj\Debug\net6.0\ref\BabyTracker.Infrastructure.dll
