@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+OXzQNrovLqlMfDxCZu4pP7lZp7jULvMgHGmMFg+8mxhCctU9S2C3pswmnnX80K0rn0NGawjmJV7SgfmB9B2ZQ==",
+  "dgSpecHash": "mLZ424ImX97sx5wLehJ7sneakSzAXtXphElhYIP01hzwUWlxD0aZc08tUu/n8xOUA9LS+bKhOZftLaPpX2IfRw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\bgh15\\source\\repos\\BTrack\\BabyTracker.Core\\BabyTracker.Core.csproj",
+  "projectFilePath": "C:\\Users\\bgh15\\source\\repos\\New folder\\Capstone_4901_Fall_2022\\BabyTracker.Core\\BabyTracker.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bgh15\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.9\\microsoft.aspnetcore.cryptography.internal.6.0.9.nupkg.sha512",
     "C:\\Users\\bgh15\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.9\\microsoft.aspnetcore.cryptography.keyderivation.6.0.9.nupkg.sha512",
