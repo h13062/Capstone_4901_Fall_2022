@@ -16,7 +16,10 @@ namespace BabyTracker.Core.Model
         [Column(TypeName = "varchar")]
         [MaxLength(50)]
         public string Name { get; set; }
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 05aec0f (add email columb to parent tabe)
         public int BabyId { get; set; }
 
     }

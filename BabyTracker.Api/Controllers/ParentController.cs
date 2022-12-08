@@ -46,7 +46,7 @@ namespace BabyTracker.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post(ParentRequestModel model)
+        public async Task<IActionResult> Post(ParentResponseModel model)
         {
             var result = await _parentServiceAsync.AddParentAsync(model); 
             if (result != 0)

@@ -8,9 +8,17 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = BabyTracker.Api
 build_property.RootNamespace = BabyTracker.Api
+<<<<<<< HEAD
 build_property.ProjectDir = c:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022-1\BabyTracker.Api\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = c:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022-1\BabyTracker.Api
+=======
+build_property.ProjectDir = c:\Users\bgh15\source\repos\Btrack\BabyTracker.Api\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = c:\Users\bgh15\source\repos\Btrack\BabyTracker.Api
+>>>>>>> parent of 05aec0f (add email columb to parent tabe)
 build_property._RazorSourceGeneratorDebug = 

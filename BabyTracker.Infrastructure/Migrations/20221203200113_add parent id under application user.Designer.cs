@@ -4,6 +4,7 @@ using BabyTracker.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BabyTracker.Infrastructure.Migrations
 {
     [DbContext(typeof(BabyTrackerDbContext))]
-    partial class BabyTrackerDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221203200113_add parent id under application user")]
+    partial class addparentidunderapplicationuser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -185,11 +187,7 @@ namespace BabyTracker.Infrastructure.Migrations
                     b.Property<int>("BabyId")
                         .HasColumnType("int");
 
-<<<<<<< HEAD
-                    b.Property<string>("Name")
-=======
                     b.Property<string>("ParentName")
->>>>>>> parent of 05aec0f (add email columb to parent tabe)
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("varchar(50)");

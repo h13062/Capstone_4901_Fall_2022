@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BabyTracker.Infrastructure.Migrations
 {
     [DbContext(typeof(BabyTrackerDbContext))]
-    [Migration("20221203220249_initial")]
-    partial class initial
+    [Migration("20221126234330_update maxlength for baby table")]
+    partial class updatemaxlengthforbabytable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -139,8 +139,7 @@ namespace BabyTracker.Infrastructure.Migrations
 
                     b.Property<string>("BabySitterName")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("varchar(50)");
+                        .HasColumnType("varchar");
 
                     b.HasKey("Id");
 
@@ -182,15 +181,9 @@ namespace BabyTracker.Infrastructure.Migrations
                     b.Property<int>("BabyId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Email")
+                    b.Property<string>("ParentName")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("varchar(50)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("varchar(50)");
+                        .HasColumnType("varchar");
 
                     b.HasKey("Id");
 
@@ -231,9 +224,6 @@ namespace BabyTracker.Infrastructure.Migrations
 
                     b.Property<DateTime>("Day")
                         .HasColumnType("datetime2");
-
-                    b.Property<TimeSpan>("SleepDuration")
-                        .HasColumnType("time");
 
                     b.Property<DateTime>("SleepEnd")
                         .HasColumnType("datetime2");

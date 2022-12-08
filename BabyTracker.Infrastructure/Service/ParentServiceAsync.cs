@@ -13,18 +13,24 @@ namespace BabyTracker.Infrastructure.Service
     public class ParentServiceAsync : IParentServiceAsync
     {
         private readonly IParentRepositoryAsync _parentRepositoryAsync;
-        public ParentServiceAsync(IParentRepositoryAsync parentRepositoryAsync)
+        private readonly IBabyRepositoryAsync _babyRepositoryAsync;
+        public ParentServiceAsync(IParentRepositoryAsync par, IBabyRepositoryAsync babyRepositoryAsync)
         {
-           _parentRepositoryAsync = parentRepositoryAsync;
+           _parentRepositoryAsync = par;
+            _babyRepositoryAsync = babyRepositoryAsync;
+
         }
 
         public async Task<int> AddParentAsync(ParentRequestModel parent)
         {
             Parent p = new Parent();
             p.Id = parent.Id;
+<<<<<<< HEAD
             p.Name = parent.FirstName + " " + parent.LastName;
+=======
+            p.ParentName = parent.FirstName + " " + parent.LastName;
+>>>>>>> parent of 05aec0f (add email columb to parent tabe)
             p.BabyId = parent.BabyId;
-
             return await _parentRepositoryAsync.InsertAsync(p);
         }
 
@@ -43,10 +49,14 @@ namespace BabyTracker.Infrastructure.Service
                 {
                     ParentResponseModel model = new ParentResponseModel();
                     model.Id = item.Id;
+<<<<<<< HEAD
                     model.Name = item.Name;
+=======
+                    model.Name = item.ParentName;
+>>>>>>> parent of 05aec0f (add email columb to parent tabe)
                     var par = await _parentRepositoryAsync.GetByIdAsync(item.BabyId);
                     model.BabyId = par.BabyId;
-                    
+
                     result.Add(model);
                 }
                 return result;
@@ -62,10 +72,13 @@ namespace BabyTracker.Infrastructure.Service
             {
                 ParentResponseModel model = new ParentResponseModel();
                 model.Id = item.Id;
+<<<<<<< HEAD
                 model.Name = item.Name;
+=======
+                model.Name = item.ParentName;
+>>>>>>> parent of 05aec0f (add email columb to parent tabe)
                 var par = await _parentRepositoryAsync.GetByIdAsync(item.BabyId);
                 model.BabyId = par.BabyId;
-                
                 return model;
             }
             return null;
@@ -78,10 +91,13 @@ namespace BabyTracker.Infrastructure.Service
             {
                 ParentResponseModel model = new ParentResponseModel();
                 model.Id = item.Id;
+<<<<<<< HEAD
                 model.Name = item.Name;
+=======
+                model.Name = item.ParentName;
+>>>>>>> parent of 05aec0f (add email columb to parent tabe)
                 var par = await _parentRepositoryAsync.GetByIdAsync(item.BabyId);
                 model.BabyId = par.BabyId;
-
                 return model;
             }
             return null;
@@ -91,9 +107,12 @@ namespace BabyTracker.Infrastructure.Service
         {
             Parent p = new Parent();
             p.Id = parent.Id;
-            p.Name = parent.FirstName + " " + parent.LastName;
+            p.ParentName = parent.FirstName + " " + parent.LastName;
             p.BabyId = parent.BabyId;
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 05aec0f (add email columb to parent tabe)
             return await _parentRepositoryAsync.UpdateAsync(p);
         }
     }

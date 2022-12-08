@@ -4,6 +4,7 @@ using BabyTracker.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BabyTracker.Infrastructure.Migrations
 {
     [DbContext(typeof(BabyTrackerDbContext))]
-    partial class BabyTrackerDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221105202707_identityuseradded")]
+    partial class identityuseradded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -63,9 +65,6 @@ namespace BabyTracker.Infrastructure.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
-                    b.Property<int>("ParentId")
-                        .HasColumnType("int");
-
                     b.Property<string>("PasswordHash")
                         .HasColumnType("nvarchar(max)");
 
@@ -95,8 +94,6 @@ namespace BabyTracker.Infrastructure.Migrations
                         .HasDatabaseName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
-                    b.HasIndex("ParentId");
-
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
@@ -113,13 +110,11 @@ namespace BabyTracker.Infrastructure.Migrations
 
                     b.Property<string>("Gender")
                         .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("varchar(10)");
+                        .HasColumnType("varchar");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("varchar(50)");
+                        .HasColumnType("varchar");
 
                     b.Property<decimal>("Weight")
                         .HasColumnType("decimal(18,2)");
@@ -142,8 +137,7 @@ namespace BabyTracker.Infrastructure.Migrations
 
                     b.Property<string>("BabySitterName")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("varchar(50)");
+                        .HasColumnType("varchar");
 
                     b.HasKey("Id");
 
@@ -185,14 +179,9 @@ namespace BabyTracker.Infrastructure.Migrations
                     b.Property<int>("BabyId")
                         .HasColumnType("int");
 
-<<<<<<< HEAD
-                    b.Property<string>("Name")
-=======
                     b.Property<string>("ParentName")
->>>>>>> parent of 05aec0f (add email columb to parent tabe)
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("varchar(50)");
+                        .HasColumnType("varchar");
 
                     b.HasKey("Id");
 
@@ -233,9 +222,6 @@ namespace BabyTracker.Infrastructure.Migrations
 
                     b.Property<DateTime>("Day")
                         .HasColumnType("datetime2");
-
-                    b.Property<TimeSpan>("SleepDuration")
-                        .HasColumnType("time");
 
                     b.Property<DateTime>("SleepEnd")
                         .HasColumnType("datetime2");
@@ -379,17 +365,6 @@ namespace BabyTracker.Infrastructure.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
-                });
-
-            modelBuilder.Entity("BabyTracker.Core.Entity.ApplicationUser", b =>
-                {
-                    b.HasOne("BabyTracker.Core.Entity.Parent", "Parent")
-                        .WithMany()
-                        .HasForeignKey("ParentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Parent");
                 });
 
             modelBuilder.Entity("BabyTracker.Core.Entity.BabySitter", b =>
