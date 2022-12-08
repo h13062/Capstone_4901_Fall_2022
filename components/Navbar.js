@@ -17,6 +17,10 @@ export default function Navbar({ isDarkGlobal, setNavItems, navItems }) {
     : styles.navButtonWrapper_dark;
 
   const color = isDarkGlobal ? '#000' : '`rgba(255, 255, 255, 0.87)`';
+
+  const navItem_hl = isDarkGlobal
+    ? styles.navItem_hl_light
+    : styles.navItem_hl_dark;
   return (
     <>
       {/* Nav bar */}
@@ -28,9 +32,7 @@ export default function Navbar({ isDarkGlobal, setNavItems, navItems }) {
             navigation.navigate('Activity');
           }}
         >
-          <View
-            style={navItems[0] == true ? styles.navItem_hl : styles.navItem}
-          >
+          <View style={navItems[0] == true ? navItem_hl : styles.navItem}>
             <Ionicons name="home" size={25} color={color} />
 
             <Text style={{ color: color, opacity: 0.87 }}>Home</Text>
@@ -43,9 +45,7 @@ export default function Navbar({ isDarkGlobal, setNavItems, navItems }) {
             navigation.navigate('Chart');
           }}
         >
-          <View
-            style={navItems[1] == true ? styles.navItem_hl : styles.navItem}
-          >
+          <View style={navItems[1] == true ? navItem_hl : styles.navItem}>
             <Ionicons name="podium" size={25} color={color} />
             <Text style={{ color: color, opacity: 0.87 }}>Chart</Text>
           </View>
@@ -57,9 +57,7 @@ export default function Navbar({ isDarkGlobal, setNavItems, navItems }) {
             navigation.navigate('BabyProfiles');
           }}
         >
-          <View
-            style={navItems[2] == true ? styles.navItem_hl : styles.navItem}
-          >
+          <View style={navItems[2] == true ? navItem_hl : styles.navItem}>
             <Ionicons name="person-circle-outline" size={25} color={color} />
             <Text style={{ color: color, opacity: 0.87 }}>Babies</Text>
           </View>
@@ -71,9 +69,7 @@ export default function Navbar({ isDarkGlobal, setNavItems, navItems }) {
             navigation.navigate('Setting');
           }}
         >
-          <View
-            style={navItems[3] == true ? styles.navItem_hl : styles.navItem}
-          >
+          <View style={navItems[3] == true ? navItem_hl : styles.navItem}>
             <Ionicons name="settings-outline" size={25} color={color} />
             <Text style={{ color: color, opacity: 0.87 }}>Settings</Text>
           </View>
@@ -111,7 +107,15 @@ const styles = StyleSheet.create({
   navItem: {
     alignItems: 'center',
   },
-  navItem_hl: {
+  navItem_hl_light: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#b5b5b5',
+    width: '80%',
+    height: '85%',
+    borderRadius: 10,
+  },
+  navItem_hl_dark: {
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#8a8a8a',
