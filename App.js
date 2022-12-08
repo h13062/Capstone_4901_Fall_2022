@@ -46,27 +46,47 @@ export default function App() {
       <Navigator>
         <Screen
           name="Welcome"
-          options={{ headerShown: false, animation: 'fade' }}
+          options={{
+            headerShown: false,
+            animation: 'fade',
+            animationDuration: 150,
+          }}
           component={Welcome}
         />
         <Screen
           name="Login"
-          options={{ headerShown: false, animation: 'fade' }}
+          options={{
+            headerShown: false,
+            animation: 'fade',
+            animationDuration: 150,
+          }}
           component={Login}
         />
         <Screen
           name="Register"
-          options={{ headerShown: false, animation: 'fade' }}
+          options={{
+            headerShown: false,
+            animation: 'fade',
+            animationDuration: 150,
+          }}
           component={Register}
         />
         <Screen
           name="BabyInfo"
-          options={{ headerShown: false, animation: 'fade' }}
+          options={{
+            headerShown: false,
+            animation: 'fade',
+            animationDuration: 150,
+          }}
           component={BabyInfo}
         />
         <Screen
           name="Activity"
-          options={{ headerShown: false, animation: 'fade' }}
+          options={{
+            headerShown: false,
+            animation: 'fade',
+            animationDuration: 150,
+          }}
         >
           {() => (
             <Activity
@@ -78,7 +98,11 @@ export default function App() {
         </Screen>
         <Screen
           name="Chart"
-          options={{ headerShown: false, animation: 'fade' }}
+          options={{
+            headerShown: false,
+            animation: 'fade',
+            animationDuration: 150,
+          }}
         >
           {() => (
             <Chart
@@ -90,7 +114,11 @@ export default function App() {
         </Screen>
         <Screen
           name="BabyProfiles"
-          options={{ headerShown: false, animation: 'fade' }}
+          options={{
+            headerShown: false,
+            animation: 'fade',
+            animationDuration: 150,
+          }}
         >
           {() => (
             <BabyProfiles
@@ -102,17 +130,29 @@ export default function App() {
         </Screen>
         <Screen
           name="Stopwatch"
-          options={{ headerShown: false, animation: 'fade' }}
+          options={{
+            headerShown: false,
+            animation: 'fade',
+            animationDuration: 150,
+          }}
           component={StopWatch}
         />
         <Screen
           name="ActivityForm"
-          options={{ headerShown: false, animation: 'fade' }}
+          options={{
+            headerShown: false,
+            animation: 'fade',
+            animationDuration: 150,
+          }}
           component={ActivityForm}
         />
         <Screen
           name="DateTimePicker"
-          options={{ headerShown: false, animation: 'fade' }}
+          options={{
+            headerShown: false,
+            animation: 'fade',
+            animationDuration: 150,
+          }}
           component={Datetime1}
         />
         <Screen
@@ -120,6 +160,7 @@ export default function App() {
           options={{
             headerShown: false,
             animation: 'fade',
+            animationDuration: 150,
           }}
         >
           {() => (
