@@ -46,27 +46,27 @@ export default function App() {
       <Navigator>
         <Screen
           name="Welcome"
-          options={{ headerShown: false }}
+          options={{ headerShown: false, animation: 'fade' }}
           component={Welcome}
         />
         <Screen
           name="Login"
-          options={{ headerShown: false }}
+          options={{ headerShown: false, animation: 'fade' }}
           component={Login}
         />
         <Screen
           name="Register"
-          options={{ headerShown: false }}
+          options={{ headerShown: false, animation: 'fade' }}
           component={Register}
         />
         <Screen
           name="BabyInfo"
-          options={{ headerShown: false }}
+          options={{ headerShown: false, animation: 'fade' }}
           component={BabyInfo}
         />
         <Screen
           name="Activity"
-          options={{ headerShown: false, animationEnabled: false }}
+          options={{ headerShown: false, animation: 'fade' }}
         >
           {() => (
             <Activity
@@ -78,7 +78,7 @@ export default function App() {
         </Screen>
         <Screen
           name="Chart"
-          options={{ headerShown: false, animationEnabled: false }}
+          options={{ headerShown: false, animation: 'fade' }}
         >
           {() => (
             <Chart
@@ -90,7 +90,7 @@ export default function App() {
         </Screen>
         <Screen
           name="BabyProfiles"
-          options={{ headerShown: false, animationEnabled: false }}
+          options={{ headerShown: false, animation: 'fade' }}
         >
           {() => (
             <BabyProfiles
@@ -102,24 +102,24 @@ export default function App() {
         </Screen>
         <Screen
           name="Stopwatch"
-          options={{ headerShown: false, animationEnabled: false }}
+          options={{ headerShown: false, animation: 'fade' }}
           component={StopWatch}
         />
         <Screen
           name="ActivityForm"
-          options={{ headerShown: false, animationEnabled: false }}
+          options={{ headerShown: false, animation: 'fade' }}
           component={ActivityForm}
         />
         <Screen
           name="DateTimePicker"
-          options={{ headerShown: false, animationEnabled: false }}
+          options={{ headerShown: false, animation: 'fade' }}
           component={Datetime1}
         />
         <Screen
           name="Setting"
           options={{
             headerShown: false,
-            animationEnabled: false,
+            animation: 'fade',
           }}
         >
           {() => (
