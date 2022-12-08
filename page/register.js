@@ -11,7 +11,7 @@ import {
 } from "react-native";
 import CheckBox from "expo-checkbox";
 import { useNavigation } from "@react-navigation/native";
-
+import axios from "axios";
 const Register = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -20,6 +20,8 @@ const Register = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [agree, setAgree] = useState(false);
   const navigation = useNavigation();
+
+  const url = "http://localhost:5290";
 
   const registerOnSubmitHandler = (e) => {
     // console.log("On submit object:", {
@@ -40,13 +42,20 @@ const Register = () => {
     //   });
     console.log("button clicked");
 
-    fetch("https://localhost:7290/api/Baby", {
-      method: "GET",
-    })
-      .then((res) => console.log("res status:", res.status))
-      .catch((err) => console.log("error:", err));
+    // fetch("https://localhost:7290/api/Baby", {
+    //   method: "GET",
+    // })
+    //   .then((res) => console.log("res status:", res.status))
+    //   .catch((err) => console.log("error:", err));
 
-    console.log("after fetch");
+    return fetch(`${url}/api/Baby`)
+      .then((response) => response.json())
+      .then((json) => {
+        console.log("baby", json);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
     // navigation.navigate("BabyInfo");
   };
 

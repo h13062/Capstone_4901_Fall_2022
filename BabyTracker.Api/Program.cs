@@ -21,8 +21,9 @@ builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(builder =>
     {
-        builder.WithOrigins("http://10.0.0.88:8000").AllowAnyHeader().AllowAnyMethod();
+        //builder.WithOrigins("https://localhost:7290").AllowAnyHeader().AllowAnyMethod();
         //builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+        builder.WithOrigins("http://192.168.254.139:19000").AllowAnyHeader().AllowAnyMethod();
     });
 });
 
@@ -77,8 +78,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseCors();
-app.UseAuthorization();
-app.UseAuthentication();
+//app.UseAuthorization();
+//app.UseAuthentication();
 app.MapControllers();
 
 app.Run();
