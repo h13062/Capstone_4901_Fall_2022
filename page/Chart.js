@@ -6,7 +6,7 @@ import Navbar from '../components/Navbar';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useEffect, useState } from 'react';
 
-export default function Chart({ isDarkGlobal }) {
+export default function Chart({ isDarkGlobal, setNavItems, navItems }) {
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
@@ -72,7 +72,11 @@ export default function Chart({ isDarkGlobal }) {
             />
           </View>
         </View>
-        <Navbar isDarkGlobal={isDarkGlobal} />
+        <Navbar
+          isDarkGlobal={isDarkGlobal}
+          setNavItems={setNavItems}
+          navItems={navItems}
+        />
       </SafeAreaView>
     </>
   );

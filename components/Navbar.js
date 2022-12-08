@@ -4,13 +4,13 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
-export default function Navbar({ isDarkGlobal }) {
+export default function Navbar({ isDarkGlobal, setNavItems, navItems }) {
   const navigation = useNavigation();
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
     setIsDark(!isDarkGlobal);
-  }, [isDarkGlobal]);
+  }, [isDarkGlobal, navItems]);
 
   const navButtonWrapper = isDarkGlobal
     ? styles.navButtonWrapper_light
@@ -23,38 +23,58 @@ export default function Navbar({ isDarkGlobal }) {
       <View style={styles.navWrapper}>
         <TouchableOpacity
           style={navButtonWrapper}
-          onPress={() => navigation.navigate('Activity')}
+          onPress={() => {
+            setNavItems([true, false, false, false]);
+            navigation.navigate('Activity');
+          }}
         >
-          <View style={{ alignItems: 'center' }}>
-            <Ionicons name="home" size={30} color={color} />
+          <View
+            style={navItems[0] == true ? styles.navItem_hl : styles.navItem}
+          >
+            <Ionicons name="home" size={25} color={color} />
 
             <Text style={{ color: color, opacity: 0.87 }}>Home</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity
           style={navButtonWrapper}
-          onPress={() => navigation.navigate('Chart')}
+          onPress={() => {
+            setNavItems([false, true, false, false]);
+            navigation.navigate('Chart');
+          }}
         >
-          <View style={{ alignItems: 'center' }}>
-            <Ionicons name="podium" size={30} color={color} />
+          <View
+            style={navItems[1] == true ? styles.navItem_hl : styles.navItem}
+          >
+            <Ionicons name="podium" size={25} color={color} />
             <Text style={{ color: color, opacity: 0.87 }}>Chart</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity
           style={navButtonWrapper}
-          onPress={() => navigation.navigate('BabyProfiles')}
+          onPress={() => {
+            setNavItems([false, false, true, false]);
+            navigation.navigate('BabyProfiles');
+          }}
         >
-          <View style={{ alignItems: 'center' }}>
-            <Ionicons name="person-circle-outline" size={30} color={color} />
+          <View
+            style={navItems[2] == true ? styles.navItem_hl : styles.navItem}
+          >
+            <Ionicons name="person-circle-outline" size={25} color={color} />
             <Text style={{ color: color, opacity: 0.87 }}>Babies</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity
           style={navButtonWrapper}
-          onPress={() => navigation.navigate('Setting')}
+          onPress={() => {
+            setNavItems([false, false, false, true]);
+            navigation.navigate('Setting');
+          }}
         >
-          <View style={{ alignItems: 'center' }}>
-            <Ionicons name="settings-outline" size={30} color={color} />
+          <View
+            style={navItems[3] == true ? styles.navItem_hl : styles.navItem}
+          >
+            <Ionicons name="settings-outline" size={25} color={color} />
             <Text style={{ color: color, opacity: 0.87 }}>Settings</Text>
           </View>
         </TouchableOpacity>
@@ -87,5 +107,16 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flex: 1,
     backgroundColor: '#595959',
+  },
+  navItem: {
+    alignItems: 'center',
+  },
+  navItem_hl: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#8a8a8a',
+    width: '80%',
+    height: '85%',
+    borderRadius: 10,
   },
 });

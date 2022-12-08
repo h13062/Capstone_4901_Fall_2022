@@ -36,6 +36,11 @@ export default function App() {
     console.log('isTempMetrtic: ', isTempMetric);
   }, [isTempMetric]);
 
+  const [navItems, setNavItems] = useState([true, false, false, false]);
+  useEffect(() => {
+    console.log('navItem: ', navItems);
+  }, [navItems]);
+
   return (
     <NavigationContainer>
       <Navigator>
@@ -63,19 +68,37 @@ export default function App() {
           name="Activity"
           options={{ headerShown: false, animationEnabled: false }}
         >
-          {() => <Activity isDarkGlobal={isDarkGlobal} />}
+          {() => (
+            <Activity
+              isDarkGlobal={isDarkGlobal}
+              setNavItems={setNavItems}
+              navItems={navItems}
+            />
+          )}
         </Screen>
         <Screen
           name="Chart"
           options={{ headerShown: false, animationEnabled: false }}
         >
-          {() => <Chart isDarkGlobal={isDarkGlobal} />}
+          {() => (
+            <Chart
+              isDarkGlobal={isDarkGlobal}
+              setNavItems={setNavItems}
+              navItems={navItems}
+            />
+          )}
         </Screen>
         <Screen
           name="BabyProfiles"
           options={{ headerShown: false, animationEnabled: false }}
         >
-          {() => <BabyProfiles isDarkGlobal={isDarkGlobal} />}
+          {() => (
+            <BabyProfiles
+              isDarkGlobal={isDarkGlobal}
+              setNavItems={setNavItems}
+              navItems={navItems}
+            />
+          )}
         </Screen>
         <Screen
           name="Stopwatch"
@@ -107,6 +130,8 @@ export default function App() {
               isUnitMetric={isUnitMetric}
               setIsTempMetric={setIsTempMetric}
               isTempMetric={isTempMetric}
+              setNavItems={setNavItems}
+              navItems={navItems}
             />
           )}
         </Screen>

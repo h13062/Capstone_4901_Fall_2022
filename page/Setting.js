@@ -26,6 +26,8 @@ export default function Setting({
   isUnitMetric,
   setIsTempMetric,
   isTempMetric,
+  setNavItems,
+  navItems,
 }) {
   const handleDarkMode = () => {
     setIsDarkGlobal(!isDarkGlobal);
@@ -100,7 +102,11 @@ export default function Setting({
             />
           </View>
         </View>
-        <Navbar isDarkGlobal={isDarkGlobal} />
+        <Navbar
+          isDarkGlobal={isDarkGlobal}
+          setNavItems={setNavItems}
+          navItems={navItems}
+        />
       </SafeAreaView>
     </>
   );

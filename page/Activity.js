@@ -18,7 +18,7 @@ import Navbar from '../components/Navbar';
 import { useNavigation } from '@react-navigation/native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-export default function Activity({ isDarkGlobal }) {
+export default function Activity({ isDarkGlobal, setNavItems, navItems }) {
   const scrollViewRef = useRef();
   const [taskItems, setTaskItems] = useState([]); // Problem here
   const navigation = useNavigation();
@@ -175,7 +175,11 @@ export default function Activity({ isDarkGlobal }) {
             </TouchableOpacity>
           </View> */}
         </View>
-        <Navbar isDarkGlobal={isDarkGlobal} />
+        <Navbar
+          isDarkGlobal={isDarkGlobal}
+          setNavItems={setNavItems}
+          navItems={navItems}
+        />
       </SafeAreaView>
     </>
   );
