@@ -152,6 +152,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginBottom: 25,
+    alignItems: 'center',
   },
   tabText_light: {
     color: '#000',
