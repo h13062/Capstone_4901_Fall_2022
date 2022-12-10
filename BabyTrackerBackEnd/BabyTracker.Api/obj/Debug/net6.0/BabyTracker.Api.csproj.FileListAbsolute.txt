@@ -1,0 +1,284 @@
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\appsettings.json
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\BabyTracker.Api.exe
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\BabyTracker.Api.deps.json
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\BabyTracker.Api.runtimeconfig.json
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\BabyTracker.Api.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\BabyTracker.Api.pdb
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\obj\Debug\net6.0\BabyTracker.Api.csproj.AssemblyReference.cache
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\obj\Debug\net6.0\BabyTracker.Api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\obj\Debug\net6.0\BabyTracker.Api.AssemblyInfoInputs.cache
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\obj\Debug\net6.0\BabyTracker.Api.AssemblyInfo.cs
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\obj\Debug\net6.0\BabyTracker.Api.csproj.CoreCompileInputs.cache
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\obj\Debug\net6.0\BabyTracker.Api.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\obj\Debug\net6.0\BabyTracker.Api.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\obj\Debug\net6.0\scopedcss\bundle\BabyTracker.Api.styles.css
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\obj\Debug\net6.0\BabyTracker.Api.csproj.CopyComplete
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\obj\Debug\net6.0\BabyTracker.Api.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\obj\Debug\net6.0\refint\BabyTracker.Api.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\obj\Debug\net6.0\BabyTracker.Api.pdb
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\obj\Debug\net6.0\BabyTracker.Api.genruntimeconfig.cache
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\obj\Debug\net6.0\ref\BabyTracker.Api.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\Humanizer.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\System.Runtime.Caching.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\BabyTracker.Core.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\BabyTracker.Infrastructure.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\BabyTracker.Infrastructure.pdb
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\BabyTracker.Core.pdb
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\bgh15\source\repos\BTrack\BabyTracker.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\bin\Debug\net6.0\appsettings.json
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\bin\Debug\net6.0\BabyTracker.Api.exe
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\bin\Debug\net6.0\BabyTracker.Api.deps.json
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\bin\Debug\net6.0\BabyTracker.Api.runtimeconfig.json
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\bin\Debug\net6.0\BabyTracker.Api.dll
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\bin\Debug\net6.0\BabyTracker.Api.pdb
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\bin\Debug\net6.0\Humanizer.dll
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\bin\Debug\net6.0\System.Runtime.Caching.dll
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\bin\Debug\net6.0\BabyTracker.Core.dll
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\bin\Debug\net6.0\BabyTracker.Infrastructure.dll
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\bin\Debug\net6.0\BabyTracker.Infrastructure.pdb
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\bin\Debug\net6.0\BabyTracker.Core.pdb
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\obj\Debug\net6.0\BabyTracker.Api.csproj.AssemblyReference.cache
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\obj\Debug\net6.0\BabyTracker.Api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\obj\Debug\net6.0\BabyTracker.Api.AssemblyInfoInputs.cache
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\obj\Debug\net6.0\BabyTracker.Api.AssemblyInfo.cs
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\obj\Debug\net6.0\BabyTracker.Api.csproj.CoreCompileInputs.cache
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\obj\Debug\net6.0\BabyTracker.Api.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\obj\Debug\net6.0\BabyTracker.Api.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\obj\Debug\net6.0\scopedcss\bundle\BabyTracker.Api.styles.css
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\obj\Debug\net6.0\BabyTracker.Api.csproj.CopyComplete
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\obj\Debug\net6.0\BabyTracker.Api.dll
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\obj\Debug\net6.0\refint\BabyTracker.Api.dll
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\obj\Debug\net6.0\BabyTracker.Api.pdb
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\obj\Debug\net6.0\BabyTracker.Api.genruntimeconfig.cache
+C:\Users\bgh15\source\repos\New folder\Capstone_4901_Fall_2022\BabyTracker.Api\obj\Debug\net6.0\ref\BabyTracker.Api.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\bin\Debug\net6.0\appsettings.json
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\bin\Debug\net6.0\BabyTracker.Api.exe
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\bin\Debug\net6.0\BabyTracker.Api.deps.json
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\bin\Debug\net6.0\BabyTracker.Api.runtimeconfig.json
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\bin\Debug\net6.0\BabyTracker.Api.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\bin\Debug\net6.0\BabyTracker.Api.pdb
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\bin\Debug\net6.0\Humanizer.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\bin\Debug\net6.0\System.Runtime.Caching.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\bin\Debug\net6.0\BabyTracker.Core.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\bin\Debug\net6.0\BabyTracker.Infrastructure.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\bin\Debug\net6.0\BabyTracker.Infrastructure.pdb
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\bin\Debug\net6.0\BabyTracker.Core.pdb
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\obj\Debug\net6.0\BabyTracker.Api.csproj.AssemblyReference.cache
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\obj\Debug\net6.0\BabyTracker.Api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\obj\Debug\net6.0\BabyTracker.Api.AssemblyInfoInputs.cache
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\obj\Debug\net6.0\BabyTracker.Api.AssemblyInfo.cs
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\obj\Debug\net6.0\BabyTracker.Api.csproj.CoreCompileInputs.cache
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\obj\Debug\net6.0\BabyTracker.Api.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\obj\Debug\net6.0\BabyTracker.Api.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\obj\Debug\net6.0\scopedcss\bundle\BabyTracker.Api.styles.css
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\obj\Debug\net6.0\BabyTracker.Api.csproj.CopyComplete
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\obj\Debug\net6.0\BabyTracker.Api.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\obj\Debug\net6.0\refint\BabyTracker.Api.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\obj\Debug\net6.0\BabyTracker.Api.pdb
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\obj\Debug\net6.0\BabyTracker.Api.genruntimeconfig.cache
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTracker.Api\obj\Debug\net6.0\ref\BabyTracker.Api.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\bin\Debug\net6.0\appsettings.json
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\bin\Debug\net6.0\BabyTracker.Api.exe
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\bin\Debug\net6.0\BabyTracker.Api.deps.json
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\bin\Debug\net6.0\BabyTracker.Api.runtimeconfig.json
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\bin\Debug\net6.0\BabyTracker.Api.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\bin\Debug\net6.0\BabyTracker.Api.pdb
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\bin\Debug\net6.0\Humanizer.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\bin\Debug\net6.0\System.Runtime.Caching.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\bin\Debug\net6.0\BabyTracker.Core.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\bin\Debug\net6.0\BabyTracker.Infrastructure.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\bin\Debug\net6.0\BabyTracker.Infrastructure.pdb
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\bin\Debug\net6.0\BabyTracker.Core.pdb
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\obj\Debug\net6.0\BabyTracker.Api.csproj.AssemblyReference.cache
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\obj\Debug\net6.0\BabyTracker.Api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\obj\Debug\net6.0\BabyTracker.Api.AssemblyInfoInputs.cache
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\obj\Debug\net6.0\BabyTracker.Api.AssemblyInfo.cs
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\obj\Debug\net6.0\BabyTracker.Api.csproj.CoreCompileInputs.cache
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\obj\Debug\net6.0\BabyTracker.Api.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\obj\Debug\net6.0\BabyTracker.Api.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\obj\Debug\net6.0\scopedcss\bundle\BabyTracker.Api.styles.css
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\obj\Debug\net6.0\BabyTracker.Api.csproj.CopyComplete
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\obj\Debug\net6.0\BabyTracker.Api.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\obj\Debug\net6.0\refint\BabyTracker.Api.dll
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\obj\Debug\net6.0\BabyTracker.Api.pdb
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\obj\Debug\net6.0\BabyTracker.Api.genruntimeconfig.cache
+C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Api\obj\Debug\net6.0\ref\BabyTracker.Api.dll
