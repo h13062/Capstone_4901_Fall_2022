@@ -21,76 +21,34 @@ const Register = () => {
   const [agree, setAgree] = useState(false);
   const navigation = useNavigation();
 
-  const url = "http://localhost:5290";
+  const url = "http://192.168.254.208:5290";
 
   const registerOnSubmitHandler = (e) => {
-    // console.log("On submit object:", {
-    //   firstName: firstName,
-    //   lastName: lastName,
-    //   email: email,
-    //   password: password,
-    //   confirmPassword: confirmPassword,
-    // });
     e.preventDefault();
 
-    // executeCreateUser(firstName, lastName, email, password, confirmPassword)
-    //   .then((res) => {
-    //     console.log("response from POST:", res);
-    //   })
-    //   .catch((err) => {
-    //     console.log("error:", err);
-    //   });
-    console.log("button clicked");
-
-    // fetch("https://localhost:7290/api/Baby", {
-    //   method: "GET",
-    // })
-    //   .then((res) => console.log("res status:", res.status))
-    //   .catch((err) => console.log("error:", err));
-
-    return fetch(`${url}/api/Baby`)
-      .then((response) => response.json())
-      .then((json) => {
-        console.log("baby", json);
+    axios
+      .post(
+        url + "/api/Account/signup",
+        {
+          firstName: firstName,
+          lastName: lastName,
+          emailId: email,
+          password: password,
+          confirmPassword: confirmPassword,
+        },
+        {
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+        }
+      )
+      .then((response) => {
+        console.log("response:", response.status);
       })
       .catch((error) => {
-        console.error(error);
+        console.log(error);
       });
-    // navigation.navigate("BabyInfo");
-  };
-
-  const executeCreateUser = (
-    firstName,
-    lastName,
-    email,
-    password,
-    confirmPassword
-  ) => {
-    const UserInfo = {
-      firstName: firstName,
-      lastName: lastName,
-      email: email,
-      password: password,
-      confirmPassword: confirmPassword,
-    };
-
-    // return fetch("https://localhost:7290/api/Account/signup", {
-    //   headers: { "Content-Type": "application/json" },
-    //   medthod: "POST",
-    //   credential: "include",
-    // });
-
-    console.log("UserInfo", { UserInfo });
-
-    return fetch("api/Account/signup", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      // credentials: "include",
-      body: JSON.stringify(UserInfo),
-    });
   };
 
   return (
