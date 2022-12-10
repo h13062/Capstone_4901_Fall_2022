@@ -33,9 +33,9 @@ export default function Navbar({ isDarkGlobal, setNavItems, navItems }) {
           }}
         >
           <View style={navItems[0] == true ? navItem_hl : styles.navItem}>
-            <Ionicons name="home" size={25} color={color} />
+            <Ionicons name="layers" size={25} color={color} />
 
-            <Text style={{ color: color, opacity: 0.87 }}>Home</Text>
+            <Text style={{ color: color, opacity: 0.87 }}>Activity</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity
@@ -46,7 +46,7 @@ export default function Navbar({ isDarkGlobal, setNavItems, navItems }) {
           }}
         >
           <View style={navItems[1] == true ? navItem_hl : styles.navItem}>
-            <Ionicons name="podium" size={25} color={color} />
+            <Ionicons name="stats-chart" size={25} color={color} />
             <Text style={{ color: color, opacity: 0.87 }}>Chart</Text>
           </View>
         </TouchableOpacity>
@@ -58,7 +58,7 @@ export default function Navbar({ isDarkGlobal, setNavItems, navItems }) {
           }}
         >
           <View style={navItems[2] == true ? navItem_hl : styles.navItem}>
-            <Ionicons name="person-circle-outline" size={25} color={color} />
+            <Ionicons name="people" size={25} color={color} />
             <Text style={{ color: color, opacity: 0.87 }}>Babies</Text>
           </View>
         </TouchableOpacity>
@@ -70,7 +70,7 @@ export default function Navbar({ isDarkGlobal, setNavItems, navItems }) {
           }}
         >
           <View style={navItems[3] == true ? navItem_hl : styles.navItem}>
-            <Ionicons name="settings-outline" size={25} color={color} />
+            <Ionicons name="cog" size={25} color={color} />
             <Text style={{ color: color, opacity: 0.87 }}>Settings</Text>
           </View>
         </TouchableOpacity>
