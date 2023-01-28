@@ -73,7 +73,6 @@ export default function Setting({
           <View style={styles.tabStyle}>
             <Text style={tabText}>Dark mode</Text>
             <CheckBox
-              style={styles.CheckBox}
               value={!isDarkGlobal}
               onValueChange={handleDarkMode}
               color={'#6082B6'}

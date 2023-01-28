@@ -60,8 +60,9 @@ export default function App() {
             animation: 'fade',
             animationDuration: 150,
           }}
-          component={Login}
-        />
+        >
+          {() => <Login isDarkGlobal={isDarkGlobal} />}
+        </Screen>
         <Screen
           name="Register"
           options={{
@@ -69,8 +70,9 @@ export default function App() {
             animation: 'fade',
             animationDuration: 150,
           }}
-          component={Register}
-        />
+        >
+          {() => <Register isDarkGlobal={isDarkGlobal} />}
+        </Screen>
         <Screen
           name="BabyInfo"
           options={{
