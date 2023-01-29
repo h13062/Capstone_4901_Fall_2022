@@ -80,8 +80,9 @@ export default function App() {
             animation: 'fade',
             animationDuration: 150,
           }}
-          component={BabyInfo}
-        />
+        >
+          {() => <BabyInfo isDarkGlobal={isDarkGlobal} />}
+        </Screen>
         <Screen
           name="Activity"
           options={{
