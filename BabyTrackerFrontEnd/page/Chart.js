@@ -60,7 +60,7 @@ export default function Chart({ isDarkGlobal }) {
                 ],
                 datasets: [
                   {
-                    data: [20, 45, 28, 80, 100, 43],
+                    data: [20, 45, 28, 80, 100, 43, 0],
                   },
                 ],
               }}

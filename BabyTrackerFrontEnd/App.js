@@ -1,22 +1,17 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet } from "react-native";
 import Login from "./page/login";
 import Register from "./page/register";
 import BabyInfo from "./page/babyinfo";
 import Chart from "./page/Chart";
 import Activity from "./page/Activity";
-import Navbar from "./components/Navbar";
 import BabyProfiles from "./page/BabyProfiles";
 import ActivityForm from "./page/ActivityForm";
 import Setting from "./page/Setting";
-import { DefaultTheme, DarkTheme } from "@react-navigation/native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import StopWatch from "./page/Stopwatch";
-import StopWatch2 from "./page/BtimerPrototype";
 import Datetime1 from "./page/Datetime1";
 import { useEffect, useState } from "react";
-
 import Welcome from "./page/Welcome";
 
 export default function App() {
