@@ -10,6 +10,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import { MaskedTextInput } from "react-native-mask-text";
 
 const BabyInfo = () => {
   const [BaByFullname, setBaByFullname] = useState("");
@@ -59,14 +60,25 @@ const BabyInfo = () => {
         />
       </View>
       <View style={styles.inputView}>
-        <TextInput
+        {/* <TextInput
           style={styles.TextInput}
           placeholder="Please enter the baby's date of birth"
           onChangeText={(e) => {
             setDateOfBirth(e);
           }}
+          format
           keyboardType="numeric"
           value={DateOfBirth}
+        /> */}
+        <MaskedTextInput
+          mask="99/99/9999"
+          placeholder="Baby's date of birth in MM/DD/YYYY"
+          onChangeText={(e) => {
+            setDateOfBirth(e);
+          }}
+          keyboardType="numeric"
+          keyboardAppearance="Dark"
+          style={styles.TextInput}
         />
       </View>
       <View style={styles.inputView}>
@@ -136,5 +148,9 @@ const styles = StyleSheet.create({
   NextText: {
     color: "white",
     fontSize: 20,
+  },
+  datePicker1: {
+    justifyContent: "center",
+    alignItems: "flex-start",
   },
 });

@@ -13,6 +13,7 @@ import { DefaultTheme, DarkTheme } from "@react-navigation/native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import StopWatch from "./page/Stopwatch";
+import StopWatch2 from "./page/BtimerPrototype";
 import Datetime1 from "./page/Datetime1";
 import { useEffect, useState } from "react";
 
@@ -115,68 +116,10 @@ export default function App() {
   );
 }
 // export default function App() {
-//   //   const { Navigator, Screen } = createNativeStackNavigator();
-//   //   const scheme = useColorScheme();
-
-//   //   return (
-//   //     <NavigationContainer theme={DefaultTheme}>
-//   //       <Navigator>
-//   //         <Screen
-//   //           name="Login"
-//   //           options={{ headerShown: false }}
-//   //           component={Login}
-//   //         />
-//   //         <Screen
-//   //           name="Register"
-//   //           options={{ headerShown: false }}
-//   //           component={Register}
-//   //         />
-//   //         <Screen
-//   //           name="BabyInfo"
-//   //           options={{ headerShown: false }}
-//   //           component={BabyInfo}
-//   //         />
-//   //         <Screen
-//   //           name="Activity"
-//   //           options={{ headerShown: false, animationEnabled: false }}
-//   //           component={Activity}
-//   //         />
-//   //         <Screen
-//   //           name="ActivityForm"
-//   //           options={{ headerShown: false, animationEnabled: false }}
-//   //           component={ActivityForm}
-//   //         />
-//   //         <Screen
-//   //           name="Chart"
-//   //           options={{ headerShown: false, animationEnabled: false }}
-//   //           component={Chart}
-//   //         />
-//   //         <Screen
-//   //           name="BabyProfiles"
-//   //           options={{ headerShown: false, animationEnabled: false }}
-//   //           component={BabyProfiles}
-//   //         />
-//   //         <Screen
-//   //           name="Setting"
-//   //           options={{
-//   //             headerShown: false,
-//   //             animationEnabled: false,
-//   //           }}
-//   //           component={Setting}
-//   //         />
-//   //       </Navigator>
-//   //     </NavigationContainer>
-
 //   return (
-//     // <View style={styles.container}>
-//     //   <StopWatch />
-//     // </View>
-
-//     <>
-//       <StopWatch />
-//       {/* <Datetime1 /> */}
-//       {/* <DateTime2 /> */}
-//     </>
+//     <View style={styles.container}>
+//       <StopWatch2 />
+//     </View>
 //   );
 // }
 

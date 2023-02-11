@@ -7,7 +7,6 @@ import {
   TouchableOpacity,
   Dimensions,
 } from "react-native";
-import { useNavigation } from "@react-navigation/native";
 
 const screen = Dimensions.get("window");
 
@@ -27,8 +26,8 @@ const getRemaining = (time) => {
 export default function App() {
   const [remainingSecs, setRemainingSecs] = useState(0);
   const [isActive, setIsActive] = useState(false);
+  const [isActive2, setIsActive2] = useState(false);
   const { hrs, mins, secs } = getRemaining(remainingSecs);
-  const navigation = useNavigation();
 
   toggle = () => {
     setIsActive(!isActive);
@@ -54,13 +53,10 @@ export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar barStyle="light-content" />
-      <TouchableOpacity
-        style={styles.ManualBtn}
-        onPress={() => navigation.navigate("DateTimePicker")}
-      >
-        <Text style={styles.ManualText}>Enter Time Manually</Text>
-      </TouchableOpacity>
       <Text style={styles.timerText}>{`${hrs}:${mins}:${secs}`}</Text>
+      <TouchableOpacity onPress={this.toggle} style={styles.button}>
+        <Text style={styles.buttonText}>{isActive ? "Pause" : "Start"}</Text>
+      </TouchableOpacity>
       <TouchableOpacity onPress={this.toggle} style={styles.button}>
         <Text style={styles.buttonText}>{isActive ? "Pause" : "Start"}</Text>
       </TouchableOpacity>
@@ -105,20 +101,5 @@ const styles = StyleSheet.create({
   },
   buttonTextReset: {
     color: "#FF851B",
-  },
-  ManualBtn: {
-    width: 300,
-    borderRadius: 10,
-    height: 50,
-    alignItems: "center",
-    justifyContent: "center",
-    marginTop: 40,
-    backgroundColor: "#00bfff",
-    marginTop: 0,
-    paddingTop: 0,
-  },
-  ManualText: {
-    color: "white",
-    fontSize: 20,
   },
 });

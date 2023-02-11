@@ -1,10 +1,10 @@
-import { StyleSheet, Text, View } from 'react-native';
-import React, { useRef } from 'react';
-import { BarChart } from 'react-native-chart-kit';
-import { Dimensions } from 'react-native';
-import Navbar from '../components/Navbar';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { useEffect, useState } from 'react';
+import { StyleSheet, Text, View } from "react-native";
+import React, { useRef } from "react";
+import { BarChart } from "react-native-chart-kit";
+import { Dimensions } from "react-native";
+import Navbar from "../components/Navbar";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { useEffect, useState } from "react";
 
 export default function Chart({ isDarkGlobal }) {
   const [isDark, setIsDark] = useState(false);
@@ -20,9 +20,9 @@ export default function Chart({ isDarkGlobal }) {
     barPercentage: 0.8,
   };
   const chartConfigDark = {
-    fillShadowGradientFrom: '#fff',
+    fillShadowGradientFrom: "#fff",
     fillShadowGradientFromOpacity: 0.87,
-    fillShadowGradientTo: '#fff',
+    fillShadowGradientTo: "#fff",
     fillShadowGradientToOpacity: 0.87,
     backgroundGradientFromOpacity: 0,
     backgroundGradientToOpacity: 0,
@@ -50,12 +50,13 @@ export default function Chart({ isDarkGlobal }) {
             <BarChart
               data={{
                 labels: [
-                  'January',
-                  'February',
-                  'March',
-                  'April',
-                  'May',
-                  'June',
+                  "January",
+                  "February",
+                  "March",
+                  "April",
+                  "May",
+                  "June",
+                  "Test",
                 ],
                 datasets: [
                   {
@@ -63,8 +64,8 @@ export default function Chart({ isDarkGlobal }) {
                   },
                 ],
               }}
-              width={Dimensions.get('window').width * 0.9}
-              height={Dimensions.get('window').height * 0.6}
+              width={Dimensions.get("window").width * 0.9}
+              height={Dimensions.get("window").height * 0.6}
               chartConfig={chartConfig}
               withInnerLines={false}
               fromZero={true}
@@ -80,43 +81,43 @@ export default function Chart({ isDarkGlobal }) {
 
 const styles = StyleSheet.create({
   allChartWrapper: {
-    width: '100%',
-    height: '100%',
+    width: "100%",
+    height: "100%",
   },
   chartWrapper_light: {
-    width: '100%',
-    height: '100%',
-    flexDirection: 'column',
+    width: "100%",
+    height: "100%",
+    flexDirection: "column",
     paddingTop: 25,
     paddingHorizontal: 25,
     flex: 10,
   },
   chartWrapper_dark: {
-    width: '100%',
-    height: '100%',
-    flexDirection: 'column',
+    width: "100%",
+    height: "100%",
+    flexDirection: "column",
     paddingTop: 25,
     paddingHorizontal: 25,
     flex: 10,
-    backgroundColor: '#121212',
+    backgroundColor: "#121212",
   },
   headerText_light: {
-    fontWeight: 'bold',
+    fontWeight: "bold",
     fontSize: 24,
-    textAlign: 'center',
+    textAlign: "center",
   },
   headerText_dark: {
-    fontWeight: 'bold',
+    fontWeight: "bold",
     fontSize: 24,
-    textAlign: 'center',
-    color: '#fff',
+    textAlign: "center",
+    color: "#fff",
     opacity: 0.87,
   },
   chartViewWrapper: {
-    width: '100%',
-    height: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
+    width: "100%",
+    height: "100%",
+    justifyContent: "center",
+    alignItems: "center",
     paddingHorizontal: 25,
   },
 });
