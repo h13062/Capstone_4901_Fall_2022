@@ -10,6 +10,7 @@ import {
   VictoryChart,
   VictoryGroup,
   VictoryAxis,
+  VictoryZoomContainer,
 } from 'victory-native';
 
 export default function Chart({ isDarkGlobal, setNavItems, navItems }) {
@@ -53,6 +54,11 @@ export default function Chart({ isDarkGlobal, setNavItems, navItems }) {
       { x: 'May', y: 120 },
       { x: 'Jul', y: 69 },
       { x: 'Sep', y: 10 },
+      { x: '1', y: 31 },
+      { x: '2', y: 60 },
+      { x: '3', y: 40 },
+      { x: '4', y: 140 },
+      { x: '5', y: 80 },
     ],
     bar2: [
       { x: 'Jan', y: 50 },
@@ -60,6 +66,11 @@ export default function Chart({ isDarkGlobal, setNavItems, navItems }) {
       { x: 'May', y: 70 },
       { x: 'Jul', y: 38 },
       { x: 'Sep', y: 105 },
+      { x: '1', y: 50 },
+      { x: '2', y: 30 },
+      { x: '3', y: 70 },
+      { x: '4', y: 38 },
+      { x: '5', y: 105 },
     ],
   };
 
@@ -84,7 +95,7 @@ export default function Chart({ isDarkGlobal, setNavItems, navItems }) {
     },
   };
 
-  const chartTheme = isDarkGlobal ? chartTheme_light : chartTheme_dark;
+  // const chartTheme = isDarkGlobal ? chartTheme_light : chartTheme_dark;
   return (
     <>
       <SafeAreaView style={styles.allChartWrapper}>
@@ -96,7 +107,15 @@ export default function Chart({ isDarkGlobal, setNavItems, navItems }) {
             <VictoryChart
               height={Dimensions.get('window').height * 0.6}
               width={Dimensions.get('window').width * 1}
-              maxDomain={{ x: 4 }}
+              containerComponent={
+                <VictoryZoomContainer
+                  responsive={false}
+                  allowZoom={false}
+                  zoomDimension="x"
+                  allowPan
+                  zoomDomain={{ x: [0, 5] }}
+                />
+              }
             >
               <VictoryAxis
                 dependentAxis
@@ -109,7 +128,9 @@ export default function Chart({ isDarkGlobal, setNavItems, navItems }) {
                       : 'rgba(255, 255, 255, 0.87)', //CHANGE COLOR OF Y-AXIS LABELS
                   },
                   grid: {
-                    stroke: 'rgba(255, 255, 255, 0.3)', //CHANGE COLOR OF Y-AXIS GRID LINES
+                    stroke: isDarkGlobal
+                      ? 'rgba(0, 0, 0, 0.12)'
+                      : 'rgba(255, 255, 255, 0.3)', //CHANGE COLOR OF Y-AXIS GRID LINES
                     strokeDasharray: '0',
                   },
                 }}
@@ -132,25 +153,25 @@ export default function Chart({ isDarkGlobal, setNavItems, navItems }) {
                   },
                 }}
               />
-              <VictoryGroup offset={20}>
+              <VictoryGroup offset={14}>
                 <VictoryBar
-                  animate={{
-                    duration: 500,
-                    onLoad: { duration: 500 },
-                  }}
+                  // animate={{
+                  //   duration: 500,
+                  //   onLoad: { duration: 500 },
+                  // }}
                   style={{ data: { fill: '#6082B6' } }}
-                  cornerRadius={{ top: 10, bottom: 10 }}
-                  barWidth={20}
+                  cornerRadius={{ top: 7, bottom: 7 }}
+                  barWidth={14}
                   data={data.bar1}
                 />
                 <VictoryBar
-                  animate={{
-                    duration: 500,
-                    onLoad: { duration: 500 },
-                  }}
+                  // animate={{
+                  //   duration: 500,
+                  //   onLoad: { duration: 500 },
+                  // }}
                   style={{ data: { fill: '#e0a370' } }}
-                  cornerRadius={{ top: 10, bottom: 10 }}
-                  barWidth={20}
+                  cornerRadius={{ top: 7, bottom: 7 }}
+                  barWidth={14}
                   data={data.bar2}
                 />
               </VictoryGroup>
@@ -229,6 +250,7 @@ const styles = StyleSheet.create({
     height: '100%',
     justifyContent: 'center',
     alignItems: 'center',
-    paddingHorizontal: 25,
+    // paddingHorizontal: 25,
+    overflow: 'visible',
   },
 });
