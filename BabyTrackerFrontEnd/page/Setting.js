@@ -26,6 +26,8 @@ export default function Setting({
   isUnitMetric,
   setIsTempMetric,
   isTempMetric,
+  setNavItems,
+  navItems,
 }) {
   const handleDarkMode = () => {
     setIsDarkGlobal(!isDarkGlobal);
@@ -71,7 +73,6 @@ export default function Setting({
           <View style={styles.tabStyle}>
             <Text style={tabText}>Dark mode</Text>
             <CheckBox
-              style={styles.CheckBox}
               value={!isDarkGlobal}
               onValueChange={handleDarkMode}
               color={'#6082B6'}
@@ -100,7 +101,11 @@ export default function Setting({
             />
           </View>
         </View>
-        <Navbar isDarkGlobal={isDarkGlobal} />
+        <Navbar
+          isDarkGlobal={isDarkGlobal}
+          setNavItems={setNavItems}
+          navItems={navItems}
+        />
       </SafeAreaView>
     </>
   );
@@ -146,6 +151,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginBottom: 25,
+    alignItems: 'center',
   },
   tabText_light: {
     color: '#000',

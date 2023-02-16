@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import {
   StyleSheet,
   Text,
@@ -50,7 +51,7 @@ export default function App() {
     }
     return () => clearInterval(interval);
   }, [isActive, remainingSecs]);
-
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <StatusBar barStyle="light-content" />
@@ -70,11 +71,63 @@ export default function App() {
       >
         <Text style={[styles.buttonText, styles.buttonTextReset]}>Reset</Text>
       </TouchableOpacity>
+      <View style={styles.controller}>
+        <TouchableOpacity
+          style={styles.backBtn}
+          onPress={() => navigation.navigate("Activity")}
+        >
+          <Text style={styles.backText}>BACK</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.customBtn}
+          onPress={() => navigation.navigate("DateTimePicker")}
+        >
+          <Text style={styles.customText}>CUSTOM</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+  controller: {
+    // flex: 1,
+    marginTop: 25,
+    flexDirection: "row",
+    justifyContent: "space-around",
+    width: "100%",
+  },
+  backBtn: {
+    width: 100,
+    borderRadius: 10,
+    height: 50,
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 40,
+    backgroundColor: "#00bfff",
+    marginTop: 10,
+    paddingTop: 0,
+    // marginLeft
+  },
+  backText: {
+    color: "white",
+    fontSize: 20,
+  },
+  customBtn: {
+    width: 100,
+    borderRadius: 10,
+    height: 50,
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 40,
+    backgroundColor: "#00bfff",
+    marginTop: 10,
+    paddingTop: 0,
+  },
+  customText: {
+    color: "white",
+    fontSize: 20,
+  },
   container: {
     flex: 1,
     backgroundColor: "#07121B",

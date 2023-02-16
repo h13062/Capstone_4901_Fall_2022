@@ -1,17 +1,21 @@
-import { StyleSheet } from "react-native";
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, Text, View } from "react-native";
 import Login from "./page/login";
 import Register from "./page/register";
 import BabyInfo from "./page/babyinfo";
 import Chart from "./page/Chart";
 import Activity from "./page/Activity";
+import Navbar from "./components/Navbar";
 import BabyProfiles from "./page/BabyProfiles";
 import ActivityForm from "./page/ActivityForm";
 import Setting from "./page/Setting";
+import { DefaultTheme, DarkTheme } from "@react-navigation/native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import StopWatch from "./page/Stopwatch";
 import Datetime1 from "./page/Datetime1";
 import { useEffect, useState } from "react";
+
 import Welcome from "./page/Welcome";
 
 export default function App() {
@@ -32,67 +36,134 @@ export default function App() {
     console.log("isTempMetrtic: ", isTempMetric);
   }, [isTempMetric]);
 
+  const [navItems, setNavItems] = useState([true, false, false, false]);
+  useEffect(() => {
+    console.log("navItem: ", navItems);
+  }, [navItems]);
+
   return (
     <NavigationContainer>
       <Navigator>
         <Screen
           name="Welcome"
-          options={{ headerShown: false }}
+          options={{
+            headerShown: false,
+            animation: "fade",
+            animationDuration: 150,
+          }}
           component={Welcome}
         />
         <Screen
           name="Login"
-          options={{ headerShown: false }}
-          component={Login}
-        />
+          options={{
+            headerShown: false,
+            animation: "fade",
+            animationDuration: 150,
+          }}
+        >
+          {() => <Login isDarkGlobal={isDarkGlobal} />}
+        </Screen>
         <Screen
           name="Register"
-          options={{ headerShown: false }}
-          component={Register}
-        />
+          options={{
+            headerShown: false,
+            animation: "fade",
+            animationDuration: 150,
+          }}
+        >
+          {() => <Register isDarkGlobal={isDarkGlobal} />}
+        </Screen>
         <Screen
           name="BabyInfo"
-          options={{ headerShown: false }}
-          component={BabyInfo}
-        />
+          options={{
+            headerShown: false,
+            animation: "fade",
+            animationDuration: 150,
+          }}
+        >
+          {() => <BabyInfo isDarkGlobal={isDarkGlobal} />}
+        </Screen>
         <Screen
           name="Activity"
-          options={{ headerShown: false, animationEnabled: false }}
+          options={{
+            headerShown: false,
+            animation: "fade",
+            animationDuration: 150,
+          }}
         >
-          {() => <Activity isDarkGlobal={isDarkGlobal} />}
+          {() => (
+            <Activity
+              isDarkGlobal={isDarkGlobal}
+              setNavItems={setNavItems}
+              navItems={navItems}
+            />
+          )}
         </Screen>
         <Screen
           name="Chart"
-          options={{ headerShown: false, animationEnabled: false }}
+          options={{
+            headerShown: false,
+            animation: "fade",
+            animationDuration: 150,
+          }}
         >
-          {() => <Chart isDarkGlobal={isDarkGlobal} />}
+          {() => (
+            <Chart
+              isDarkGlobal={isDarkGlobal}
+              setNavItems={setNavItems}
+              navItems={navItems}
+            />
+          )}
         </Screen>
         <Screen
           name="BabyProfiles"
-          options={{ headerShown: false, animationEnabled: false }}
+          options={{
+            headerShown: false,
+            animation: "fade",
+            animationDuration: 150,
+          }}
         >
-          {() => <BabyProfiles isDarkGlobal={isDarkGlobal} />}
+          {() => (
+            <BabyProfiles
+              isDarkGlobal={isDarkGlobal}
+              setNavItems={setNavItems}
+              navItems={navItems}
+            />
+          )}
         </Screen>
         <Screen
           name="Stopwatch"
-          options={{ headerShown: false, animationEnabled: false }}
+          options={{
+            headerShown: false,
+            animation: "fade",
+            animationDuration: 150,
+          }}
           component={StopWatch}
         />
         <Screen
           name="ActivityForm"
-          options={{ headerShown: false, animationEnabled: false }}
+          options={{
+            headerShown: false,
+            animation: "fade",
+            animationDuration: 150,
+          }}
           component={ActivityForm}
         />
         <Screen
           name="DateTimePicker"
-          options={{ headerShown: false, animationEnabled: false }}
+          options={{
+            headerShown: false,
+            animation: "fade",
+            animationDuration: 150,
+          }}
           component={Datetime1}
         />
         <Screen
           name="Setting"
           options={{
             headerShown: false,
-            animationEnabled: false,
+            animation: "fade",
+            animationDuration: 150,
           }}
         >
           {() => (
@@ -103,6 +174,8 @@ export default function App() {
               isUnitMetric={isUnitMetric}
               setIsTempMetric={setIsTempMetric}
               isTempMetric={isTempMetric}
+              setNavItems={setNavItems}
+              navItems={navItems}
             />
           )}
         </Screen>
