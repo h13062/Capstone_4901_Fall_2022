@@ -16,7 +16,7 @@ import { useNavigation } from '@react-navigation/native';
 import BabyInfo from './babyinfo';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-export default function BabyProfiles({ isDarkGlobal }) {
+export default function BabyProfiles({ isDarkGlobal, setNavItems, navItems }) {
   const scrollViewRef = useRef();
   const [taskItems, setTaskItems] = useState([]);
   const navigation = useNavigation();
@@ -120,7 +120,11 @@ export default function BabyProfiles({ isDarkGlobal }) {
             </TouchableOpacity>
           </View>
         </View>
-        <Navbar isDarkGlobal={isDarkGlobal} />
+        <Navbar
+          isDarkGlobal={isDarkGlobal}
+          setNavItems={setNavItems}
+          navItems={navItems}
+        />
       </SafeAreaView>
     </>
   );
