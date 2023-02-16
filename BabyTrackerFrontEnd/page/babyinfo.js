@@ -77,7 +77,7 @@ export default function BabyInfo({ isDarkGlobal }) {
         />
       </View>
       <View style={styles.inputView}>
-        <TextInput
+        {/* <TextInput
           style={TextInp}
           placeholder="Please enter the baby's date of birth"
           placeholderTextColor={
@@ -89,16 +89,20 @@ export default function BabyInfo({ isDarkGlobal }) {
           format
           keyboardType="numeric"
           value={DateOfBirth}
-        />
+        /> */}
         <MaskedTextInput
           mask="99/99/9999"
           placeholder="Baby's date of birth in MM/DD/YYYY"
+          placeholderTextColor={
+            isDarkGlobal ? "rgba(0, 0, 0, 0.25)" : "rgba(255, 255, 255, 0.5)"
+          }
           onChangeText={(e) => {
             setDateOfBirth(e);
           }}
           keyboardType="numeric"
           keyboardAppearance="Dark"
-          style={styles.TextInput}
+          style={TextInp}
+          value={DateOfBirth}
         />
       </View>
       <View style={styles.inputView}>

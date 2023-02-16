@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import React, { useState, useEffect } from "react";
 import {
   StyleSheet,
   Text,
@@ -51,7 +50,6 @@ export default function App() {
     }
     return () => clearInterval(interval);
   }, [isActive, remainingSecs]);
-  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <StatusBar barStyle="light-content" />
