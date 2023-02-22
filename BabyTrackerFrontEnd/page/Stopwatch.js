@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import {
   StyleSheet,
   Text,
@@ -6,10 +6,10 @@ import {
   StatusBar,
   TouchableOpacity,
   Dimensions,
-} from "react-native";
-import { useNavigation } from "@react-navigation/native";
+} from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
-const screen = Dimensions.get("window");
+const screen = Dimensions.get('window');
 
 const formatNumber = (number) => `0${number}`.slice(-2);
 
@@ -24,7 +24,7 @@ const getRemaining = (time) => {
   };
 };
 
-export default function App() {
+export default function App({ isDarkGlobal, setNavItems, navItems }) {
   const [remainingSecs, setRemainingSecs] = useState(0);
   const [isActive, setIsActive] = useState(false);
   const { hrs, mins, secs } = getRemaining(remainingSecs);
@@ -50,18 +50,21 @@ export default function App() {
     }
     return () => clearInterval(interval);
   }, [isActive, remainingSecs]);
+
+  const container = isDarkGlobal
+    ? styles.container_light
+    : styles.container_dark;
+
+  const timerText = isDarkGlobal
+    ? styles.timerText_light
+    : styles.timerText_dark;
+
   return (
-    <View style={styles.container}>
+    <View style={container}>
       <StatusBar barStyle="light-content" />
-      <TouchableOpacity
-        style={styles.ManualBtn}
-        onPress={() => navigation.navigate("DateTimePicker")}
-      >
-        <Text style={styles.ManualText}>Enter Time Manually</Text>
-      </TouchableOpacity>
-      <Text style={styles.timerText}>{`${hrs}:${mins}:${secs}`}</Text>
+      <Text style={timerText}>{`${hrs}:${mins}:${secs}`}</Text>
       <TouchableOpacity onPress={this.toggle} style={styles.button}>
-        <Text style={styles.buttonText}>{isActive ? "Pause" : "Start"}</Text>
+        <Text style={styles.buttonText}>{isActive ? 'Pause' : 'Start'}</Text>
       </TouchableOpacity>
       <TouchableOpacity
         onPress={this.reset}
@@ -72,13 +75,13 @@ export default function App() {
       <View style={styles.controller}>
         <TouchableOpacity
           style={styles.backBtn}
-          onPress={() => navigation.navigate("Activity")}
+          onPress={() => navigation.navigate('Activity')}
         >
           <Text style={styles.backText}>BACK</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.customBtn}
-          onPress={() => navigation.navigate("DateTimePicker")}
+          onPress={() => navigation.navigate('DateTimePicker')}
         >
           <Text style={styles.customText}>CUSTOM</Text>
         </TouchableOpacity>
@@ -90,86 +93,95 @@ export default function App() {
 const styles = StyleSheet.create({
   controller: {
     // flex: 1,
-    marginTop: 25,
-    flexDirection: "row",
-    justifyContent: "space-around",
-    width: "100%",
+    marginTop: 10,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    width: '100%',
   },
   backBtn: {
     width: 100,
     borderRadius: 10,
     height: 50,
-    alignItems: "center",
-    justifyContent: "center",
-    marginTop: 40,
-    backgroundColor: "#00bfff",
-    marginTop: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 25,
+    backgroundColor: '#6082B6',
+    // marginTop: 10,
     paddingTop: 0,
     // marginLeft
   },
   backText: {
-    color: "white",
+    color: 'white',
     fontSize: 20,
   },
   customBtn: {
     width: 100,
     borderRadius: 10,
     height: 50,
-    alignItems: "center",
-    justifyContent: "center",
-    marginTop: 40,
-    backgroundColor: "#00bfff",
-    marginTop: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 25,
+    backgroundColor: '#6082B6',
+    // marginTop: 10,
     paddingTop: 0,
   },
   customText: {
-    color: "white",
+    color: 'white',
     fontSize: 20,
   },
-  container: {
+  container_light: {
     flex: 1,
-    backgroundColor: "#07121B",
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  container_dark: {
+    flex: 1,
+    alignItems: 'center',
+    backgroundColor: '#121212',
+    justifyContent: 'center',
   },
   button: {
     borderWidth: 10,
-    borderColor: "#B9AAFF",
+    borderColor: '#B9AAFF',
     width: screen.width / 2,
     height: screen.width / 2,
     borderRadius: screen.width / 2,
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   buttonText: {
     fontSize: 45,
-    color: "#B9AAFF",
+    color: '#B9AAFF',
   },
-  timerText: {
-    color: "#fff",
+  timerText_light: {
     fontSize: 90,
     marginBottom: 20,
   },
+  timerText_dark: {
+    fontSize: 90,
+    marginBottom: 20,
+    color: 'rgba(255, 255, 255, 0.87)',
+  },
   buttonReset: {
     marginTop: 20,
-    borderColor: "#FF851B",
+    borderColor: '#FF851B',
   },
   buttonTextReset: {
-    color: "#FF851B",
+    color: '#FF851B',
   },
   ManualBtn: {
     width: 300,
     borderRadius: 10,
     height: 50,
-    alignItems: "center",
-    justifyContent: "center",
-    marginTop: 40,
-    backgroundColor: "#00bfff",
-    marginTop: 0,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 25,
+    backgroundColor: '#00bfff',
+    // marginTop: 0,
     paddingTop: 0,
   },
   ManualText: {
-    color: "white",
+    color: 'white',
     fontSize: 20,
   },
 });
