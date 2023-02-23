@@ -1,44 +1,44 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
-import Login from "./page/login";
-import Register from "./page/register";
-import BabyInfo from "./page/babyinfo";
-import Chart from "./page/Chart";
-import Activity from "./page/Activity";
-import Navbar from "./components/Navbar";
-import BabyProfiles from "./page/BabyProfiles";
-import ActivityForm from "./page/ActivityForm";
-import Setting from "./page/Setting";
-import { DefaultTheme, DarkTheme } from "@react-navigation/native";
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import StopWatch from "./page/Stopwatch";
-import Datetime1 from "./page/Datetime1";
-import { useEffect, useState } from "react";
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View } from 'react-native';
+import Login from './page/login';
+import Register from './page/register';
+import BabyInfo from './page/babyinfo';
+import Chart from './page/Chart';
+import Activity from './page/Activity';
+import Navbar from './components/Navbar';
+import BabyProfiles from './page/BabyProfiles';
+import ActivityForm from './page/ActivityForm';
+import Setting from './page/Setting';
+import { DefaultTheme, DarkTheme } from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import StopWatch from './page/Stopwatch';
+import Datetime1 from './page/Datetime1';
+import { useEffect, useState } from 'react';
 
-import Welcome from "./page/Welcome";
+import Welcome from './page/Welcome';
 
 export default function App() {
   const { Navigator, Screen } = createNativeStackNavigator();
 
   const [isDarkGlobal, setIsDarkGlobal] = useState(true);
   useEffect(() => {
-    console.log("isDarkGlobal: ", isDarkGlobal);
+    console.log('isDarkGlobal: ', isDarkGlobal);
   }, [isDarkGlobal]);
 
   const [isUnitMetric, setIsUnitMetric] = useState(true);
   useEffect(() => {
-    console.log("isUnitMetrtic: ", isUnitMetric);
+    console.log('isUnitMetrtic: ', isUnitMetric);
   }, [isUnitMetric]);
 
   const [isTempMetric, setIsTempMetric] = useState(true);
   useEffect(() => {
-    console.log("isTempMetrtic: ", isTempMetric);
+    console.log('isTempMetrtic: ', isTempMetric);
   }, [isTempMetric]);
 
   const [navItems, setNavItems] = useState([true, false, false, false]);
   useEffect(() => {
-    console.log("navItem: ", navItems);
+    console.log('navItem: ', navItems);
   }, [navItems]);
 
   return (
@@ -48,7 +48,7 @@ export default function App() {
           name="Welcome"
           options={{
             headerShown: false,
-            animation: "fade",
+            animation: 'fade',
             animationDuration: 150,
           }}
           component={Welcome}
@@ -57,7 +57,7 @@ export default function App() {
           name="Login"
           options={{
             headerShown: false,
-            animation: "fade",
+            animation: 'fade',
             animationDuration: 150,
           }}
         >
@@ -67,7 +67,7 @@ export default function App() {
           name="Register"
           options={{
             headerShown: false,
-            animation: "fade",
+            animation: 'fade',
             animationDuration: 150,
           }}
         >
@@ -77,7 +77,7 @@ export default function App() {
           name="BabyInfo"
           options={{
             headerShown: false,
-            animation: "fade",
+            animation: 'fade',
             animationDuration: 150,
           }}
         >
@@ -87,7 +87,7 @@ export default function App() {
           name="Activity"
           options={{
             headerShown: false,
-            animation: "fade",
+            animation: 'fade',
             animationDuration: 150,
           }}
         >
@@ -103,7 +103,7 @@ export default function App() {
           name="Chart"
           options={{
             headerShown: false,
-            animation: "fade",
+            animation: 'fade',
             animationDuration: 150,
           }}
         >
@@ -119,7 +119,7 @@ export default function App() {
           name="BabyProfiles"
           options={{
             headerShown: false,
-            animation: "fade",
+            animation: 'fade',
             animationDuration: 150,
           }}
         >
@@ -135,16 +135,23 @@ export default function App() {
           name="Stopwatch"
           options={{
             headerShown: false,
-            animation: "fade",
+            animation: 'fade',
             animationDuration: 150,
           }}
-          component={StopWatch}
-        />
+        >
+          {() => (
+            <StopWatch
+              isDarkGlobal={isDarkGlobal}
+              setNavItems={setNavItems}
+              navItems={navItems}
+            />
+          )}
+        </Screen>
         <Screen
           name="ActivityForm"
           options={{
             headerShown: false,
-            animation: "fade",
+            animation: 'fade',
             animationDuration: 150,
           }}
           component={ActivityForm}
@@ -153,7 +160,7 @@ export default function App() {
           name="DateTimePicker"
           options={{
             headerShown: false,
-            animation: "fade",
+            animation: 'fade',
             animationDuration: 150,
           }}
           component={Datetime1}
@@ -162,7 +169,7 @@ export default function App() {
           name="Setting"
           options={{
             headerShown: false,
-            animation: "fade",
+            animation: 'fade',
             animationDuration: 150,
           }}
         >
@@ -194,8 +201,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
