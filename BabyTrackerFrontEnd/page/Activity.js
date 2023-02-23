@@ -17,6 +17,7 @@ import Task from '../components/Task';
 import Navbar from '../components/Navbar';
 import { useNavigation } from '@react-navigation/native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import axios from 'axios';
 
 export default function Activity({ isDarkGlobal, setNavItems, navItems }) {
   const scrollViewRef = useRef();
@@ -28,6 +29,72 @@ export default function Activity({ isDarkGlobal, setNavItems, navItems }) {
   useEffect(() => {
     setIsDark(!isDarkGlobal);
   }, [isDarkGlobal]);
+
+  const url = 'https://capstone54.azurewebsites.net/';
+
+  const registerOnSubmitHandler = (e) => {
+    e.preventDefault();
+
+    axios
+      .get(url + '/api/Account/signup', {
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+      })
+      .then((response) => {
+        console.log('response:', response.status);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  useEffect(() => {
+    axios
+      .get(url + '/api/EatActivity', {
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+      })
+      .then((response) => {
+        console.log('response:', response.status);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  });
+  useEffect(() => {
+    axios
+      .get(url + '/api/PlayActivityControllercs', {
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+      })
+      .then((response) => {
+        console.log('response:', response.status);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  });
+  useEffect(() => {
+    axios
+      .get(url + '/api/SleepActivity', {
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+      })
+      .then((response) => {
+        console.log('response:', response.status);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  });
 
   // Complete a task by removing an element at a specific index
   //   const handleClearTask = (index) => {

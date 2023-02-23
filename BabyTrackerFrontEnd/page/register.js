@@ -23,7 +23,7 @@ export default function Register({ isDarkGlobal }) {
   const [agree, setAgree] = useState(false);
   const navigation = useNavigation();
 
-  const url = 'http://192.168.254.208:5290';
+  const url = 'https://capstone54.azurewebsites.net/';
 
   const registerOnSubmitHandler = (e) => {
     e.preventDefault();
