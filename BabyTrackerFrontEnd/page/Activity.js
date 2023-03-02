@@ -4,6 +4,7 @@ import {
   View,
   ScrollView,
   TouchableOpacity,
+  StatusBar,
   Keyboard,
   Alert,
   Modal,
@@ -154,7 +155,17 @@ export default function Activity({ isDarkGlobal, setNavItems, navItems }) {
     : styles.headerText_dark;
   return (
     <>
-      <SafeAreaView style={styles.allAcivityWrapper}>
+      <SafeAreaView
+        style={[
+          styles.allAcivityWrapper,
+          {
+            backgroundColor: isDarkGlobal
+              ? 'rgba(255, 255, 255, 0.87)'
+              : '#121212',
+          },
+        ]}
+      >
+        <StatusBar barStyle={isDarkGlobal ? 'dark-content' : 'light-content'} />
         {/* Acitivity header */}
         <View style={activityWrapper}>
           <View>

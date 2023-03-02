@@ -4,6 +4,7 @@ import {
   View,
   ScrollView,
   TouchableOpacity,
+  StatusBar,
   Keyboard,
   Alert,
 } from 'react-native';
@@ -78,7 +79,17 @@ export default function BabyProfiles({ isDarkGlobal, setNavItems, navItems }) {
     : styles.headerText_dark;
   return (
     <>
-      <SafeAreaView style={styles.allProfileWrapper}>
+      <SafeAreaView
+        style={[
+          styles.allProfileWrapper,
+          {
+            backgroundColor: isDarkGlobal
+              ? 'rgba(255, 255, 255, 0.87)'
+              : '#121212',
+          },
+        ]}
+      >
+        <StatusBar barStyle={isDarkGlobal ? 'dark-content' : 'light-content'} />
         {/* Acitivity header */}
         <View style={profileWrapper}>
           <View>

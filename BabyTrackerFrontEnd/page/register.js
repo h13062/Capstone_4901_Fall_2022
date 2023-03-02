@@ -1,4 +1,3 @@
-import { StatusBar } from 'expo-status-bar';
 import React, { useEffect, useState } from 'react';
 import {
   StyleSheet,
@@ -6,6 +5,7 @@ import {
   View,
   Image,
   TextInput,
+  StatusBar,
   Button,
   TouchableOpacity,
   SafeAreaView,
@@ -74,7 +74,7 @@ export default function Register({ isDarkGlobal }) {
         source={require('../assets/sleep_baby.jpg')}
       />
 
-      <StatusBar style="auto" />
+      <StatusBar barStyle={isDarkGlobal ? 'dark-content' : 'light-content'} />
       <View>
         <Text style={title}>Register</Text>
       </View>

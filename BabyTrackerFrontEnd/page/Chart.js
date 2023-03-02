@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, StatusBar } from 'react-native';
 import React, { useRef } from 'react';
 import { BarChart } from 'react-native-chart-kit';
 import { Dimensions } from 'react-native';
@@ -147,7 +147,17 @@ export default function Chart({ isDarkGlobal, setNavItems, navItems }) {
   // const chartTheme = isDarkGlobal ? chartTheme_light : chartTheme_dark;
   return (
     <>
-      <SafeAreaView style={styles.allChartWrapper}>
+      <SafeAreaView
+        style={[
+          styles.allChartWrapper,
+          {
+            backgroundColor: isDarkGlobal
+              ? 'rgba(255, 255, 255, 0.87)'
+              : '#121212',
+          },
+        ]}
+      >
+        <StatusBar barStyle={isDarkGlobal ? 'dark-content' : 'light-content'} />
         <View style={chartWrapper}>
           <View>
             <Text style={headerText}>Chart</Text>

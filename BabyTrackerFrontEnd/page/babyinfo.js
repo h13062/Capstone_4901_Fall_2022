@@ -1,22 +1,22 @@
-import { StatusBar } from "expo-status-bar";
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import {
   StyleSheet,
   Text,
   View,
   Image,
+  StatusBar,
   TextInput,
   Button,
   TouchableOpacity,
-} from "react-native";
-import { useNavigation } from "@react-navigation/native";
-import { MaskedTextInput } from "react-native-mask-text";
+} from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { MaskedTextInput } from 'react-native-mask-text';
 
 export default function BabyInfo({ isDarkGlobal }) {
-  const [BaByFullname, setBaByFullname] = useState("");
-  const [Gender, setGender] = useState("");
-  const [DateOfBirth, setDateOfBirth] = useState("");
-  const [Weight, setWeight] = useState("");
+  const [BaByFullname, setBaByFullname] = useState('');
+  const [Gender, setGender] = useState('');
+  const [DateOfBirth, setDateOfBirth] = useState('');
+  const [Weight, setWeight] = useState('');
   const navigation = useNavigation();
 
   const container = isDarkGlobal
@@ -31,19 +31,28 @@ export default function BabyInfo({ isDarkGlobal }) {
   const NextText = isDarkGlobal ? styles.NextText_light : styles.NextText_dark;
 
   const babyInfoOnPressHandler = () => {
-    console.log("On submit object:", {
+    console.log('On submit object:', {
       fullname: BaByFullname,
       Gender: Gender,
       DateOfBirth: DateOfBirth,
       Weight: Weight,
     });
 
-    navigation.navigate("Activity");
+    navigation.navigate('Activity');
   };
 
   return (
-    <View style={container}>
-      <StatusBar style="auto" />
+    <View
+      style={[
+        container,
+        {
+          backgroundColor: isDarkGlobal
+            ? 'rgba(255, 255, 255, 0.87)'
+            : '#121212',
+        },
+      ]}
+    >
+      <StatusBar barStyle={isDarkGlobal ? 'dark-content' : 'light-content'} />
       <View>
         <Text style={title}>Baby Information</Text>
         <Text style={sup_title}>
@@ -55,7 +64,7 @@ export default function BabyInfo({ isDarkGlobal }) {
           style={TextInp}
           placeholder="Please enter the baby's fullname"
           placeholderTextColor={
-            isDarkGlobal ? "rgba(0, 0, 0, 0.25)" : "rgba(255, 255, 255, 0.5)"
+            isDarkGlobal ? 'rgba(0, 0, 0, 0.25)' : 'rgba(255, 255, 255, 0.5)'
           }
           onChangeText={(e) => {
             setBaByFullname(e);
@@ -68,7 +77,7 @@ export default function BabyInfo({ isDarkGlobal }) {
           style={TextInp}
           placeholder="Please enter the baby's gender"
           placeholderTextColor={
-            isDarkGlobal ? "rgba(0, 0, 0, 0.25)" : "rgba(255, 255, 255, 0.5)"
+            isDarkGlobal ? 'rgba(0, 0, 0, 0.25)' : 'rgba(255, 255, 255, 0.5)'
           }
           onChangeText={(e) => {
             setGender(e);
@@ -94,7 +103,7 @@ export default function BabyInfo({ isDarkGlobal }) {
           mask="99/99/9999"
           placeholder="Baby's date of birth in MM/DD/YYYY"
           placeholderTextColor={
-            isDarkGlobal ? "rgba(0, 0, 0, 0.25)" : "rgba(255, 255, 255, 0.5)"
+            isDarkGlobal ? 'rgba(0, 0, 0, 0.25)' : 'rgba(255, 255, 255, 0.5)'
           }
           onChangeText={(e) => {
             setDateOfBirth(e);
@@ -110,7 +119,7 @@ export default function BabyInfo({ isDarkGlobal }) {
           style={TextInp}
           placeholder="Please enter the baby's weight (ib)"
           placeholderTextColor={
-            isDarkGlobal ? "rgba(0, 0, 0, 0.25)" : "rgba(255, 255, 255, 0.5)"
+            isDarkGlobal ? 'rgba(0, 0, 0, 0.25)' : 'rgba(255, 255, 255, 0.5)'
           }
           onChangeText={(e) => {
             setWeight(e);
@@ -129,100 +138,100 @@ export default function BabyInfo({ isDarkGlobal }) {
 const styles = StyleSheet.create({
   title_light: {
     fontSize: 40,
-    fontWeight: "0.5",
-    textAlign: "center",
+    fontWeight: '0.5',
+    textAlign: 'center',
   },
   title_dark: {
     fontSize: 40,
-    fontWeight: "0.5",
-    textAlign: "center",
-    color: "rgba(255, 255, 255, 0.87)",
+    fontWeight: '0.5',
+    textAlign: 'center',
+    color: 'rgba(255, 255, 255, 0.87)',
   },
   sup_title_light: {
-    alignSelf: "center",
-    textAlign: "center",
+    alignSelf: 'center',
+    textAlign: 'center',
     width: 300,
     paddingBottom: 25,
   },
   sup_title_dark: {
-    alignSelf: "center",
-    textAlign: "center",
+    alignSelf: 'center',
+    textAlign: 'center',
     width: 300,
     paddingBottom: 25,
-    color: "rgba(255, 255, 255, 0.87)",
+    color: 'rgba(255, 255, 255, 0.87)',
   },
   container_light: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   container_dark: {
     flex: 1,
-    backgroundColor: "#121212",
-    alignItems: "center",
-    justifyContent: "center",
+    backgroundColor: '#121212',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   inputView: {
     borderRadius: 10,
-    width: "100%",
+    width: '100%',
     height: 40,
     marginBottom: 20,
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 
   TextInput_light: {
     height: 50,
     borderRadius: 10,
-    alignItems: "center",
+    alignItems: 'center',
     width: 300,
     flex: 1,
     padding: 10,
     marginLeft: 10,
-    borderColor: "#121212",
+    borderColor: '#121212',
     borderWidth: 2,
   },
   TextInput_dark: {
     height: 50,
     borderRadius: 10,
-    alignItems: "center",
+    alignItems: 'center',
     width: 300,
     flex: 1,
     padding: 10,
     marginLeft: 10,
-    borderColor: "rgba(255, 255, 255, 0.87)",
+    borderColor: 'rgba(255, 255, 255, 0.87)',
     borderWidth: 2,
   },
   NextBtn_light: {
     width: 300,
     borderRadius: 10,
     height: 50,
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center',
     marginTop: 25,
-    backgroundColor: "#6082B6",
+    backgroundColor: '#6082B6',
   },
   NextBtn_dark: {
     width: 300,
     borderRadius: 10,
     height: 50,
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center',
     marginTop: 25,
-    backgroundColor: "#121212",
-    borderColor: "#6082B6",
+    backgroundColor: '#121212',
+    borderColor: '#6082B6',
     borderWidth: 2,
   },
   NextText_light: {
-    color: "rgba(255, 255, 255, 0.87)",
+    color: 'rgba(255, 255, 255, 0.87)',
     fontSize: 20,
   },
   NextText_dark: {
-    color: "#6082B6",
+    color: '#6082B6',
     fontSize: 20,
   },
   datePicker1: {
-    justifyContent: "center",
-    alignItems: "flex-start",
+    justifyContent: 'center',
+    alignItems: 'flex-start',
   },
 });
