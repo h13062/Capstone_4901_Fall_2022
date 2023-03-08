@@ -155,6 +155,12 @@ export default function DateTime1() {
             </View>
           </View>
         </View>
+        <TouchableOpacity
+          style={styleSheet.submitBtn}
+          onPress={CustomOnSubmitHandler}
+        >
+          <Text style={styleSheet.submitText}>SUBMIT</Text>
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   ) : (
