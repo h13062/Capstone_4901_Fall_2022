@@ -144,6 +144,7 @@ export default function DateTime1() {
             </View>
           </View>
         </View>
+        <Button title="Submit" />
       </View>
     </SafeAreaView>
   ) : (
@@ -262,6 +263,7 @@ export default function DateTime1() {
             </View>
           )}
         </View>
+        <Button title="Submit" />
       </View>
     </SafeAreaView>
   );
