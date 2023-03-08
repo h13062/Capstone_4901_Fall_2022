@@ -4,6 +4,7 @@ import {
   View,
   ScrollView,
   TouchableOpacity,
+  StatusBar,
   Keyboard,
   Alert,
   Modal,
@@ -65,7 +66,17 @@ export default function Setting({
 
   return (
     <>
-      <SafeAreaView style={styles.allSettingWrapper}>
+      <SafeAreaView
+        style={[
+          styles.allSettingWrapper,
+          {
+            backgroundColor: isDarkGlobal
+              ? 'rgba(255, 255, 255, 0.87)'
+              : '#121212',
+          },
+        ]}
+      >
+        <StatusBar barStyle={isDarkGlobal ? 'dark-content' : 'light-content'} />
         <View style={settingWrapper}>
           <View>
             <Text style={headerText}>Setting</Text>

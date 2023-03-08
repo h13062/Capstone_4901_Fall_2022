@@ -60,8 +60,17 @@ export default function App({ isDarkGlobal, setNavItems, navItems }) {
     : styles.timerText_dark;
 
   return (
-    <View style={container}>
-      <StatusBar barStyle="light-content" />
+    <View
+      style={[
+        container,
+        {
+          backgroundColor: isDarkGlobal
+            ? 'rgba(255, 255, 255, 0.87)'
+            : '#121212',
+        },
+      ]}
+    >
+      <StatusBar barStyle={isDarkGlobal ? 'dark-content' : 'light-content'} />
       <Text style={timerText}>{`${hrs}:${mins}:${secs}`}</Text>
       <TouchableOpacity onPress={this.toggle} style={styles.button}>
         <Text style={styles.buttonText}>{isActive ? 'Pause' : 'Start'}</Text>

@@ -1,4 +1,3 @@
-import { StatusBar } from 'expo-status-bar';
 import React, { useEffect, useState } from 'react';
 import {
   StyleSheet,
@@ -6,6 +5,7 @@ import {
   View,
   Image,
   TextInput,
+  StatusBar,
   Button,
   TouchableOpacity,
 } from 'react-native';
@@ -53,14 +53,23 @@ export default function Login({ isDarkGlobal }) {
     ? styles.registerBtn_light
     : styles.registerBtn_dark;
   return (
-    <SafeAreaView style={container}>
+    <SafeAreaView
+      style={[
+        container,
+        {
+          backgroundColor: isDarkGlobal
+            ? 'rgba(255, 255, 255, 0.87)'
+            : '#121212',
+        },
+      ]}
+    >
       {/* <View style={container}> */}
+      <StatusBar barStyle={isDarkGlobal ? 'dark-content' : 'light-content'} />
       <Image
         style={styles.image}
         source={require('../assets/sleep_baby.jpg')}
       />
 
-      {/* <StatusBar style="auto" /> */}
       <View
         style={{
           alignItems: 'center',
