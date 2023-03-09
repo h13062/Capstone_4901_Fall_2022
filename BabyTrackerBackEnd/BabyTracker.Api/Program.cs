@@ -6,6 +6,7 @@ using BabyTracker.Infrastructure.Repository;
 using BabyTracker.Infrastructure.Service;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
@@ -17,11 +18,12 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+//add jwt token to swagger
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo
     {
-        Title = "JWT Token",
+        Title = "BabyTracker",
         Version = "v1",
     });
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
@@ -50,16 +52,25 @@ builder.Services.AddSwaggerGen(c =>
 });
 builder.Services.AddCors(options =>
 {
-    options.AddDefaultPolicy(builder =>
-    {
-        //builder.WithOrigins("https://localhost:7290").AllowAnyHeader().AllowAnyMethod();
-        //builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
-        builder.WithOrigins("exp://192.168.254.208:19000").AllowAnyHeader().AllowAnyMethod();
-    });
+    options.AddPolicy("CorsPolicy",
+            builder => builder.AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader());
+    //.AllowCredentials());
 });
 
-builder.Services.AddSqlServer<BabyTrackerDbContext>(builder.Configuration.GetConnectionString("OnlineBabyTracker"));
-builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
+//builder.Services.AddSqlServer<BabyTrackerDbContext>(builder.Configuration.GetConnectionString("OnlineBabyTracker"));
+builder.Services.AddDbContext<BabyTrackerDbContext>(options =>
+    options.UseSqlServer(
+        builder.Configuration.GetConnectionString("OnlineBabyTracker"),
+        sqlServerOptionsAction: sqlOptions =>
+        {
+            sqlOptions.EnableRetryOnFailure(
+                maxRetryCount: 5,
+                maxRetryDelay: TimeSpan.FromSeconds(30),
+                errorNumbersToAdd: null);
+        }));
+builder.Services.AddIdentity<IdentityUser, IdentityRole>()
     .AddEntityFrameworkStores<BabyTrackerDbContext>()
     .AddDefaultTokenProviders();
 builder.Services.AddAuthentication(options =>
@@ -86,31 +97,41 @@ builder.Services.AddScoped<IBabyRepositoryAsync, BabyRepositoryAsync>();
 builder.Services.AddScoped<IBabySitterRepositoryAsync, BabySitterRepositoryAsync>();
 builder.Services.AddScoped<IParentRepositoryAsync, ParentRepositoryAsync>();
 builder.Services.AddScoped<IEatActivityRepositoryAsync, EatActivityRepositoryAsync>();
-builder.Services.AddScoped<IPlayActivityRepositoryAsync,PlayActivityRepositoryAsync>();
+builder.Services.AddScoped<IPlayActivityRepositoryAsync, PlayActivityRepositoryAsync>();
 builder.Services.AddScoped<ISleepActivityRepositoryAsync, SleepActivityRepositoryAsync>();
-builder.Services.AddScoped<IAccountRepositoryAsync, AccountRepositoryAsync>();
+//builder.Services.AddScoped<IAccountRepositoryAsync, AccountRepositoryAsync>();
 
 
 builder.Services.AddScoped<IBabyServiceAsync, BabyServiceAsync>();
 builder.Services.AddScoped<IBabySitterServiceAsync, BabySitterServiceAsync>();
-builder.Services.AddScoped<IParentServiceAsync,ParentServiceAsync>();
+builder.Services.AddScoped<IParentServiceAsync, ParentServiceAsync>();
 builder.Services.AddScoped<IEatActivyServiceAsync, EatActivityServiceAsync>();
 builder.Services.AddScoped<IPlayActivtyServiceAsync, PlayActivityServiceAsync>();
 builder.Services.AddScoped<IPlayActivityServiceAsync, SleepActivityServiceAsync>();
-builder.Services.AddScoped<IAccountServiceAsync, AccountServiceAsync>();
+//builder.Services.AddScoped<IAccountServiceAsync, AccountServiceAsync>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
+{
+    app.UseDeveloperExceptionPage();
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+else
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
 app.UseHttpsRedirection();
-app.UseCors();
-app.UseAuthorization();
+
+app.UseCors("CorsPolicy");
+
+//app.UseAuthorization();
 app.UseAuthentication();
+
 app.MapControllers();
 
 app.Run();
+

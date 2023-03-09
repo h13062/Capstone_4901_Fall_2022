@@ -33,7 +33,7 @@ namespace BabyTracker.Api.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> Post(EatActivityModel model)
+        public async Task<IActionResult> Post(EatActivityRequestModel model)
         {
             var result = await _eatactivyServiceAsync.AddEatAsync(model);
             if (result != 0)

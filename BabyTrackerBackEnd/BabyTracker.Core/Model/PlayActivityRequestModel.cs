@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace BabyTracker.Core.Model
 {
-    public class EatActivityModel
+    public class PlayActivityRequestModel
     {
         public int Id { get; set; }
-        public DateTime Day { get; set; }
-        public DateTime EatStart { get; set; }
-        public DateTime EatEnd { get; set; }
+        public string Day { get; set; }
+        public string PlayStart { get; set; }
+        public string PlayEnd { get; set; }
     }
 }

@@ -13,9 +13,11 @@ namespace BabyTracker.Infrastructure.Service
     public class ParentServiceAsync : IParentServiceAsync
     {
         private readonly IParentRepositoryAsync _parentRepositoryAsync;
-        public ParentServiceAsync(IParentRepositoryAsync parentRepositoryAsync)
+        private readonly IBabyRepositoryAsync _babyRepositoryAsync;
+        public ParentServiceAsync(IParentRepositoryAsync parentRepositoryAsync, IBabyRepositoryAsync babyRepositoryAsync)
         {
-           _parentRepositoryAsync = parentRepositoryAsync;
+            _parentRepositoryAsync = parentRepositoryAsync;
+            _babyRepositoryAsync = babyRepositoryAsync;
         }
 
         public async Task<int> AddParentAsync(ParentRequestModel parent)
@@ -35,24 +37,37 @@ namespace BabyTracker.Infrastructure.Service
 
         public async Task<IEnumerable<ParentResponseModel>> GetAllAsync()
         {
-            var collection = await _parentRepositoryAsync.GetAllAsync();
-            if (collection != null)
+            try
             {
-                List<ParentResponseModel> result = new List<ParentResponseModel>();
-                foreach (var item in collection)
+                IEnumerable<Parent> collection = await _parentRepositoryAsync.GetAllAsync();
+                if (collection != null)
                 {
-                    ParentResponseModel model = new ParentResponseModel();
-                    model.Id = item.Id;
-                    model.Name = item.Name;
-                    var par = await _parentRepositoryAsync.GetByIdAsync(item.BabyId);
-                    model.BabyId = par.BabyId;
-                    
-                    result.Add(model);
+                    List<ParentResponseModel> result = new List<ParentResponseModel>();
+                    foreach (var item in collection)
+                    {
+                        ParentResponseModel model = new ParentResponseModel();
+                        model.Id = item.Id;
+                        model.Name = item.Name;
+                        try
+                        {
+                            var par = await _babyRepositoryAsync.GetByIdAsync(item.BabyId);
+                            //model.BabyId = par.Id;
+                            model.Baby = par;
+                            result.Add(model);
+                        }
+                        catch (Exception ex)
+                        {
+                            throw new Exception("An error has occur while calling GetByIdAsync", ex);
+                        }
+                    }
+                    return result;
                 }
-                return result;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("An error has occur", ex);
             }
             return null;
-
         }
 
         public async Task<ParentResponseModel> GetByIdAsync(int id)
@@ -63,9 +78,9 @@ namespace BabyTracker.Infrastructure.Service
                 ParentResponseModel model = new ParentResponseModel();
                 model.Id = item.Id;
                 model.Name = item.Name;
-                var par = await _parentRepositoryAsync.GetByIdAsync(item.BabyId);
-                model.BabyId = par.BabyId;
-                
+                var par = await _babyRepositoryAsync.GetByIdAsync(item.BabyId);
+                //model.BabyId = par.BabyId;
+                model.Baby = par;
                 return model;
             }
             return null;
@@ -79,9 +94,9 @@ namespace BabyTracker.Infrastructure.Service
                 ParentResponseModel model = new ParentResponseModel();
                 model.Id = item.Id;
                 model.Name = item.Name;
-                var par = await _parentRepositoryAsync.GetByIdAsync(item.BabyId);
-                model.BabyId = par.BabyId;
-
+                var par = await _babyRepositoryAsync.GetByIdAsync(item.BabyId);
+                //model.BabyId = par.BabyId;
+                model.Baby = par;
                 return model;
             }
             return null;

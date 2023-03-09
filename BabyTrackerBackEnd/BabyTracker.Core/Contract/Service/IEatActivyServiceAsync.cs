@@ -9,10 +9,10 @@ namespace BabyTracker.Core.Contract.Service
 {
     public interface IEatActivyServiceAsync
     {
-        Task<IEnumerable<EatActivityModel>> GetAllAsync();
-        Task<int> AddEatAsync(EatActivityModel sleep);
-        Task<EatActivityModel> GetByIdAsync(int id);
-        Task<int> UpdateEatAsync(EatActivityModel sleep);
+        Task<IEnumerable<EatActivityRespondModel>> GetAllAsync();
+        Task<int> AddEatAsync(EatActivityRequestModel sleep);
+        Task<EatActivityRespondModel> GetByIdAsync(int id);
+        Task<int> UpdateEatAsync(EatActivityRequestModel sleep);
         Task<int?> DeleteByIdAsync(int id);
     }
 }

@@ -5,7 +5,7 @@ namespace BabyTracker.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PlayActivityControllercs: ControllerBase
+    public class PlayActivityControllercs : ControllerBase
     {
         private readonly IPlayActivtyServiceAsync _playActivityServiceAsync;
         public PlayActivityControllercs(IPlayActivtyServiceAsync playActivityServiceAsync)
@@ -32,7 +32,7 @@ namespace BabyTracker.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post(PlayActivityModel model)
+        public async Task<IActionResult> Post(PlayActivityRequestModel model)
         {
             var result = await _playActivityServiceAsync.AddPlayAsync(model);
             if (result != 0)

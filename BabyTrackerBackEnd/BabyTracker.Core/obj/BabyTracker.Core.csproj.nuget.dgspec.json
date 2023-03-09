@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bgh15\\Capstone_4901_Fall_2022-1\\BabyTrackerBackEnd\\BabyTracker.Core\\BabyTracker.Core.csproj": {}
+    "D:\\4902\\Capstone_4901_Fall_2022\\BabyTrackerBackEnd\\BabyTracker.Core\\BabyTracker.Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\bgh15\\Capstone_4901_Fall_2022-1\\BabyTrackerBackEnd\\BabyTracker.Core\\BabyTracker.Core.csproj": {
+    "D:\\4902\\Capstone_4901_Fall_2022\\BabyTrackerBackEnd\\BabyTracker.Core\\BabyTracker.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bgh15\\Capstone_4901_Fall_2022-1\\BabyTrackerBackEnd\\BabyTracker.Core\\BabyTracker.Core.csproj",
+        "projectUniqueName": "D:\\4902\\Capstone_4901_Fall_2022\\BabyTrackerBackEnd\\BabyTracker.Core\\BabyTracker.Core.csproj",
         "projectName": "BabyTracker.Core",
-        "projectPath": "C:\\Users\\bgh15\\Capstone_4901_Fall_2022-1\\BabyTrackerBackEnd\\BabyTracker.Core\\BabyTracker.Core.csproj",
+        "projectPath": "D:\\4902\\Capstone_4901_Fall_2022\\BabyTrackerBackEnd\\BabyTracker.Core\\BabyTracker.Core.csproj",
         "packagesPath": "C:\\Users\\bgh15\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bgh15\\Capstone_4901_Fall_2022-1\\BabyTrackerBackEnd\\BabyTracker.Core\\obj\\",
+        "outputPath": "D:\\4902\\Capstone_4901_Fall_2022\\BabyTrackerBackEnd\\BabyTracker.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

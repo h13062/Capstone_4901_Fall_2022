@@ -4,6 +4,7 @@ using BabyTracker.Core.Entity;
 using BabyTracker.Core.Model;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,15 +16,15 @@ namespace BabyTracker.Infrastructure.Service
         private readonly IPlayActivityRepositoryAsync _playActivtyRepositoryAsync;
         public PlayActivityServiceAsync(IPlayActivityRepositoryAsync playActivtyRepositoryAsync)
         {
-              _playActivtyRepositoryAsync = playActivtyRepositoryAsync;
+            _playActivtyRepositoryAsync = playActivtyRepositoryAsync;
         }
-        public async Task<int> AddPlayAsync(PlayActivityModel play)
+        public async Task<int> AddPlayAsync(PlayActivityRequestModel play)
         {
             PlayActivity p = new PlayActivity();
             p.Id = play.Id;
-            p.Day = play.Day;  
-            p.PlayStart=play.PlayStart;
-            p.PlayEnd=play.PlayEnd;
+            p.Day = DateTime.ParseExact(play.Day, "MM-dd-yyyy", CultureInfo.InvariantCulture);
+            p.PlayStart = DateTime.Parse(play.PlayStart);
+            p.PlayEnd = DateTime.Parse(play.PlayEnd);
             return await _playActivtyRepositoryAsync.InsertAsync(p);
         }
 
@@ -32,16 +33,16 @@ namespace BabyTracker.Infrastructure.Service
             return await _playActivtyRepositoryAsync.DeleteAsync(id);
         }
 
-        public async Task<IEnumerable<PlayActivityModel>> GetAllAsync()
+        public async Task<IEnumerable<PlayActivityResponseModel>> GetAllAsync()
         {
             var collection = await _playActivtyRepositoryAsync.GetAllAsync();
 
             if (collection != null)
             {
-                List<PlayActivityModel> result = new List<PlayActivityModel>();
+                List<PlayActivityResponseModel> result = new List<PlayActivityResponseModel>();
                 foreach (var item in collection)
                 {
-                    PlayActivityModel model = new PlayActivityModel();
+                    PlayActivityResponseModel model = new PlayActivityResponseModel();
                     model.Id = item.Id;
                     model.Day = item.Day;
                     model.PlayStart = item.PlayStart;
@@ -53,12 +54,12 @@ namespace BabyTracker.Infrastructure.Service
             return null;
         }
 
-        public async Task<PlayActivityModel> GetByIdAsync(int id)
+        public async Task<PlayActivityResponseModel> GetByIdAsync(int id)
         {
             var item = await _playActivtyRepositoryAsync.GetByIdAsync(id);
             if (item != null)
             {
-                PlayActivityModel model = new PlayActivityModel();
+                PlayActivityResponseModel model = new PlayActivityResponseModel();
                 model.Id = item.Id;
                 model.Day = item.Day;
                 model.PlayStart = item.PlayStart;
@@ -70,14 +71,20 @@ namespace BabyTracker.Infrastructure.Service
             return null;
         }
 
-        public async Task<int> UpdatePlayAsync(PlayActivityModel play)
+        public async Task<int> UpdatePlayAsync(PlayActivityRequestModel play)
         {
             PlayActivity p = new PlayActivity();
             p.Id = play.Id;
-            p.Day = play.Day;
-            p.PlayStart = play.PlayStart;
-            p.PlayEnd = play.PlayEnd;
+            p.Day = DateTime.Parse(play.Day);
+            p.PlayStart = DateTime.Parse(play.PlayStart);
+            p.PlayEnd = DateTime.Parse(play.PlayEnd);
             return await _playActivtyRepositoryAsync.UpdateAsync(p);
+
+            //p.Id = play.Id;
+            //p.Day = DateTime.ParseExact(play.Day, "MM-dd-yyyy", CultureInfo.InvariantCulture);
+            //p.PlayStart = DateTime.Parse(play.PlayStart);
+            //p.PlayEnd = DateTime.Parse(play.PlayEnd);
+
         }
     }
 }
