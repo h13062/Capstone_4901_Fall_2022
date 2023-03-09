@@ -17,6 +17,7 @@ import Datetime1 from './page/Datetime1';
 import { useEffect, useState } from 'react';
 
 import Welcome from './page/Welcome';
+import DateTime1 from './page/Datetime1';
 
 export default function App() {
   const { Navigator, Screen } = createNativeStackNavigator();
@@ -163,8 +164,9 @@ export default function App() {
             animation: 'fade',
             animationDuration: 150,
           }}
-          component={Datetime1}
-        />
+        >
+          {() => <DateTime1 isDarkGlobal={isDarkGlobal} />}
+        </Screen>
         <Screen
           name="Setting"
           options={{
