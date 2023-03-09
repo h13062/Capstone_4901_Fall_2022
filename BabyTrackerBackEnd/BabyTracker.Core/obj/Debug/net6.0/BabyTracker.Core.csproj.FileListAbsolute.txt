@@ -46,3 +46,15 @@ C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Core\obj
 C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Core\obj\Debug\net6.0\refint\BabyTracker.Core.dll
 C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Core\obj\Debug\net6.0\BabyTracker.Core.pdb
 C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Core\obj\Debug\net6.0\ref\BabyTracker.Core.dll
+D:\4902\Capstone_4901_Fall_2022\BabyTrackerBackEnd\BabyTracker.Core\bin\Debug\net6.0\BabyTracker.Core.deps.json
+D:\4902\Capstone_4901_Fall_2022\BabyTrackerBackEnd\BabyTracker.Core\bin\Debug\net6.0\BabyTracker.Core.dll
+D:\4902\Capstone_4901_Fall_2022\BabyTrackerBackEnd\BabyTracker.Core\bin\Debug\net6.0\BabyTracker.Core.pdb
+D:\4902\Capstone_4901_Fall_2022\BabyTrackerBackEnd\BabyTracker.Core\obj\Debug\net6.0\BabyTracker.Core.csproj.AssemblyReference.cache
+D:\4902\Capstone_4901_Fall_2022\BabyTrackerBackEnd\BabyTracker.Core\obj\Debug\net6.0\BabyTracker.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\4902\Capstone_4901_Fall_2022\BabyTrackerBackEnd\BabyTracker.Core\obj\Debug\net6.0\BabyTracker.Core.AssemblyInfoInputs.cache
+D:\4902\Capstone_4901_Fall_2022\BabyTrackerBackEnd\BabyTracker.Core\obj\Debug\net6.0\BabyTracker.Core.AssemblyInfo.cs
+D:\4902\Capstone_4901_Fall_2022\BabyTrackerBackEnd\BabyTracker.Core\obj\Debug\net6.0\BabyTracker.Core.csproj.CoreCompileInputs.cache
+D:\4902\Capstone_4901_Fall_2022\BabyTrackerBackEnd\BabyTracker.Core\obj\Debug\net6.0\BabyTracker.Core.dll
+D:\4902\Capstone_4901_Fall_2022\BabyTrackerBackEnd\BabyTracker.Core\obj\Debug\net6.0\refint\BabyTracker.Core.dll
+D:\4902\Capstone_4901_Fall_2022\BabyTrackerBackEnd\BabyTracker.Core\obj\Debug\net6.0\BabyTracker.Core.pdb
+D:\4902\Capstone_4901_Fall_2022\BabyTrackerBackEnd\BabyTracker.Core\obj\Debug\net6.0\ref\BabyTracker.Core.dll

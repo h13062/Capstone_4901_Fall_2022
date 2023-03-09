@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BabyTracker.Core.Model
 {
-    public class EatActivityModel
+    public class EatActivityRespondModel
     {
         public int Id { get; set; }
         public DateTime Day { get; set; }
