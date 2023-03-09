@@ -97,6 +97,9 @@ export default function App() {
               isDarkGlobal={isDarkGlobal}
               setNavItems={setNavItems}
               navItems={navItems}
+              sleepURL="/api/SleepActivity"
+              eatURL="/api/EatActivity"
+              playURL="/api/PlayActivityControllercs"
             />
           )}
         </Screen>
@@ -140,13 +143,7 @@ export default function App() {
             animationDuration: 150,
           }}
         >
-          {() => (
-            <StopWatch
-              isDarkGlobal={isDarkGlobal}
-              setNavItems={setNavItems}
-              navItems={navItems}
-            />
-          )}
+          {() => <StopWatch isDarkGlobal={isDarkGlobal} />}
         </Screen>
         <Screen
           name="ActivityForm"
