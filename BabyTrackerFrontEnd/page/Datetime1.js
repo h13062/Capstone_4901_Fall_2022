@@ -105,7 +105,7 @@ export default function DateTime1({ isDarkGlobal }) {
             style={{
               alignItems: 'flex-start',
               backgroundColor: isDarkGlobal
-                ? 'rgba(255, 255, 255, 0)'
+                ? 'rgba(150, 150, 150, 0.1)'
                 : 'rgba(133, 133, 133, 0.5)',
               padding: 20,
               borderRadius: 10,
@@ -209,7 +209,7 @@ export default function DateTime1({ isDarkGlobal }) {
             style={{
               alignItems: 'flex-start',
               backgroundColor: isDarkGlobal
-                ? 'rgba(255, 255, 255, 0)'
+                ? 'rgba(150, 150, 150, 0.1)'
                 : 'rgba(133, 133, 133, 0.5)',
               padding: 20,
               borderRadius: 10,
