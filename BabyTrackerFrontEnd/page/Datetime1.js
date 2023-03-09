@@ -85,7 +85,7 @@ export default function DateTime1({ isDarkGlobal }) {
           >
             <Text
               style={{
-                color: isDarkGlobal ? '#121212' : 'rgba(255, 255, 255, 0.87)',
+                color: '#6082B6',
                 fontSize: 20,
               }}
             >
@@ -101,17 +101,37 @@ export default function DateTime1({ isDarkGlobal }) {
             Time = {time1.toLocaleTimeString('en-US')}
           </Text> */}
 
-          <View style={{ alignItems: 'flex-start' }}>
+          <View
+            style={{
+              alignItems: 'flex-start',
+              backgroundColor: isDarkGlobal
+                ? 'rgba(255, 255, 255, 0)'
+                : 'rgba(133, 133, 133, 0.5)',
+              padding: 20,
+              borderRadius: 10,
+              width: '100%',
+              paddingBottom: 5,
+            }}
+          >
+            <Text
+              style={{
+                color: isDarkGlobal ? '#121212' : 'rgba(255, 255, 255, 0.87)',
+                fontSize: 30,
+                marginBottom: 25,
+                fontWeight: 'bold',
+              }}
+            >
+              Start
+            </Text>
             <View
               style={{
                 flexDirection: 'row',
                 alignItems: 'center',
-                backgroundColor: isDarkGlobal
-                  ? 'rgba(255, 255, 255, 0)'
-                  : 'rgba(133, 133, 133, 0.5)',
                 paddingHorizontal: 10,
                 borderRadius: 10,
                 marginBottom: 10,
+                width: '100%',
+                justifyContent: 'space-between',
               }}
             >
               <Text
@@ -143,12 +163,11 @@ export default function DateTime1({ isDarkGlobal }) {
               style={{
                 flexDirection: 'row',
                 alignItems: 'center',
-                backgroundColor: isDarkGlobal
-                  ? 'rgba(255, 255, 255, 0)'
-                  : 'rgba(133, 133, 133, 0.5)',
                 paddingHorizontal: 10,
                 borderRadius: 10,
                 marginBottom: 10,
+                width: '100%',
+                justifyContent: 'space-between',
               }}
             >
               <Text
@@ -186,17 +205,37 @@ export default function DateTime1({ isDarkGlobal }) {
             Time = {time2.toLocaleTimeString('en-US')}
           </Text> */}
 
-          <View style={{ alignItems: 'flex-start' }}>
+          <View
+            style={{
+              alignItems: 'flex-start',
+              backgroundColor: isDarkGlobal
+                ? 'rgba(255, 255, 255, 0)'
+                : 'rgba(133, 133, 133, 0.5)',
+              padding: 20,
+              borderRadius: 10,
+              width: '100%',
+              paddingBottom: 5,
+            }}
+          >
+            <Text
+              style={{
+                color: isDarkGlobal ? '#121212' : 'rgba(255, 255, 255, 0.87)',
+                fontSize: 30,
+                marginBottom: 25,
+                fontWeight: 'bold',
+              }}
+            >
+              End
+            </Text>
             <View
               style={{
                 flexDirection: 'row',
                 alignItems: 'center',
-                backgroundColor: isDarkGlobal
-                  ? 'rgba(255, 255, 255, 0)'
-                  : 'rgba(133, 133, 133, 0.5)',
                 paddingHorizontal: 10,
                 borderRadius: 10,
                 marginBottom: 10,
+                width: '100%',
+                justifyContent: 'space-between',
               }}
             >
               <Text
@@ -224,12 +263,11 @@ export default function DateTime1({ isDarkGlobal }) {
               style={{
                 flexDirection: 'row',
                 alignItems: 'center',
-                backgroundColor: isDarkGlobal
-                  ? 'rgba(255, 255, 255, 0)'
-                  : 'rgba(133, 133, 133, 0.5)',
                 paddingHorizontal: 10,
                 borderRadius: 10,
                 marginBottom: 10,
+                width: '100%',
+                justifyContent: 'space-between',
               }}
             >
               <Text
@@ -427,11 +465,10 @@ const styleSheet = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     alignSelf: 'center',
-    marginTop: 40,
+    marginTop: 20,
     backgroundColor: '#6082B6',
     borderColor: '#6082B6',
     borderWidth: 2,
-    marginTop: 0,
   },
   submitText: {
     color: 'rgba(255, 255, 255, 0.87)',
