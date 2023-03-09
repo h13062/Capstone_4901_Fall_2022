@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MVzH9+fETod+AJ+Bc8cHw8T/RpI7Po5m1as+diDO91YP/dIM6mxgPJJnWfdvfe2WbfSKT9hakBDRDjN9agagLg==",
+  "dgSpecHash": "MQEQdVXiWpaaf4ptuYDlfJpOPGVNB5WQ5funZ1zUclEAcLCYmbe90adtuBDSNlbjijJvwocjfe18IVwLX6MMdQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\bgh15\\Capstone_4901_Fall_2022-1\\BabyTrackerBackEnd\\BabyTracker.Api\\BabyTracker.Api.csproj",
+  "projectFilePath": "D:\\4902\\Capstone_4901_Fall_2022\\BabyTrackerBackEnd\\BabyTracker.Api\\BabyTracker.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bgh15\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\bgh15\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",

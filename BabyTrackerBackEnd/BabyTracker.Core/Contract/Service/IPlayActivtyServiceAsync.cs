@@ -9,10 +9,10 @@ namespace BabyTracker.Core.Contract.Service
 {
     public interface IPlayActivtyServiceAsync
     {
-        Task<IEnumerable<PlayActivityModel>> GetAllAsync();
-        Task<int> AddPlayAsync(PlayActivityModel play);
-        Task<PlayActivityModel> GetByIdAsync(int id);
-        Task<int> UpdatePlayAsync(PlayActivityModel play);
+        Task<IEnumerable<PlayActivityResponseModel>> GetAllAsync();
+        Task<int> AddPlayAsync(PlayActivityRequestModel play);
+        Task<PlayActivityResponseModel> GetByIdAsync(int id);
+        Task<int> UpdatePlayAsync(PlayActivityRequestModel play);
         Task<int?> DeleteByIdAsync(int id);
     }
 }
