@@ -20,7 +20,14 @@ import { useNavigation } from '@react-navigation/native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import axios from 'axios';
 
-export default function Activity({ isDarkGlobal, setNavItems, navItems }) {
+export default function Activity({
+  isDarkGlobal,
+  setNavItems,
+  navItems,
+  sleepURL,
+  eatURL,
+  playURL,
+}) {
   const scrollViewRef = useRef();
   const [taskItems, setTaskItems] = useState([]); // Problem here
   const navigation = useNavigation();
@@ -184,7 +191,9 @@ export default function Activity({ isDarkGlobal, setNavItems, navItems }) {
               {/* This is where the activities will go */}
               <TouchableOpacity
                 style={{ marginBottom: 25 }}
-                onPress={() => navigation.navigate('Stopwatch')}
+                onPress={() => {
+                  navigation.navigate('Stopwatch', '/api/SleepActivity');
+                }}
               >
                 <Task
                   text="Sleeping"
@@ -194,7 +203,9 @@ export default function Activity({ isDarkGlobal, setNavItems, navItems }) {
               </TouchableOpacity>
               <TouchableOpacity
                 style={{ marginBottom: 25 }}
-                onPress={() => navigation.navigate('Stopwatch')}
+                onPress={() => {
+                  navigation.navigate('Stopwatch', '/api/EatActivity');
+                }}
               >
                 <Task
                   text="Eating"
@@ -204,7 +215,12 @@ export default function Activity({ isDarkGlobal, setNavItems, navItems }) {
               </TouchableOpacity>
               <TouchableOpacity
                 style={{ marginBottom: 25 }}
-                onPress={() => navigation.navigate('Stopwatch')}
+                onPress={() => {
+                  navigation.navigate(
+                    'Stopwatch',
+                    '/api/PlayActivityControllercs'
+                  );
+                }}
               >
                 <Task
                   text="Playing"

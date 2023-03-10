@@ -140,13 +140,7 @@ export default function App() {
             animationDuration: 150,
           }}
         >
-          {() => (
-            <StopWatch
-              isDarkGlobal={isDarkGlobal}
-              setNavItems={setNavItems}
-              navItems={navItems}
-            />
-          )}
+          {() => <StopWatch isDarkGlobal={isDarkGlobal} />}
         </Screen>
         <Screen
           name="ActivityForm"

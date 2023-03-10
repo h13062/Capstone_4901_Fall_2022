@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -9,10 +9,14 @@ import {
   StatusBar,
 } from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 
 export default function DateTime1({ isDarkGlobal }) {
   const navigation = useNavigation();
+  const route = useRoute();
+  const activityURL = route.params;
+
+  console.log('activityURL: ', activityURL);
 
   // for First Date Time Picker=======================================
   const [date1, setDate1] = useState(new Date());

@@ -7,7 +7,8 @@ import {
   TouchableOpacity,
   Dimensions,
 } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
+import axios from 'axios';
 
 const screen = Dimensions.get('window');
 
@@ -24,11 +25,15 @@ const getRemaining = (time) => {
   };
 };
 
-export default function App({ isDarkGlobal, setNavItems, navItems }) {
+export default function App({ isDarkGlobal }) {
   const [remainingSecs, setRemainingSecs] = useState(0);
   const [isActive, setIsActive] = useState(false);
   const { hrs, mins, secs } = getRemaining(remainingSecs);
+  const [currentDate, setCurrrentDate] = useState(new Date());
   const navigation = useNavigation();
+
+  const route = useRoute();
+  const activityURL = route.params;
 
   toggle = () => {
     setIsActive(!isActive);
@@ -40,6 +45,8 @@ export default function App({ isDarkGlobal, setNavItems, navItems }) {
   };
 
   useEffect(() => {
+    console.log('activityURL: ', activityURL);
+    console.log(currentDate);
     let interval = null;
     if (isActive) {
       interval = setInterval(() => {
@@ -59,6 +66,10 @@ export default function App({ isDarkGlobal, setNavItems, navItems }) {
     ? styles.timerText_light
     : styles.timerText_dark;
 
+  const handleOnSubmit = () => {
+    console.log(remainingSecs);
+  };
+
   return (
     <View
       style={[
@@ -72,8 +83,15 @@ export default function App({ isDarkGlobal, setNavItems, navItems }) {
     >
       <StatusBar barStyle={isDarkGlobal ? 'dark-content' : 'light-content'} />
       <Text style={timerText}>{`${hrs}:${mins}:${secs}`}</Text>
-      <TouchableOpacity onPress={this.toggle} style={styles.button}>
-        <Text style={styles.buttonText}>{isActive ? 'Pause' : 'Start'}</Text>
+      <TouchableOpacity
+        disabled={!isActive}
+        onPress={this.toggle}
+        style={styles.button}
+      >
+        <Text style={styles.buttonText}>
+          {isActive ? 'Stop' : 'Start'}
+          {console.log('isActive: ', isActive)}
+        </Text>
       </TouchableOpacity>
       <TouchableOpacity
         onPress={this.reset}
@@ -90,9 +108,12 @@ export default function App({ isDarkGlobal, setNavItems, navItems }) {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.customBtn}
-          onPress={() => navigation.navigate('DateTimePicker')}
+          onPress={() => navigation.navigate('DateTimePicker', activityURL)}
         >
           <Text style={styles.customText}>CUSTOM</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.customBtn} onPress={handleOnSubmit}>
+          <Text style={styles.customText}>SUBMIT</Text>
         </TouchableOpacity>
       </View>
     </View>
