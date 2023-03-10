@@ -97,9 +97,6 @@ export default function App() {
               isDarkGlobal={isDarkGlobal}
               setNavItems={setNavItems}
               navItems={navItems}
-              sleepURL="/api/SleepActivity"
-              eatURL="/api/EatActivity"
-              playURL="/api/PlayActivityControllercs"
             />
           )}
         </Screen>

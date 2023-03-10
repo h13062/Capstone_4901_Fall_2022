@@ -191,11 +191,9 @@ export default function Activity({
               {/* This is where the activities will go */}
               <TouchableOpacity
                 style={{ marginBottom: 25 }}
-                onPress={() =>
-                  navigation.navigate('Stopwatch', {
-                    sleepURL: { sleepURL },
-                  })
-                }
+                onPress={() => {
+                  navigation.navigate('Stopwatch', '/api/SleepActivity');
+                }}
               >
                 <Task
                   text="Sleeping"
@@ -205,9 +203,9 @@ export default function Activity({
               </TouchableOpacity>
               <TouchableOpacity
                 style={{ marginBottom: 25 }}
-                onPress={() =>
-                  navigation.navigate('Stopwatch', { eatURL: { eatURL } })
-                }
+                onPress={() => {
+                  navigation.navigate('Stopwatch', '/api/EatActivity');
+                }}
               >
                 <Task
                   text="Eating"
@@ -217,9 +215,12 @@ export default function Activity({
               </TouchableOpacity>
               <TouchableOpacity
                 style={{ marginBottom: 25 }}
-                onPress={() =>
-                  navigation.navigate('Stopwatch', { playURL: { playURL } })
-                }
+                onPress={() => {
+                  navigation.navigate(
+                    'Stopwatch',
+                    '/api/PlayActivityControllercs'
+                  );
+                }}
               >
                 <Task
                   text="Playing"
