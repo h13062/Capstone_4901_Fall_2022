@@ -11,6 +11,7 @@ import {
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { MaskedTextInput } from 'react-native-mask-text';
+import axios from 'axios';
 
 export default function BabyInfo({ isDarkGlobal }) {
   const [BaByFullname, setBaByFullname] = useState('');
@@ -18,6 +19,8 @@ export default function BabyInfo({ isDarkGlobal }) {
   const [DateOfBirth, setDateOfBirth] = useState('');
   const [Weight, setWeight] = useState('');
   const navigation = useNavigation();
+
+  const url = 'https://capstone54.azurewebsites.net/';
 
   const container = isDarkGlobal
     ? styles.container_light
@@ -37,6 +40,29 @@ export default function BabyInfo({ isDarkGlobal }) {
       DateOfBirth: DateOfBirth,
       Weight: Weight,
     });
+
+    axios
+      .post(
+        url + '/api/Baby',
+        {
+          name: BaByFullname,
+          gender: Gender,
+          dateOfBirth: DateOfBirth,
+          weight: Weight,
+        },
+        {
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+          },
+        }
+      )
+      .then((response) => {
+        console.log('response:', response.status);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
 
     navigation.navigate('Activity');
   };
@@ -100,8 +126,8 @@ export default function BabyInfo({ isDarkGlobal }) {
           value={DateOfBirth}
         /> */}
         <MaskedTextInput
-          mask="99/99/9999"
-          placeholder="Baby's date of birth in MM/DD/YYYY"
+          mask="99-99-9999"
+          placeholder="Baby's date of birth in MM-DD-YYYY"
           placeholderTextColor={
             isDarkGlobal ? 'rgba(0, 0, 0, 0.25)' : 'rgba(255, 255, 255, 0.5)'
           }
