@@ -325,7 +325,7 @@ export default function DateTime1({ isDarkGlobal }) {
           </TouchableOpacity>
         </View>
         {/* First Date Time Picker ====================================================*/}
-        <View style={[styleSheet.MainContainer, { padding: 25 }]}>
+        <View style={[styleSheet.MainContainer1, { padding: 25 }]}>
           <Text style={styleSheet.text}>Date: {date1.toDateString()}</Text>
 
           <Text style={styleSheet.text}>
@@ -437,17 +437,21 @@ export default function DateTime1({ isDarkGlobal }) {
 
 const styleSheet = StyleSheet.create({
   MainContainer: {
-    // flex: 8,
+    backgroundColor: "rgba(255, 255, 255, 0.87)",
+    display: "flex",
+    alignContent: "center",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  MainContainer1: {
     backgroundColor: "rgba(255, 255, 255, 0.87)",
     display: "flex",
     alignContent: "center",
     alignSelf: "center",
     alignItems: "center",
     justifyContent: "center",
-    // backgroundColor: 'white',
   },
   MainContainer2: {
-    // flex: 8,
     backgroundColor: "rgba(255, 255, 255, 0.87)",
     display: "flex",
     alignContent: "center",
