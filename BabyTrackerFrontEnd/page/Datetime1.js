@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import { useNavigation, useRoute } from "@react-navigation/native";
+import axios from "axios";
 
 export default function DateTime1({ isDarkGlobal }) {
   const navigation = useNavigation();
@@ -17,6 +18,8 @@ export default function DateTime1({ isDarkGlobal }) {
   const activityURL = route.params;
 
   console.log("activityURL: ", activityURL);
+
+  const url = "https://capstone54.azurewebsites.net/";
 
   // for First Date Time Picker=======================================
   const [date1, setDate1] = useState(new Date());
@@ -68,6 +71,88 @@ export default function DateTime1({ isDarkGlobal }) {
       Date2: date2.toDateString(),
       Time2: time2.toLocaleTimeString("en-US"),
     });
+
+    var tempDate = date1.getDate();
+    if (date1.getDate() < 10) {
+      tempDate = "".concat("0", date1.getDate());
+    }
+    var tempMonth = date1.getMonth() + 1;
+    if (date1.getMonth() + 1 < 10) {
+      tempMonth = "".concat("0", date1.getMonth() + 1);
+    }
+
+    console.log(tempMonth, tempDate);
+    console.log("".concat(tempMonth, "-", tempDate, "-", date1.getFullYear()));
+
+    if (activityURL === "/api/SleepActivity") {
+      axios
+        .post(
+          url + activityURL,
+          {
+            day: "".concat(tempMonth, "-", tempDate, "-", date1.getFullYear()),
+            sleepStart: time1.toLocaleTimeString("en-US"),
+            sleepEnd: time2.toLocaleTimeString("en-US"),
+          },
+          {
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/json",
+            },
+          }
+        )
+        .then((response) => {
+          console.log("response:", response.status);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+    if (activityURL === "/api/EatActivity") {
+      axios
+        .post(
+          url + activityURL,
+          {
+            day: "".concat(tempMonth, "-", tempDate, "-", date1.getFullYear()),
+            eatStart: time1.toLocaleTimeString("en-US"),
+            eatEnd: time2.toLocaleTimeString("en-US"),
+          },
+          {
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/json",
+            },
+          }
+        )
+        .then((response) => {
+          console.log("response:", response.status);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+    if (activityURL === "/api/PlayActivityControllercs") {
+      axios
+        .post(
+          url + activityURL,
+          {
+            day: "".concat(tempMonth, "-", tempDate, "-", date1.getFullYear()),
+            playStart: time1.toLocaleTimeString("en-US"),
+            playEnd: time2.toLocaleTimeString("en-US"),
+          },
+          {
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/json",
+            },
+          }
+        )
+        .then((response) => {
+          console.log("response:", response.status);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
 
     navigation.navigate("Stopwatch");
   };

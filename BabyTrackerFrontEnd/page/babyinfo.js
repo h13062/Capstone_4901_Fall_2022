@@ -13,7 +13,7 @@ import { useNavigation } from "@react-navigation/native";
 import { MaskedTextInput } from "react-native-mask-text";
 import axios from "axios";
 
-export default function BabyInfo({ isDarkGlobal }) {
+export default function BabyInfo({ isDarkGlobal, isUnitMetric }) {
   const [BaByFullname, setBaByFullname] = useState("");
   const [Gender, setGender] = useState("");
   const [DateOfBirth, setDateOfBirth] = useState("");
@@ -143,7 +143,11 @@ export default function BabyInfo({ isDarkGlobal }) {
       <View style={styles.inputView}>
         <TextInput
           style={TextInp}
-          placeholder="Please enter the baby's weight (ib)"
+          placeholder={
+            !isUnitMetric
+              ? "Please enter the baby's weight (lb)"
+              : "Please enter the baby's weight (kg)"
+          }
           placeholderTextColor={
             isDarkGlobal ? "rgba(0, 0, 0, 0.25)" : "rgba(255, 255, 255, 0.5)"
           }
