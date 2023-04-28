@@ -93,65 +93,21 @@ export default function BabyProfiles({ isDarkGlobal, setNavItems, navItems }) {
         {/* Acitivity header */}
         <View style={profileWrapper}>
           <View>
-            <Text style={headerText}>Breast Feeding</Text>
+            <Text style={headerText}>Baby Profile</Text>
           </View>
 
           {/* Task view */}
-          <View
+          <ScrollView
             style={styles.scrollWrapper}
             ref={scrollViewRef}
             onContentSizeChange={() => {
               scrollViewRef.current.scrollToEnd({ animated: true });
             }}
           >
-            <View
-              style={{
-                flexDirection: "row",
-                justifyContent: "center",
-                alignItems: "center",
-                width: "100%",
-                height: "100%",
-              }}
-            >
+            <View style={styles.items}>
               {/* This is where the baby profiles will go */}
-              <TouchableOpacity
-                onPress={() => navigation.navigate("Stopwatch")}
-                style={{
-                  marginBottom: 25,
-                  width: 100,
-                  borderRadius: 10,
-                  height: 50,
-                  alignItems: "center",
-                  justifyContent: "center",
-                  marginRight: 75,
-                  // alignSelf: "center",
-                  marginTop: 20,
-                  backgroundColor: "#6082B6",
-                  borderColor: "#6082B6",
-                  borderWidth: 2,
-                }}
-              >
-                <Text style={{ color: "black", fontSize: 20 }}>LEFT</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() => navigation.navigate("Stopwatch")}
-                style={{
-                  marginBottom: 25,
-                  marginLeft: 85,
-                  width: 100,
-                  borderRadius: 10,
-                  height: 50,
-                  alignItems: "center",
-                  justifyContent: "center",
-                  // alignSelf: "flex-end",
-                  marginTop: 20,
-                  backgroundColor: "#6082B6",
-                  borderColor: "#6082B6",
-                  borderWidth: 2,
-                }}
-              >
-                {/* <BabyBox text="HUY BUI" /> */}
-                <Text style={{ color: "black", fontSize: 20 }}>RIGHT</Text>
+              <TouchableOpacity style={{ marginBottom: 25 }}>
+                <BabyBox text="HUY BUI" />
               </TouchableOpacity>
               {taskItems.map((item, index) => {
                 return (
@@ -162,9 +118,9 @@ export default function BabyProfiles({ isDarkGlobal, setNavItems, navItems }) {
                 );
               })}
             </View>
-          </View>
+          </ScrollView>
 
-          {/* <View style={styles.buttonsWrapper}>
+          <View style={styles.buttonsWrapper}>
             <TouchableOpacity
               style={styles.addButton}
               onPress={() => navigation.navigate("BabyInfo")}
@@ -173,7 +129,7 @@ export default function BabyProfiles({ isDarkGlobal, setNavItems, navItems }) {
                 <Text style={styles.buttonText}>+</Text>
               </View>
             </TouchableOpacity>
-          </View> */}
+          </View>
         </View>
         <Navbar
           isDarkGlobal={isDarkGlobal}
