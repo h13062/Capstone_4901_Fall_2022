@@ -1,23 +1,26 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import Login from './page/login';
-import Register from './page/register';
-import BabyInfo from './page/babyinfo';
-import Chart from './page/Chart';
-import Activity from './page/Activity';
-import Navbar from './components/Navbar';
-import BabyProfiles from './page/BabyProfiles';
-import ActivityForm from './page/ActivityForm';
-import Setting from './page/Setting';
-import { DefaultTheme, DarkTheme } from '@react-navigation/native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import StopWatch from './page/Stopwatch';
-import Datetime1 from './page/Datetime1';
-import { useEffect, useState } from 'react';
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, Text, View } from "react-native";
+import Login from "./page/login";
+import Register from "./page/register";
+import BabyInfo from "./page/babyinfo";
+import Chart from "./page/Chart";
+import Activity from "./page/Activity";
+import Navbar from "./components/Navbar";
+import BabyProfiles from "./page/BabyProfiles";
+import ActivityForm from "./page/ActivityForm";
+import Setting from "./page/Setting";
+import { DefaultTheme, DarkTheme } from "@react-navigation/native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import StopWatch from "./page/Stopwatch";
+import Datetime1 from "./page/Datetime1";
+import ParentInfo from "./page/ParentInfo";
+import BabySitterInfo from "./page/BabySitterInfo";
+import { useEffect, useState } from "react";
 
-import Welcome from './page/Welcome';
-import DateTime1 from './page/Datetime1';
+import Welcome from "./page/Welcome";
+import DateTime1 from "./page/Datetime1";
+import { Paragraph } from "react-native-paper";
 
 export default function App() {
   const { Navigator, Screen } = createNativeStackNavigator();
@@ -49,7 +52,7 @@ export default function App() {
           name="Welcome"
           options={{
             headerShown: false,
-            animation: 'fade',
+            animation: "fade",
             animationDuration: 150,
           }}
           component={Welcome}
@@ -58,7 +61,7 @@ export default function App() {
           name="Login"
           options={{
             headerShown: false,
-            animation: 'fade',
+            animation: "fade",
             animationDuration: 150,
           }}
         >
@@ -68,7 +71,7 @@ export default function App() {
           name="Register"
           options={{
             headerShown: false,
-            animation: 'fade',
+            animation: "fade",
             animationDuration: 150,
           }}
         >
@@ -78,7 +81,7 @@ export default function App() {
           name="BabyInfo"
           options={{
             headerShown: false,
-            animation: 'fade',
+            animation: "fade",
             animationDuration: 150,
           }}
         >
@@ -90,7 +93,7 @@ export default function App() {
           name="Activity"
           options={{
             headerShown: false,
-            animation: 'fade',
+            animation: "fade",
             animationDuration: 150,
           }}
         >
@@ -106,7 +109,7 @@ export default function App() {
           name="Chart"
           options={{
             headerShown: false,
-            animation: 'fade',
+            animation: "fade",
             animationDuration: 150,
           }}
         >
@@ -122,7 +125,7 @@ export default function App() {
           name="BabyProfiles"
           options={{
             headerShown: false,
-            animation: 'fade',
+            animation: "fade",
             animationDuration: 150,
           }}
         >
@@ -138,7 +141,7 @@ export default function App() {
           name="Stopwatch"
           options={{
             headerShown: false,
-            animation: 'fade',
+            animation: "fade",
             animationDuration: 150,
           }}
         >
@@ -148,7 +151,7 @@ export default function App() {
           name="ActivityForm"
           options={{
             headerShown: false,
-            animation: 'fade',
+            animation: "fade",
             animationDuration: 150,
           }}
           component={ActivityForm}
@@ -157,7 +160,7 @@ export default function App() {
           name="DateTimePicker"
           options={{
             headerShown: false,
-            animation: 'fade',
+            animation: "fade",
             animationDuration: 150,
           }}
         >
@@ -167,7 +170,7 @@ export default function App() {
           name="Setting"
           options={{
             headerShown: false,
-            animation: 'fade',
+            animation: "fade",
             animationDuration: 150,
           }}
         >
@@ -184,6 +187,26 @@ export default function App() {
             />
           )}
         </Screen>
+        <Screen
+          name="ParentInfo"
+          options={{
+            headerShown: false,
+            animation: "fade",
+            animationDuration: 150,
+          }}
+        >
+          {() => <ParentInfo />}
+        </Screen>
+        <Screen
+          name="BabySitterInfo"
+          options={{
+            headerShown: false,
+            animation: "fade",
+            animationDuration: 150,
+          }}
+        >
+          {() => <BabySitterInfo />}
+        </Screen>
       </Navigator>
     </NavigationContainer>
   );
@@ -199,8 +222,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
