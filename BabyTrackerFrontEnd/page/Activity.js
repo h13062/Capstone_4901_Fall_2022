@@ -72,7 +72,7 @@ export default function Activity({
       .catch((error) => {
         console.log(error);
       });
-  });
+  }, []);
   useEffect(() => {
     axios
       .get(url + '/api/PlayActivityControllercs', {

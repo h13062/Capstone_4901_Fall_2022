@@ -1,25 +1,30 @@
-import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
-const BabyBox = (props) => {
+const BabyBox = ({ name, dateOfBirth, weight, gender }) => {
+  const [expanded, setExpanded] = useState(false);
+
+  const handlePress = () => {
+    setExpanded(!expanded);
+  };
+
   return (
     <>
-      <View style={styles.boxWrapper}>
-        <View style={styles.imgWrapper}></View>
+      <TouchableOpacity style={styles.boxWrapper} onPress={handlePress}>
+        {/* <View style={styles.imgWrapper}></View> */}
         <View style={{ flex: 6, marginLeft: 25 }}>
-          <Text style={styles.text}>{props.text}</Text>
-          <Text style={styles.subtext}>Date Here</Text>
+          <Text style={styles.text}>{name}</Text>
+          {expanded && (
+            <>
+              <Text style={styles.subtext}>
+                Date of birth: {dateOfBirth.split('T')[0]}
+              </Text>
+              <Text style={styles.subtext}>Weight: {weight}</Text>
+              <Text style={styles.subtext}>Gender: {gender}</Text>
+            </>
+          )}
         </View>
-        <View
-          style={{
-            flex: 1,
-            justifyContent: 'center',
-            alignItems: 'flex-end',
-          }}
-        >
-          <Text style={styles.arrow}>&#10095;</Text>
-        </View>
-      </View>
+      </TouchableOpacity>
     </>
   );
 };
