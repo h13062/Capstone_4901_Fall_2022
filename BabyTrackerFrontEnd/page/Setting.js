@@ -118,6 +118,22 @@ export default function Setting({
               <Text style={[tabText, { color: "#ff0000" }]}>Add account</Text>
             </TouchableOpacity>
           </View>
+          <View style={styles.tabStyle}>
+            <TouchableOpacity onPress={() => navigation.navigate("ParentInfo")}>
+              <Text style={[tabText, { color: "#ff0000" }]}>
+                Parent (For Testing Purpose)
+              </Text>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.tabStyle}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("BabySitterInfo")}
+            >
+              <Text style={[tabText, { color: "#ff0000" }]}>
+                BabySitter (For Testing Purpose)
+              </Text>
+            </TouchableOpacity>
+          </View>
         </View>
         <Navbar
           isDarkGlobal={isDarkGlobal}

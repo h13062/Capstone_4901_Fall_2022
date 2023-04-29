@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import {
   StyleSheet,
   Text,
@@ -6,11 +6,11 @@ import {
   StatusBar,
   TouchableOpacity,
   Dimensions,
-} from 'react-native';
-import { useNavigation, useRoute } from '@react-navigation/native';
-import axios from 'axios';
+} from "react-native";
+import { useNavigation, useRoute } from "@react-navigation/native";
+import axios from "axios";
 
-const screen = Dimensions.get('window');
+const screen = Dimensions.get("window");
 
 const formatNumber = (number) => `0${number}`.slice(-2);
 
@@ -45,7 +45,7 @@ export default function App({ isDarkGlobal }) {
   };
 
   useEffect(() => {
-    console.log('activityURL: ', activityURL);
+    console.log("activityURL: ", activityURL);
     console.log(currentDate);
     let interval = null;
     if (isActive) {
@@ -76,21 +76,21 @@ export default function App({ isDarkGlobal }) {
         container,
         {
           backgroundColor: isDarkGlobal
-            ? 'rgba(255, 255, 255, 0.87)'
-            : '#121212',
+            ? "rgba(255, 255, 255, 0.87)"
+            : "#121212",
         },
       ]}
     >
-      <StatusBar barStyle={isDarkGlobal ? 'dark-content' : 'light-content'} />
+      <StatusBar barStyle={isDarkGlobal ? "dark-content" : "light-content"} />
       <Text style={timerText}>{`${hrs}:${mins}:${secs}`}</Text>
       <TouchableOpacity
-        disabled={!isActive}
+        // disabled={!isActive}
         onPress={this.toggle}
         style={styles.button}
       >
         <Text style={styles.buttonText}>
-          {isActive ? 'Stop' : 'Start'}
-          {console.log('isActive: ', isActive)}
+          {isActive ? "Stop" : "Start"}
+          {console.log("isActive: ", isActive)}
         </Text>
       </TouchableOpacity>
       <TouchableOpacity
@@ -102,13 +102,13 @@ export default function App({ isDarkGlobal }) {
       <View style={styles.controller}>
         <TouchableOpacity
           style={styles.backBtn}
-          onPress={() => navigation.navigate('Activity')}
+          onPress={() => navigation.navigate("Activity")}
         >
           <Text style={styles.backText}>BACK</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.customBtn}
-          onPress={() => navigation.navigate('DateTimePicker', activityURL)}
+          onPress={() => navigation.navigate("DateTimePicker", activityURL)}
         >
           <Text style={styles.customText}>CUSTOM</Text>
         </TouchableOpacity>
@@ -124,64 +124,64 @@ const styles = StyleSheet.create({
   controller: {
     // flex: 1,
     marginTop: 10,
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    width: '100%',
+    flexDirection: "row",
+    justifyContent: "space-around",
+    width: "100%",
   },
   backBtn: {
     width: 100,
     borderRadius: 10,
     height: 50,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
     marginTop: 25,
-    backgroundColor: '#6082B6',
+    backgroundColor: "#6082B6",
     // marginTop: 10,
     paddingTop: 0,
     // marginLeft
   },
   backText: {
-    color: 'white',
+    color: "white",
     fontSize: 20,
   },
   customBtn: {
     width: 100,
     borderRadius: 10,
     height: 50,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
     marginTop: 25,
-    backgroundColor: '#6082B6',
+    backgroundColor: "#6082B6",
     // marginTop: 10,
     paddingTop: 0,
   },
   customText: {
-    color: 'white',
+    color: "white",
     fontSize: 20,
   },
   container_light: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
   },
   container_dark: {
     flex: 1,
-    alignItems: 'center',
-    backgroundColor: '#121212',
-    justifyContent: 'center',
+    alignItems: "center",
+    backgroundColor: "#121212",
+    justifyContent: "center",
   },
   button: {
     borderWidth: 10,
-    borderColor: '#B9AAFF',
+    borderColor: "#B9AAFF",
     width: screen.width / 2,
     height: screen.width / 2,
     borderRadius: screen.width / 2,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
   },
   buttonText: {
     fontSize: 45,
-    color: '#B9AAFF',
+    color: "#B9AAFF",
   },
   timerText_light: {
     fontSize: 90,
@@ -190,28 +190,28 @@ const styles = StyleSheet.create({
   timerText_dark: {
     fontSize: 90,
     marginBottom: 20,
-    color: 'rgba(255, 255, 255, 0.87)',
+    color: "rgba(255, 255, 255, 0.87)",
   },
   buttonReset: {
     marginTop: 20,
-    borderColor: '#FF851B',
+    borderColor: "#FF851B",
   },
   buttonTextReset: {
-    color: '#FF851B',
+    color: "#FF851B",
   },
   ManualBtn: {
     width: 300,
     borderRadius: 10,
     height: 50,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
     marginTop: 25,
-    backgroundColor: '#00bfff',
+    backgroundColor: "#00bfff",
     // marginTop: 0,
     paddingTop: 0,
   },
   ManualText: {
-    color: 'white',
+    color: "white",
     fontSize: 20,
   },
 });
