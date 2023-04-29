@@ -33,7 +33,7 @@ namespace BabyTracker.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post(SleepActivityModel model)
+        public async Task<IActionResult> Post(SleepActivityRequestModel model)
         {
             var result = await _sleepactivyServiceAsync.AddSleepAsync(model);
             if (result != 0)
