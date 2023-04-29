@@ -4,6 +4,7 @@ using BabyTracker.Core.Entity;
 using BabyTracker.Core.Model;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,13 +19,13 @@ namespace BabyTracker.Infrastructure.Service
             this._sleepActivityRepositoyryAsync = sleepActivityRepositoyryAsync;
         }
 
-        public async Task<int> AddSleepAsync(SleepActivityModel sleep)
+        public async Task<int> AddSleepAsync(SleepActivityRequestModel sleep)
         {
             SleepActivity s = new SleepActivity();
             s.Id = sleep.Id;    
-            s.Day = sleep.Day;
-            s.SleepStart = sleep.SleepStart;
-            s.SleepEnd = sleep.SleepEnd;
+            s.Day = DateTime.ParseExact(sleep.Day, "MM-dd-yyyy", CultureInfo.InvariantCulture); ;
+            s.SleepStart = DateTime.Parse(sleep.SleepStart);
+            s.SleepEnd = DateTime.Parse(sleep.SleepEnd);
             return await _sleepActivityRepositoyryAsync.InsertAsync(s);
         }
 
@@ -72,13 +73,13 @@ namespace BabyTracker.Infrastructure.Service
             return null;
         }
 
-        public async Task<int> UpdateSleepAsync(SleepActivityModel sleep)
+        public async Task<int> UpdateSleepAsync(SleepActivityRequestModel sleep)
         {
             SleepActivity s = new SleepActivity();
             s.Id = sleep.Id;
-            s.Day = sleep.Day;
-            s.SleepStart = sleep.SleepStart;
-            s.SleepEnd = sleep.SleepEnd;
+            s.Day = DateTime.Parse(sleep.Day);
+            s.SleepStart = DateTime.Parse(sleep.SleepStart);
+            s.SleepEnd = DateTime.Parse(sleep.SleepEnd);
             return await _sleepActivityRepositoyryAsync.UpdateAsync(s);
         }
     }
