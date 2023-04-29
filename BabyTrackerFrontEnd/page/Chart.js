@@ -16,6 +16,9 @@ import axios from 'axios';
 
 export default function Chart({ isDarkGlobal, setNavItems, navItems }) {
   const [isDark, setIsDark] = useState(false);
+  const [eatData, setEatData] = useState([]);
+  const [sleepData, setSleepData] = useState([]);
+  const [playData, setPlayData] = useState([]);
 
   useEffect(() => {
     setIsDark(!isDarkGlobal);
@@ -60,11 +63,65 @@ export default function Chart({ isDarkGlobal, setNavItems, navItems }) {
       })
       .then((response) => {
         console.log('response:', response.status);
-        console.log('eat response:', response.data);
+        const totals = {};
+
+        for (const { eatStart, eatEnd } of response.data) {
+          const [startDate, startTime] = eatStart.split('T');
+          const [endDate, endTime] = eatEnd.split('T');
+          // const [startHour, startMinute] = startTime.split(':');
+          // const [endHour, endMinute] = endTime.split(':');
+          const startTimeUTC = Date.parse(`${startDate}T${startTime}Z`);
+          const endTimeUTC = Date.parse(`${endDate}T${endTime}Z`);
+          const elapsed = (endTimeUTC - startTimeUTC) / 1000 / 3600; // elapsed time in hours
+          const month = Number(startDate.split('-')[1]); // get month number
+          totals[month] = (totals[month] || 0) + elapsed; // add elapsed time to total for month
+        }
+
+        const result = Object.entries(totals).map(([month, total]) => ({
+          x: Number(month),
+          y: total,
+        }));
+        setEatData(result);
       })
       .catch((error) => {
         console.log(error);
       });
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get(url + '/api/SleepActivity', {
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+      })
+      .then((response) => {
+        console.log('response:', response.status);
+        const totals = {};
+
+        for (const { sleepStart, sleepEnd } of response.data) {
+          const [startDate, startTime] = sleepStart.split('T');
+          const [endDate, endTime] = sleepEnd.split('T');
+          const startTimeUTC = Date.parse(`${startDate}T${startTime}Z`);
+          const endTimeUTC = Date.parse(`${endDate}T${endTime}Z`);
+          const elapsed = (endTimeUTC - startTimeUTC) / 1000 / 3600; // elapsed time in hours
+          const month = Number(startDate.split('-')[1]); // get month number
+          totals[month] = (totals[month] || 0) + elapsed; // add elapsed time to total for month
+        }
+
+        const result = Object.entries(totals).map(([month, total]) => ({
+          x: Number(month),
+          y: total,
+        }));
+        setSleepData(result);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  useEffect(() => {
     axios
       .get(url + '/api/PlayActivityControllercs', {
         headers: {
@@ -74,50 +131,37 @@ export default function Chart({ isDarkGlobal, setNavItems, navItems }) {
       })
       .then((response) => {
         console.log('response:', response.status);
+        const totals = {};
+
+        for (const { playStart, playEnd } of response.data) {
+          const [startDate, startTime] = playStart.split('T');
+          const [endDate, endTime] = playEnd.split('T');
+          const startTimeUTC = Date.parse(`${startDate}T${startTime}Z`);
+          const endTimeUTC = Date.parse(`${endDate}T${endTime}Z`);
+          const elapsed = (endTimeUTC - startTimeUTC) / 1000 / 3600; // elapsed time in hours
+          const month = Number(startDate.split('-')[1]); // get month number
+          totals[month] = (totals[month] || 0) + elapsed; // add elapsed time to total for month
+        }
+
+        const result = Object.entries(totals).map(([month, total]) => ({
+          x: Number(month),
+          y: total,
+        }));
+        setPlayData(result);
       })
       .catch((error) => {
         console.log(error);
       });
-    axios
-      .get(url + '/api/SleepActivity/', {
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-        },
-      })
-      .then((response) => {
-        console.log('response:', response.status);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  });
+  }, []);
+
+  console.log('EatData: ', eatData);
+  console.log('SleepData: ', sleepData);
+  console.log('PlayData: ', playData);
 
   const data = {
-    bar1: [
-      { x: 'Jan', y: 20 },
-      { x: 'Mar', y: 40 },
-      { x: 'May', y: 120 },
-      { x: 'Jul', y: 69 },
-      { x: 'Sep', y: 10 },
-      { x: '1', y: 31 },
-      { x: '2', y: 60 },
-      { x: '3', y: 40 },
-      { x: '4', y: 140 },
-      { x: '5', y: 80 },
-    ],
-    bar2: [
-      { x: 'Jan', y: 50 },
-      { x: 'Mar', y: 30 },
-      { x: 'May', y: 70 },
-      { x: 'Jul', y: 38 },
-      { x: 'Sep', y: 105 },
-      { x: '1', y: 50 },
-      { x: '2', y: 30 },
-      { x: '3', y: 70 },
-      { x: '4', y: 38 },
-      { x: '5', y: 105 },
-    ],
+    bar1: eatData,
+    bar2: sleepData,
+    bar3: playData,
   };
 
   const chartTheme_light = {
@@ -209,18 +253,24 @@ export default function Chart({ isDarkGlobal, setNavItems, navItems }) {
                   },
                 }}
               />
-              <VictoryGroup offset={14}>
+              <VictoryGroup offset={10}>
                 <VictoryBar
                   style={{ data: { fill: '#6082B6' } }}
-                  cornerRadius={{ top: 7, bottom: 7 }}
-                  barWidth={14}
+                  cornerRadius={{ top: 5, bottom: 5 }}
+                  barWidth={10}
                   data={data.bar1}
                 />
                 <VictoryBar
                   style={{ data: { fill: '#e0a370' } }}
-                  cornerRadius={{ top: 7, bottom: 7 }}
-                  barWidth={14}
+                  cornerRadius={{ top: 5, bottom: 5 }}
+                  barWidth={10}
                   data={data.bar2}
+                />
+                <VictoryBar
+                  style={{ data: { fill: '#60c689' } }}
+                  cornerRadius={{ top: 5, bottom: 5 }}
+                  barWidth={10}
+                  data={data.bar3}
                 />
               </VictoryGroup>
             </VictoryChart>

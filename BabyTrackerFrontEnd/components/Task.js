@@ -5,14 +5,26 @@ import preprocess from 'react-native-web/dist/cjs/exports/StyleSheet/preprocess'
 
 const Task = (props) => {
   return (
-    <View style={props.isDarkGlobal ? styles.item_light : styles.item_dark}>
-      <Text style={props.isDarkGlobal ? styles.text_light : styles.text_dark}>
+    <View
+      style={[
+        props.isDarkGlobal ? styles.item_light : styles.item_dark,
+        { backgroundColor: props.bg },
+      ]}
+    >
+      <Text
+        style={[
+          props.isDarkGlobal ? styles.text_light : styles.text_dark,
+          props.isDarkGlobal
+            ? { color: props.iconColor }
+            : { color: props.iconColorDark },
+        ]}
+      >
         {props.text}
       </Text>
       <Ionicons
         name={props.icon}
         size={80}
-        color={props.isDarkGlobal ? '#355382' : '#rgba(180, 203, 237, 0.5)'}
+        color={props.isDarkGlobal ? props.iconColor : props.iconColorDark}
       ></Ionicons>
     </View>
   );

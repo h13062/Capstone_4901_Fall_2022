@@ -87,7 +87,7 @@ export default function Activity({
       .catch((error) => {
         console.log(error);
       });
-  });
+  }, []);
   useEffect(() => {
     axios
       .get(url + '/api/SleepActivity', {
@@ -102,7 +102,7 @@ export default function Activity({
       .catch((error) => {
         console.log(error);
       });
-  });
+  }, []);
 
   // Complete a task by removing an element at a specific index
   //   const handleClearTask = (index) => {
@@ -199,6 +199,9 @@ export default function Activity({
                   text="Sleeping"
                   isDarkGlobal={isDarkGlobal}
                   icon="moon-outline"
+                  bg="#6082B6"
+                  iconColor="#233c63"
+                  iconColorDark="#d3e0f5"
                 />
               </TouchableOpacity>
               <TouchableOpacity
@@ -211,6 +214,9 @@ export default function Activity({
                   text="Eating"
                   isDarkGlobal={isDarkGlobal}
                   icon="nutrition-outline"
+                  bg="#e0a370"
+                  iconColor="#7d502a"
+                  iconColorDark="#f5e2d3"
                 />
               </TouchableOpacity>
               <TouchableOpacity
@@ -226,6 +232,9 @@ export default function Activity({
                   text="Playing"
                   isDarkGlobal={isDarkGlobal}
                   icon="tennisball-outline"
+                  bg="#60c689"
+                  iconColor="#21693e"
+                  iconColorDark="#c5edd5"
                 />
               </TouchableOpacity>
               {taskItems.map((item, index) => {
